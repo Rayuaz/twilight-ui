@@ -1,0 +1,189 @@
+.chat-message {
+    background: $black2;
+    color: $white;
+    border-color: $black4!important;
+    font-family: 'Roboto';
+
+    .message-header {
+        color: $white;
+
+        .message-sender {
+            text-shadow: none!important;
+            font-weight: 900;
+            margin-bottom: 3px;
+        }
+    }
+
+    .message-content {
+        line-height: 1.4;
+    }
+}
+
+.message-metadata .message-delete {
+    margin-left: 5px;
+}
+
+a.entity-link, a.inline-roll {
+    background-color: $black3;
+}
+
+.chat-message .table-draw {
+    .table-description {
+        color: $white;
+        opacity: .7;
+    }
+
+    .table-results .table-result img.result-image {
+        background: rgba(255,255,255,.6);
+        border-radius: 5px;
+        padding: 2px;
+    }
+}
+
+.dnd5e.chat-card .card-header, .midi-qol-nobox, .dnd5e.chat-card .card-footer {
+    border-color: rgba(255,255,255,0.1);
+}
+
+.dnd5e.chat-card {
+    font-size: 0.875rem;
+
+    .card-header {
+        margin: 3px 0;
+    
+        h3 {
+            color: $white;
+            font-family: 'roboto';
+            font-size: 1rem;
+
+            &:hover {
+                color: $white;
+                text-shadow: 0 0 10px var(--primary-accent);
+                cursor: pointer;
+            }
+        }
+    }
+
+    .card-buttons button {
+        border: 1px solid $black3L;
+        font-size: 14px;
+        padding: 10px 5px;
+        height: auto;
+        border-radius: 4px;
+    }
+}
+
+.dice-roll {
+    .dice-row {
+        gap: 5px;
+    }
+    
+    &.red-dual .die-icon {
+        background-image: none;
+    
+        &:after {
+            content: "";
+            background-image: url(../../../icons/svg/d20-grey.svg);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-size: 22px;
+            height: 100%;
+            opacity: 0.4;
+        }
+    }
+
+    .dice-formula, .dice-total {
+        box-shadow: none;
+        border-color: $black4;
+    }
+
+    .dice-row {
+        .failure, .success {
+            color: $white;
+        }
+
+        .dice-total.success {
+            background: #418824;
+            border-color: #418824;
+        }
+
+        .dice-total.failure {
+            background: #cc2d2d;
+            border-color: #cc2d2d;
+        }
+
+        .mixed {
+            color: #596cf3;
+        }
+    }
+}
+
+.br5e-roll-label {
+    font-weight: 900;
+    margin: 5px 0;
+}
+
+.midi-qol-nobox {
+    margin-top: 5px;
+}
+
+.midi-qol-flex-container div:first-child {
+    margin-left: 0;
+}
+
+.midi-qol-target-name {
+    font-weight: 900;
+
+    &:hover {
+        text-shadow: 0 0 4px var(--primary-accent);
+        cursor: pointer;
+    }
+}
+
+.die-result-overlay-br button, .xmidi-qol-flex-container button {
+    background-color: $black3;
+    border: none;
+    color: $white;
+    width: 30px;
+    height: 30px;
+
+    &:hover {
+        background: $black3L;
+    }
+}
+
+.dice-roll .dice-formula, .dice-roll .dice-total {
+    line-height: 34px;
+}
+
+.chat-message.whisper {
+    background: $black2;
+    border-color: $white!important;
+}
+
+.xmidi-qol-flex-container table {
+    border: none;
+}
+
+#chat-form textarea {
+    background: $black3;
+    color: $white;
+}
+
+#chat-controls .roll-type-select {
+    color: $white;
+    background: $black4;
+}
+
+.xmidi-qol-flex-container thead {
+    display: none;
+}
+
+#chat-log {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-bottom: 10px;
+}

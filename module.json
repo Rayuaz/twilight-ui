@@ -1,0 +1,25 @@
+{
+    "name": "twilight-ui",
+    "title": "Twilight UI",
+    "description": "A dark theme for Foundry",
+    "author": {
+        "Name": "Sua Mãe, Aquela Católica",
+        "email": "alan@tpk.gg",
+        "discord": "Sua mãe, Aquela Católica#2512"
+    },
+    "version": "1.0",
+    "minimumCoreVersion": "0.7",
+    "compatibleCoreVersion": "0.8.8",
+    "scripts": [
+        "scripts/tinymce_handler.js",
+        "scripts/directory_colors.js",
+        "scripts/spell_level_buttons.js"
+    ],
+    "styles": [
+        "twilight-ui.css"
+    ],
+    "manifest": "https://github.com/Rayuaz/twilight-ui/releases/latest/download/module.json",
+	"url": "https://github.com/Rayuaz/twilight-ui",
+    "download": "https://github.com/Rayuaz/twilight-ui/releases/latest/download/twilight-ui.zip",
+    "readme": "https://github.com/Rayuaz/twilight-ui/blob/master/readme.md"
+}

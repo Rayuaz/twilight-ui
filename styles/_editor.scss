@@ -1,0 +1,347 @@
+/* ---------------------- */
+/* --- Journal Header --- */
+/* ---------------------- */
+
+.journal-sheet .window-content {
+    padding: 10px 0;
+}
+
+.journal-sheet form {
+    position: relative;
+    overflow-y: scroll;
+    padding: 0 5px 0 10px;
+
+    &.editable input[name="name"] {
+        font-family: 'roboto';
+        font-weight: 900;
+        font-size: 3.75rem;
+        height: auto;
+        background: transparent;
+        border: none;
+        padding: 0 25px;
+        color: white;
+        margin-bottom: 40px;
+
+        &:focus {
+            box-shadow: none;
+            background-color: $black3;
+        }
+    }
+
+    select[name="folder"] {
+        display: none;
+        // grid-area: folder;
+        // margin: 0;
+        // font-family: 'roboto';
+        // background: transparent;
+        // border: none;
+        // font-style: italic;
+        // height: auto;
+        // width: fit-content;
+        // border-radius: 5px;
+        // padding: 5px;
+        // margin-left: 25px;
+
+        // &:hover {
+        //     cursor: pointer;
+        //     background-color: $black3;
+        // }
+
+        // option {
+        //     background-color: $black3;
+        // }
+    }
+
+    .editor {
+        max-height: none;
+        min-height: calc(100% - 102px);
+        height: fit-content;
+
+        .editor-content {
+            padding: 25px;
+            padding-top: 0;
+
+            .bottom-spacer {
+                display: none;
+            }
+        }
+
+        .editor-edit {
+            background-color: $black3;
+            box-shadow: none;
+            border: none;
+        }
+    }
+
+    button[type="submit"] {
+        margin: 0;
+        position: sticky;
+        left: 0;
+        bottom: 0;
+    }
+}
+
+/* ----------------------- */
+/* --- TinyMCE Toolbar --- */
+/* ----------------------- */
+
+div.tox {
+    .tox-pop.tox-pop--bottom::before,
+    .tox-pop.tox-pop--bottom::after {
+        border-color: $black4 transparent transparent transparent;
+    }
+
+    .tox-pop.tox-pop--top::before,
+    .tox-pop.tox-pop--top::after {
+        border-color: transparent transparent $black4 transparent;
+    }
+
+    .tox-pop__dialog {
+        background: $black4;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .tox-toolbar, 
+    .tox-toolbar__overflow, 
+    .tox-toolbar__primary {
+        background: none;
+        justify-content: center;
+    }
+
+    &:not([dir=rtl]) .tox-toolbar__group:not(:last-of-type) {
+        border: none;
+        position: relative;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 20px;
+            background: rgba(255,255,255,.1);
+            right: 0;
+            top: calc(50% - 10px);
+            position: absolute;
+        }
+    }
+
+    .tox-tbtn {
+        color: rgba(255,255,255,.5);
+        font-family: 'roboto';
+        transition: all .15s ease-in-out;
+        margin: 0;
+        padding: 2px 0 3px 0;
+        border-radius: 0;
+
+        &__select-chevron svg,
+        svg {
+            fill: rgba(255,255,255,.5);
+        }
+
+        &--enabled {
+            background: $black4L;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background: $black4L;
+            color: $white;
+
+            svg {
+                fill: $white;
+            }
+        }
+
+        &:focus:not(.tox-tbtn--diabled) svg {
+            fill: $white;
+        }
+
+        &--select:focus {
+            box-shadow: none!important;
+            background: $black4!important;
+            color: $white!important;
+        }
+        
+    }
+
+    // Sub-menus
+    .tox-menu {
+        background: $black4;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .tox-collection__item {
+        color: rgba(255,255,255,.5);
+
+        &-caret svg {
+            fill: rgba(255,255,255,.4);
+        }
+
+        &-accessory {
+            color: rgba(255,255,255,.2);
+        }
+    } 
+    
+    .tox-collection--list {
+        .tox-collection__item {
+            font-family: 'roboto';
+        }
+        
+        .tox-collection__item--active {
+            background-color: $black4L;
+    
+            &:not(.tox-collection__item--state-disabled) {
+                color: $white;
+            }
+        }
+
+        .tox-collection__item--enabled {
+            background-color: $black4L;
+            color: $white;
+            
+            svg {
+                fill: $white;
+            }
+
+            &:hover {
+                background: $black4L;
+                color: $white;
+
+                svg {
+                    fill: $white;
+                }
+            }
+        }
+
+        .tox-collection__group {
+            border: 0;
+            position: relative;
+            padding: 6px 0;
+            
+            &:before {
+                content: '';
+                width: 75%;
+                height: 1px;
+                display: block;
+                background: rgba(255,255,255,.2);
+                position: absolute;
+                top: 0;
+                left: 12.5%;
+            }
+
+            &:first-child:before {
+                display: none;
+            }
+        }
+    }
+
+    // Dialog Windows
+
+    .tox-dialog {
+        background-color: $black2;
+        border: none;
+
+        &-wrap__backdrop {
+            background-color: rgba(0,0,0,.75);
+        }
+
+        &__header {
+            background-color: $black2;
+            color: $white;
+        }
+
+        &__title {
+            font-family: 'roboto';
+            font-weight: 900;
+        }
+
+        &__footer {
+            background-color: $black2;
+            border: none;
+        }
+
+        &__body-nav-item {
+            color: $white;
+            background: $black3;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: 500;
+            width: 100%;
+            text-align: center;
+
+            &:hover {
+                background: $black3L;
+            }
+        }
+    }
+
+    .tox-form__group--stretched .tox-textarea {
+        background: $black3;
+        border: none;
+        color: $white;
+
+        &:hover {
+            background: $black3;
+            box-shadow: none
+        }
+    }
+
+    .tox-button {
+        background: $black3;
+        border: none;
+        color: $white;
+
+        &--naked {
+            color: $white;
+        }
+    
+        &--secondary {
+            opacity: .7;
+        }
+
+        &:hover {
+            background: $black3L;
+        }
+    }
+
+    .tox-label,
+    .tox-toolbar-label {
+        color: $white;
+        font-weight: 500;
+    }
+
+    .tox-listboxfield .tox-listbox--select,
+    .tox-textarea,
+    .tox-textfield,
+    .tox-toolbar-textfield {
+        background: $black3;
+        color: $white;
+
+        &:focus {
+            background: $black3L;
+        }
+    }
+
+    .tox-listbox__select-chevron svg {
+        fill: $white;
+    }
+
+    .tox-form__grid--2col>.tox-form__group {
+        height: fit-content;
+    }
+
+    .tox-checkbox {
+        color: $white;
+
+        &__icons .tox-checkbox-icon__unchecked svg {
+            fill: $white;
+        }
+    }
+
+
+}
+
+.tox.tox-tinymce .tox-editor-container .tox-editor-header {
+    display: none;
+}

@@ -1,0 +1,786 @@
+/* ----------------------- */
+/* --- Search Anywhere --- */
+/* ----------------------- */
+
+#search-anywhere-autocomplete {
+    color: $black4;
+}
+
+.modal-content input[type=text] {
+    font-family: 'roboto';
+    padding: 10px;
+    height: auto;
+    box-shadow: none;
+}
+
+.autocomplete-suggestion {
+    font-family: 'roboto';
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+/* ------------------ */
+/* --- Token Mold --- */
+/* ------------------ */
+
+.token-mold h3 {
+    font-weight: 900;
+}
+
+section.token-mold {
+    margin-bottom: 5px;
+    padding-bottom: 9px;
+    border-color: rgba(255,255,255,.5);
+}
+
+/* ----------------- */
+/* --- Dice Tray --- */
+/* ----------------- */
+
+.dice-tray {
+    padding: 0 3px;
+}
+
+.dice-calculator__input > label {
+    font-weight: 900;
+    font-family: 'Roboto';
+}
+
+.dice-calculator__input-wrapper > textarea {
+    font-size: 1.25rem;
+    color: $white;
+    font-family: 'Roboto';
+    font-weight: 900;
+    background: $black4;
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+}
+
+.dice-calculator > button:hover, .dice-calculator .dice-calculator--button:hover {
+    box-shadow: none;
+}
+
+.dialog--dice-calculator button {
+    font-family: 'Roboto';
+
+    &.roll {
+        margin-bottom: 10px;
+        padding: 15px 0;
+        height: auto;
+    }
+
+    &.dice-calculator--button {
+        font-size: 1rem;
+    }
+
+    &.dice-calculator--op {
+        background-color: #801c18;
+
+        &:hover {
+            background-color: lighten(#801c18, 10%);
+        }
+    }
+    
+    &.dice-calculator--math {
+        background-color: #804720;
+
+        &:hover {
+            background-color: lighten(#804720, 10%);
+        }
+    }
+    
+    &.dice-calculator--confirm {
+        background-color: #5b250c;
+
+        &:hover {
+            background-color: lighten(#5b250c, 10%);
+        }
+    }
+    
+    &.dice-calculator--stat {
+        background-color: #6d3b20;
+
+        &:hover {
+            background-color: lighten(#6d3b20, 10%);
+        }
+    }
+    
+    &.dice-calculator--attr {
+        background: #92361b;
+
+        &:hover {
+            background-color: lighten(#92361b, 10%);
+        }
+    }
+
+    &.dice-calculator--light {
+        background-color: $black3;
+
+        &:hover {
+            background-color: $black3L;
+        }
+    }
+
+    &.dice-calculator--dark {
+        background-color: darken($black2, 3%);
+
+        &:hover {
+            background-color: lighten(darken($black2, 3%), 5%);
+        }
+    }
+}
+
+/* --------------- */
+/* --- Tidy 5e --- */
+/* --------------- */
+
+.system-dnd5e.tidy5eDark {
+    --background: $black1;
+}
+
+.tidy5e.sheet.actor {
+
+    /* --- Character Sheet Header --- */
+
+    .char-name {
+        font-family: 'roboto';
+        font-weight: 900;
+        font-size: 1.25rem;
+    }
+
+    .speed-form {
+        font-size: 12px;
+    }
+
+    .header-attributes .ac-display .value {
+        font-family: 'Roboto Condensed';
+        font-weight: 900;
+        font-size: 34px;
+        letter-spacing: -3px;
+        text-align: center;
+        margin-left: -2px;
+        padding: 0;
+    }
+
+    .attribute-name {
+        font-family: 'roboto condensed';
+        font-size: 1rem;
+    }
+
+    .attribute-name, .ability-scores .ability {
+        .ability-name {
+            font-family: 'roboto condensed';
+            font-size: 1rem;   
+        }
+
+        .ability-modifiers:hover ~ .mod-label {
+            margin-top: -4px;
+        }
+    }
+
+    .ability-scores .ability .ability-score, .header-attributes .value {
+        font-family: 'roboto condensed';
+        font-size: 1.25rem;
+    }
+
+    .portrait-hp input, .portrait-hp span {
+        font-family: 'roboto';
+        font-size: 14px;
+    }
+
+    .tidy5e.sheet.actor .portrait-temp input {
+        font-family: 'Roboto Condensed';
+    }
+
+    .level {
+        font-family: 'roboto condensed';
+        font-size: 17px;
+        font-weight: 900
+    }
+
+    // Fix paddings
+    .items-list .items-header .spell-slots input,
+    .spellcasting-ability select,
+    .spellcasting-ability input,
+    .portrait-hp input,
+    .portrait-hp span {
+        padding: 0;
+    }
+
+    //Fix Spellcasting Ability text
+    .spellcasting-ability h3 {
+        font-family: 'roboto';
+        font-weight: 900;
+        font-size: 14px;
+    }
+
+    /* ------------------------- */
+
+    .resources .resource {
+        .resource-name input {
+            font-family: 'roboto condensed';
+            font-size: 0.813rem;
+        }
+
+        .resource-value.multiple input {
+            font-family: 'roboto condensed';
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+    }
+
+    /* --- Character Sheet Inventory --- */
+
+    #item-info-container {
+        .info-card-hint, .info-card {
+            background-color: $black3!important;
+        }
+
+        .info-card .info-card-name {
+            font-family: 'roboto condensed';
+            font-weight: 900;
+            font-size: 1.25rem;
+        }
+    }
+
+    .items-list .item {
+        .context-menu {
+            background-color: $black4;
+        }
+
+        .item-quantity input {
+            padding: 0;
+        }
+
+        .ammo-switch option {
+            background: $black3;
+        }
+    }
+
+    .inventory-currency .currency-item a {
+        background-color: $black3;
+
+        &:hover {
+            background-color: $black3L;
+        }
+    }
+
+    .item-summary {
+        table td, table th {
+            padding: 5px 2px;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        h2, h3, h4, h5, h6 {
+            margin-top: 10px;
+        }
+    }
+
+    .attuned-items-counter input {
+        padding: 0;
+    }
+
+    // NPC Sheet
+
+    &.npc {
+        .level-information {
+            font-family: 'roboto condensed';
+        }
+
+        .spellbook-title {
+            font-family: 'roboto';
+            font-weight: 900;
+            border: none;
+        }
+
+        .spellcasting-ability .spell-dc {
+            font-family: 'roboto condensed';
+            font-size: 1rem;
+        }
+
+        .origin-summary .environment span:focus-within,
+        .origin-summary .environment:hover .environment-label {
+            background: $black3;
+        }
+        
+        .origin-summary .environment .environment-label::after {
+            border-top-color: $black3;
+        }
+
+        .actor-size-select.active ul {
+            background: $black3;
+        }
+
+        .actor-size-select .size-list li:hover {
+            background: $black3L;
+        }
+    }
+}
+
+.tidy5e.sheet.item {
+
+    .sheet-header {
+        .charname input {
+            font-family: 'roboto';
+            font-weight: 900;
+            font-size: 1.375rem;
+        }
+
+        .item-subtitle {
+            padding: 3px;
+            padding-left: 6px;
+            height: auto;
+            
+            .item-type {
+                font-family: 'roboto condensed';
+                font-size: 1.063rem;
+                font-weight: 900
+            }
+
+            .item-status {
+                font-family: 'roboto condensed';
+                font-size: 0.75rem;
+                font-weight: 900;
+            }
+        }
+
+        .summary {
+            border: none;
+            margin-top: 5px;
+
+            li {
+                border-left: none;
+                position: relative;
+                padding-left: 6px;
+
+                &:first-child {
+                    padding-left: 6px;
+                }
+
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    left: -3px;
+                    top: calc(50% - 10px);
+                    width: 3px;
+                    height: 17px;
+                    background-color: var(--faint-color);
+                }
+
+                input {
+                    margin-left: -6px;
+                }
+            }
+        }
+
+    }
+
+    .sheet-body {
+        input[type="checkbox"]:checked {
+            background-color: $black3;
+        }
+        
+        //Properties sidebar
+        .item-properties .properties-list li {
+            font-size: 0.813rem;
+            padding: 5px;
+        }
+
+        //Sheet contents
+        .tab.item-betterRolls, .tab.details, .tab.dynamiceffects, .tab.magic-items {
+            .form-header, .damage-header { //Headers
+                font-family: 'roboto';
+                border: none;
+                font-weight: 900;
+                margin-left: 0;
+                margin-top: 20px;
+            }
+
+            .form-group { // Form lines
+                background: transparent;
+                padding: 0;
+                margin: 5px 0;
+
+                label {
+                    margin: 0;
+
+                    &.checkbox { // The properties checkboxes
+                        background: var(--prepared);
+                    }
+                }
+
+                select, input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), button { // Inputs
+                    background: $black3;
+                    padding: 5px 10px;
+                    height: auto;
+    
+                    &:hover, &:focus {
+                        background: $black3L;
+                        box-shadow: none;
+                        box-shadow: 0 0 3px #6f6f6f inset, 0 0 3px #6f6f6f inset, 0 0 3px #6f6f6f inset, 0 0 3px #6f6f6f inset;
+                    }
+                }
+            }
+
+        }
+
+        //Damage section looks fucked up with display: flex
+        .damage-parts {
+            display: block;
+
+            .damage-part input[type="text"]:first-child {
+                margin-right: 0;
+            }
+
+            .damage-part input[type="text"]:nth-child(2) {
+                margin: 0 5px;
+            }
+
+            li {
+                border: none;
+                margin-top: 4px;
+            }
+        }
+
+        //Damage formula save DC
+        .tab.details .form-group.input-select .form-fields input[name="data.save.dc"] {
+            padding: 5px 0;
+        }
+
+        //Magic Items Activation Options section doesn't work with display:grid
+        .tab.magic-items .magic-item-enabled > .form-group:first-child {
+            display: flex;
+        }
+
+        //Padding for the magic items checkboxes
+        .tab.magic-items .form-group label.checkbox {
+            padding: 5px 10px;
+            height: 30px;
+            margin-bottom: 5px;
+
+            input {
+                margin-right: 7px;
+            }
+        }
+
+        //Bigger font and padding for the Active Effects tab
+        .tab.effects .items-list .items-header h3 {
+            font-size: 13px;
+            padding: 5px;
+            color: $white;
+        }
+
+    }
+
+    .tox-sidebar-wrap { //TinyMCE background
+        background: transparent!important;
+        padding: 0!important;
+        padding-bottom: 40px!important;
+    }
+
+    .tox { // TinyMCE Toolbar
+        &.tox-tinymce .tox-editor-container .tox-editor-header {
+            display: block;
+    
+            .tox-toolbar-overlord {
+                position: absolute;
+                bottom: 0;
+                right: 15px;
+                width: 100%;
+                background: $black3;   
+            }
+        }
+
+        .tox-tbtn {
+            display: none;
+
+            &[title="Save"] {
+                display: block;
+                width: 100%!important;
+                height: 100%!important;
+                padding: 5px;
+
+                .tox-icon {
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
+
+        .tox-toolbar__group {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    
+
+}
+
+.tidy5e .materials {
+    margin-bottom: 5px;
+}
+
+.tidy5e.sheet.item .sheet-body .editor .editor-content, .tidy5eDark .tidy5e.sheet.actor {
+    a.entity-link, a.inline-roll {
+        padding: 2px 5px;
+        background: $black4;
+        border-color: $black4L;
+        color: $white;
+    
+        &:hover {
+            background: $black4L;
+        }
+    }
+}
+
+.tidy5e-navigation .item, .sheet-navigation .item {
+    font-weight: 500;
+}
+
+.app.trait-selector {
+    input[type="text"] {
+        height: 24px;
+        background: $black3;
+
+        &:first-child {
+            margin: 0;
+            text-align: center;
+
+            &:hover {
+                background: $black3L;
+            }
+        }
+    }
+
+    .trait-list li:not(.subtype):not(.custom-type) label:hover {
+        color: white;
+        cursor: pointer;
+    }
+}
+
+/* ---------------------------- */
+/* --- Automated Animations --- */
+/* ---------------------------- */
+
+.audio-checkbox {
+    background-color: #292929;
+    padding: 5px 10px;
+
+    button {
+        background-color: #363535;
+        height: 26px;
+        margin-bottom: 3px;
+        margin-left: 3px;
+    }
+
+    input[name="flags.autoanimations.allSounds.item.delay"], input[name="flags.autoanimations.allSounds.item.volume"], input[name="flags.autoanimations.allSounds.item.file"] {
+        background-color: #363535;
+    }
+}
+
+.audio-checkbox button:hover {
+    background-color: #3F3F3F;
+}
+
+/* --------------------------- */
+/* --- Collapsible headers --- */
+/* --------------------------- */
+
+.cjs-collapsible:not(.cjs-collapsedSect)::before, .cjs-collapsible:not(.cjs-collapsedSect):hover::before, .cjs-collapsedSect::before {
+    content: '';
+    display: none;
+}
+
+/* ------------------------ */
+/* --- Token Action HUD --- */
+/* ------------------------ */
+
+#token-action-hud {
+    background: $black2!important;
+    border-radius: 0 6px 6px 6px;
+    gap: 5px;
+
+    .tah-category:not(:nth-last-child(2)):after {
+        content: '';
+        width: 1px;
+        height: 15px;
+        display: block;
+        background: rgba(255,255,255,.2);
+        position: absolute;
+        right: -2px;
+        top: 10px;
+    }
+
+    .tah-title-button {
+        background: transparent;
+        border: none;
+        padding: 3px 10px;
+        border-radius: 0;
+        margin: 0;
+    
+        &:hover {
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            border: 0;
+            box-shadow: $shadow;
+        }
+
+        .fa-filter {
+            display: none;
+        }
+    }
+
+    .tah-category.hover .tah-content {
+        left: 0;
+        padding: 15px;
+        background: $black2!important;
+        border-radius: 0 0 5px 5px;
+
+        .tah-subcategory {
+            display: block;
+
+            &:not(:first-child) {
+                margin-top: 15px;
+            }
+
+            .tah-subtitle {
+                font-weight: 900;
+                position: relative;
+                text-align: left;
+                padding: 0;
+                margin-bottom: 5px;
+    
+                &:after {
+                    content: '';
+                    position: absolute;
+                    height: 1px;
+                    width: 50%;
+                    display: block;
+                    background: rgba(255,255,255,.2);
+                    top: calc(50% - 1px);
+                    left: 25%;
+                }
+            }
+
+            .tah-actions {
+                gap: 5px;
+
+                .tah-action {
+                    margin: 0;
+                    padding: 0;
+                
+                    button {
+                        background: $black3;
+                        margin: 0;
+                        padding: 3px 5px;
+                
+                        &:hover {
+                            font-weight: 500;
+                            border: none;
+                            box-shadow: $shadow;
+                        }
+                    }
+                }
+            }
+        }
+
+        .tah-action button {
+            border: none;
+            background: $black2;
+            border-radius: 5px;
+
+            &:hover {
+                border: none;
+                background: $black3L;
+            }
+        }
+    }
+
+    #tah-hudTitle {
+        background: $black4;
+        border-radius: 5px 5px 0 0;
+        padding: .25em 10px;
+        margin-left: 0;
+    }
+
+    #tah-categories {
+        border-radius: 0 5px 5px 0;
+
+        .fa-book:before {
+            content: '\f067';
+            font-size: 13px;
+        }
+    }
+
+    &:hover {
+        border-radius: 0;
+
+        #tah-reposition, #tah-categories {
+            background: $black1;
+            height: 100%;
+            padding: 0 5px;
+        }
+
+        #tah-reposition {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            left: -35px;
+            border-radius: 5px 0 0 6px;
+        }
+    }
+}
+
+.tagify {
+    --tag-bg: $black4;
+    --tag-hover: $black4L;
+    --tag-text-color: $white;
+    --tag-text-color--edit: $white;
+    --placeholder-color: $white;
+}
+
+.token-action-hud-taginput {
+    background: $black3!important;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: $white!important;
+}
+
+#token-action-hud-index {
+    background: $black3!important;
+    border: none;
+    border-radius: 5px;
+    color: $white!important;
+}
+
+.tagify__tag>div {
+    font-size: 13px;
+}
+
+/* ------------------------- */
+/* --- Multilevel Tokens --- */
+/* ------------------------- */
+
+#drawing-config .tab[data-tab="multilevel-tokens"] .form-header {
+    color: $white;
+    border: none;
+    font-weight: 900;
+    font-size: 1.25rem;
+    margin-top: 25px
+}
+
+#drawing-config .tab[data-tab="multilevel-tokens"] hr {
+    border: none;
+    border-top: 1px solid $black4L;
+}

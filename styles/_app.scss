@@ -1,0 +1,1902 @@
+.folder, button, form button, .die-result-overlay-br button, .xmidi-qol-flex-container button, .header-overlay-br button, .dice-tray button, .dice-calculator-toggle, select, input[type="color"], input[type="checkbox"], input[type="radio"] {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.app {
+    background: $black1;
+}
+
+/* ----------------- */
+/* --- Token HUD --- */
+/* ----------------- */
+
+#token-hud {
+    input[type="text"] {
+        font-size: 1.25rem;
+        font-weight: 900;
+    }
+
+    .control-icon:hover {
+        cursor: pointer;
+    }
+}
+
+/* ------------------ */
+/* --- App Window --- */
+/* ------------------ */
+  
+.window-app {
+    .window-header .window-title {
+        font-weight: 500;
+    }
+
+    .tabs:not(.tidy5e-navigation):not(.sheet-navigation) .item {
+        transition: all .15s ease-in-out;
+        font-weight: 500;
+        border-radius: 0;
+
+        &:hover {
+            box-shadow: $shadow;
+            background: $black3L;
+            text-shadow: none;
+            border-radius: 5px 5px 0 0;
+        }
+
+        &.active {
+            box-shadow: $shadow;
+            background: $black3L;
+            text-shadow: none;
+            border-radius: 5px 5px 0 0;
+        }
+    }
+
+    .tab.active {
+        margin-bottom: 10px;
+    }
+
+    nav.sheet-tabs {
+        border-top: none;
+        margin-top: 0;
+    }
+
+    .window-content {
+        padding: 10px;
+        border-radius: 0 0 5px 5px;
+    }
+
+    &.image-popout {
+        .form-group.title {
+            display: none;
+        }
+
+        .lightbox-image {
+            flex: auto;
+        }
+    }
+
+    .notes {
+        color: $white;
+        margin-top: 0;
+        padding: 5px 0;
+        padding-bottom: 8px;
+        margin-bottom: 15px;
+        font-weight: 400;
+        border: none;
+    }
+
+    input[type="checkbox"] {
+        justify-self: center;
+    }
+
+    .window-resizable-handle,
+    .window-draggable-handle {
+        opacity: 0;
+    }
+
+    .window-resizable-handle:hover {
+        cursor: nwse-resize	;
+    }
+
+    .window-draggable-handle:hover {
+        cursor: grab;
+    }
+}
+
+.window-app .window-content, .tidy5e.sheet.actor .window-content {
+    background: $black2;
+    color: $white;
+}
+
+.dnd5e .form-group {
+    label {
+        color: var(--secondary-color);
+    }
+
+    .form-fields button {
+        border: none;
+        background: $black3;
+    
+        &:hover {
+            background: $black3L;
+        }
+    }
+}
+
+// Hit Dice Window
+.window-app.hd-config {
+    input.current, input.max {
+        color: $white;
+    }
+
+    input {
+        height: 32px;
+    }
+    
+    input.max:hover {
+        background: $black2
+    }
+    
+    .form-group button {
+        padding: 5px;
+
+        &.increment, &.decrement {
+            height: 32px;
+            flex: .2;
+        }
+    }
+
+    .notes {
+        margin: 0;
+    }
+}
+
+/* ----------------------- */
+/* --- Settings Window --- */
+/* ----------------------- */
+
+#client-settings {
+    .tab.active {
+        margin: 0;
+    }
+    
+    nav.tabs {
+        border: none;
+    }
+}
+
+.filepicker .display-modes a, .filepicker .display-modes a.active {
+    background: $black3;
+}
+
+#client-settings.app.window-app.form #config-tabs {
+    .settings-list h2.module-header span {
+        color: $white;
+        opacity: 0.5;
+    }
+
+    .tab[data-tab="modules"] .settings-list h2.module-header {
+        padding: 1em 0;
+        margin: 0;
+    }
+}
+
+#module-management .package-list {
+    .package-title, .package-metadata, .package-description {
+        color: $white;
+    }
+}
+
+/* -------------------- */
+/* --- Form Windows --- */
+/* -------------------- */
+
+form {
+    button {
+        color: $white;
+        background: $black3;
+        border: none;
+    }
+    
+    
+
+    .form-group, 
+    .form-group-stacked {
+        margin: 6px 0;
+
+        &:not(.submenu) {
+            display: grid;
+            grid-template-columns: 2fr 3fr;
+        }
+        
+        label {
+            font-size: 0.813rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .form-fields {
+            justify-content: center;
+
+            & > label.checkbox {
+                align-items: center;
+                justify-content: center;
+                padding: 4px;
+            }
+        }
+
+        span.units {
+            color: rgba(255,255,255,.4);
+            font-weight: 400;
+        }
+    }
+
+    .form-group.stacked,
+    .form-group-stacked {
+        grid-template-columns: 1fr;
+    }
+
+    .notes,
+    .hint {
+        color: $white;
+        opacity: 0.5;
+        grid-column: 1/-1;
+        font-size: 0.813rem;
+        font-weight: 500;
+    }
+    
+}
+
+.window-app textarea {
+    background: $black3;
+    border: none;
+}
+
+// Workaround too many tabs on Drawing config window
+#drawing-config .sheet-tabs {
+    height: fit-content;
+}
+
+// Override for the macro-sheet
+
+.macro-sheet form .form-group {
+    display: flex;
+}
+
+#drawing-config {
+    min-height: 420px;
+}
+
+// Dialog Buttons
+
+.dialog .dialog-buttons button, .dialog .dialog-buttons button.default {
+    border: none;
+    background-color: $black3;
+    margin-top: 10px;
+
+    &:hover {
+        background-color: $black3L;
+    }
+}
+
+.dialog-content form > p:first-child {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+// Macro Window
+
+.macro-sheet .form-group.command .furnace-macro-command textarea {
+    color: $white;
+    -webkit-text-fill-color: unset;
+}
+
+/* --------------------------- */
+/* --- Scene Config Window --- */
+/* --------------------------- */
+
+.scene-sheet {
+    .form-header {
+        color: $white;
+        border: none;
+        font-weight: 900;
+        font-size: 1.25rem;
+
+        &:not(:first-child) {
+            margin-top: 40px;
+        }
+    }
+    
+    .window-content {
+        padding: 25px;
+    }
+    
+    .notes {
+        padding-top: 0;
+    }
+}
+
+/* ------------------------- */
+/* --- Filepicker Window --- */
+/* ------------------------- */
+
+.filepicker {
+    .form-group.current-dir {
+        display: flex;
+    }
+
+    .current-dir button {
+        background: $black3;
+        border: none;
+
+        &:hover {
+            background: $black3L;
+        }
+    }
+
+    .display-modes a {
+        border: none;
+
+        &:hover {
+            text-shadow: none;
+            background: $black3L;
+        }
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &.active {
+            text-shadow: none;
+            color: white;
+            background: $black3L;
+        }
+        
+    }
+
+    .directory {
+        border: none;
+
+        & > li.dir:hover {
+            text-shadow: none;
+            background: $black3L;
+        }
+    }
+
+    .tiles-list li {
+        &:hover {
+            background-color: $black3L;
+            border-radius: 5px;
+        }
+
+        &.picked {
+            box-shadow: $shadow;
+            background: $black3L;
+            border-radius: 5px;
+        }
+    }
+}
+
+/* ----------------------------- */
+/* --- Drawing Config Window --- */
+/* ----------------------------- */
+
+#drawing-config {
+    // Adjusted width and height to better fit other modules that add tabs to this window
+    min-height: 450px;
+    min-width: 510px;
+
+    // The range inputs in the drawing window are not nested in a .form-fields div, like
+    // every other input in Foundry, so this is a workaround. Atropos, please fix :(
+    .tab[data-tab="text"] .form-group:nth-child(5),
+    .tab[data-tab="text"] .form-group:nth-child(6),
+    .tab[data-tab="fill"] .form-group:nth-child(3),
+    .tab[data-tab="fill"] .form-group:nth-child(4),
+    .tab[data-tab="lines"] .form-group:nth-child(3),
+    .tab[data-tab="lines"] .form-group:nth-child(4),
+    .tab[data-tab="lines"] .form-group:nth-child(5) {
+        grid-template-columns: 2fr 2.5fr .5fr;
+    }
+}
+
+/* --------------- */
+/* --- Sidebar --- */
+/* --------------- */
+
+#sidebar {
+    width: 320px;
+    padding: 10px;
+
+    &.collapsed {
+        padding: 0;
+
+        #sidebar-tabs > .item.active {
+            border: none;
+        }
+    }
+
+    #sidebar-tabs {
+        box-shadow: none;
+        border-color: $black4L;
+
+        .item {
+            border-radius: 0;
+            transition: all .15s ease-in-out;
+            border: none;
+
+            &:hover {
+                box-shadow: $shadow;
+                background: $black3L;
+                border-radius: 5px 5px 0 0;
+        
+                i {
+                    text-shadow: none!important;
+                    color: $white;
+                }
+            }
+
+            &.active {
+                box-shadow: $shadow;
+                background: $black3L;
+                border: none;
+                border-radius: 5px 5px 0 0;
+        
+                i {
+                    color: $white;
+                    text-shadow: none!important;
+                }
+            }
+        }
+    }
+}
+
+/* --------------------- */
+/* --- Sidebar Lists --- */
+/* --------------------- */
+
+.directory .directory-list {
+
+    .directory-item {
+        margin-bottom: 5px;
+        
+        &.folder {
+            border-radius: 5px;
+            padding: 0 5px;
+
+            & > .folder-header {
+                border-radius: 5px;
+                padding: 10px;
+                border: none;
+            }
+        }
+
+        h3 {
+            font-weight: 900;
+        }
+
+        img {
+            border-radius: 6px;
+            padding: 3px;
+        }
+
+        &.entity {
+            transition: all .15s ease-in-out;
+            border: 0;
+            background-color: $black2;
+            border-radius: 5px;
+            padding-right: 3px;
+        
+            &:hover {
+                cursor: pointer;
+                background-color: $black3L;
+            }
+        }
+
+    }
+
+    .subdirectory {
+        border: none;
+        border-radius: 5px;
+    }
+
+}
+
+.directory .directory-header .header-search input {
+    background: $black4;
+    border-color: transparent;
+    color: $white;
+}
+
+.directory .action-buttons button {
+    font-weight: 500;
+}
+
+#journal li.journal {
+    padding: 10px;
+}
+
+/* ------------------- */
+/* --- Scenes List --- */
+/* ------------------- */
+
+#scenes {
+    .scene {
+        transition: all .15s ease-in-out;
+        margin: 0;
+        border-radius: 10px;
+        border: none;
+        height: 75px;
+        line-height: 75px;
+        align-items: center;
+        margin-bottom: 5px;
+
+        &:hover {
+            filter: brightness(1.4);
+        }
+
+        h3 {
+            font-weight: 900;
+            height: 100%;
+            line-height: 75px;
+            font-size: 1.1rem;
+        }
+
+        a:hover {
+            text-shadow: none;
+        }
+    }
+
+    .subdirectory {
+        border: none;
+    }
+}
+
+/* ---------------------- */
+/* --- Playlists list --- */
+/* ---------------------- */
+
+#playlists {
+    .global-control {
+        margin-bottom: 20px;
+
+        .playlist-header {
+            padding-bottom: 0;
+
+            h4 {
+                text-decoration: none;
+                font-weight: 900;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .playlist {
+        &:hover {
+            cursor: default;
+        }
+
+        .playlist-header {
+            text-decoration: none;
+            padding: 5px;
+
+            .playlist-name {
+                font-weight: 900;
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+/* ------------------------ */
+/* --- Compendium packs --- */
+/* ------------------------ */
+
+#compendium li.folder>.folder-header {
+    background: $black2!important;
+
+    &:hover {
+        background: $black3L!important;
+    }
+}
+
+#compendium li.compendium-pack {
+    background: $black2;
+    border-radius: 5px;
+    margin-bottom: 5px!important;
+    padding: 5px 10px!important;
+
+    &:hover {
+        background: $black3L;
+    }
+}
+
+// Folder Items
+
+.compendium .directory-list .directory-item {
+    border: none;
+    background-color: $black3;
+    border-radius: 4px;
+    margin-top: 5px;
+    padding: 5px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $black3L;
+    }
+
+    img {
+        margin: 0;
+        margin-right: 8px;
+        border-radius: 4px;
+    }
+}
+
+/* ---------------------- */
+/* --- Scene Controls --- */
+/* ---------------------- */
+
+#controls {
+    background: $black2;
+    padding: 0;
+    border-radius: 7px;
+    width: 40px;
+
+    .control-tools {
+        @extend #controls
+    }
+
+    .scene-control, .control-tool {
+        transition: all .15s ease-in-out;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        margin: 0;
+        width: 40px;
+        height: 40px;
+        display: grid;
+        justify-content: center;
+        align-items: center;        
+        border-radius: 0;
+
+        i {
+            font-size: 1rem;
+        }
+
+        &.active, &:hover {
+            border: none;
+            box-shadow: 0 0 3px #6f6f6f inset, 0 0 3px #6f6f6f inset, 0 0 3px #6f6f6f inset, 0 0 3px #6f6f6f inset;
+            background: $black3L;
+            border-radius: 7px;
+        }
+    }
+
+    .scene-control.active {
+        position: relative;
+    }
+
+    .control-tools {
+        top: 0;
+        left: 40px;
+        background: $black3;
+
+        .control-tool.toggle {
+            border: none;
+            box-shadow: 0 0 3px #9b8dff inset;
+            &.active, &:hover {
+                box-shadow: 0 0 10px #9b8dff inset;
+            }
+        }
+    }
+}
+
+/* ---------------------------- */
+/* --- Settings Sidebar Tab --- */
+/* ---------------------------- */
+
+#settings {
+    padding: 0;
+
+    h2 {
+        background: transparent;
+        border: none;
+        font-weight: 900;
+        font-size: 1.2rem;
+        margin-top: 20px;
+        padding: 0;
+
+        &:first-child {
+            margin: 0;
+        }
+    }
+
+    div {
+        margin: 0;
+    }
+}
+
+/* -------------- */
+/* --- Hotbar --- */
+/* -------------- */
+
+#hotbar, #custom-hotbar {
+    #hotbar-directory-controls, #custom-hotbar-directory-controls { // Left button
+        margin-right: 0;
+        border-radius: 6px 0 0 6px;
+        box-shadow: none;
+        background: $black1;
+        border: none;
+    }
+
+    #action-bar #hotbar-page-controls { // Right button
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0 5px 5px 0;
+        background: $black1;
+        border: none;
+    }
+
+    #macro-list, #custom-macro-list {
+        background: $black2;
+        border-radius: 0;
+        margin: 0;
+
+        .macro {
+            transition: all .15s ease-in-out; 
+            position: relative;
+            border-radius: 0;
+            background: transparent;
+            border: 1px solid $black1;
+
+            .macro-key, .custom-macro-key {
+                top: 0;
+                right: 0;
+                font-size: 13px;
+                border-radius: 0 0 0 6px;
+                background: #0d0c0a;
+            }
+
+            &.inactive {
+                box-shadow: none;
+                border: none;
+
+                &:after { // Divider
+                    content: '';
+                    width: 1px;
+                    height: 17px;
+                    display: block;
+                    background-color: $black1;
+                    position: absolute;
+                    right: -1px;
+                    top: calc(50% - 6px);
+                }
+
+                &:before { // + icon on the center
+                    transition: .25s ease-in-out;
+                    content: '+';
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    font-size: 30px;
+                    font-weight: 900;
+                    color: white;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    pointer-events: none;
+                }
+
+                &:hover:before {
+                    opacity: .1;
+                }
+            }
+
+            &.active {
+                &:after {
+                    transition: all .15s ease-in-out;
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: transparent;                    
+                    border-radius: 0;
+                    box-shadow: 0 0 3px transparent inset, 0 0 3px transparent inset, 0 0 3px transparent inset, 0 0 3px transparent inset;
+                    pointer-events: none;
+                }
+
+                &:hover > img {
+                    border-radius: 6px;
+                }
+
+                &:hover:after {
+                    border-radius: 6px;
+                    box-shadow: $shadow;
+                    background: rgba(255,255,255,.1);
+                }
+            }
+
+            &.inactive, &.active {
+                &:hover {
+                    border-radius: 6px;
+                    background: $black3;
+                    box-shadow: $shadow;
+                }
+            }
+        }
+    }
+}
+
+#custom-hotbar #custom-macro-list {
+    border-radius: 0 6px 6px 0;
+}
+
+/* ------------------------ */
+/* --- Scene Navigation --- */
+/* ------------------------ */
+
+#navigation {
+    #nav-toggle {
+        margin: 0;
+        border-radius: 5px 0 0 5px;
+        border: none;
+        background: $black1;
+    }
+
+    #scene-list .scene {
+        transition: all .15s ease-in-out;
+        margin: 0;
+        border-radius: 0;
+        border: none;
+        height: 100%;
+        background: $black2;
+        position: relative;
+
+        &:last-child {
+            border-radius: 0 5px 5px 0;
+        }
+
+        &:not(:last-child):before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: $black2;
+            z-index: -1;
+        }
+
+        &:not(:last-child):not(.view):after { // All, except the last and the one being viewed
+            content: '';
+            display: block;
+            width: 1px;
+            height: 18px;
+            position: absolute;
+            top: calc(50% - 9px);
+            right: 0;
+            background: $black4L;            
+        }
+
+        &:hover {
+            background: $black3L;
+            box-shadow: $shadow;
+            border-radius: 5px;
+        }
+
+        &.view,
+        &.context {
+            border: none;
+            background: $black3L;
+            box-shadow: $shadow;
+            border-radius: 5px;
+        }
+
+        &.gm {
+            border: none;
+            box-shadow: 0 0 3px #9b8dff inset;
+            background: #2e1846;
+
+            &:hover {
+                box-shadow: 0 0 7px #9b8dff inset;
+                background: #49296b;
+            }
+
+            &.view,
+            &.context {
+                box-shadow: 0 0 7px #9b8dff inset;
+                background: #49296b;
+            }
+        }
+
+        a:hover {
+            text-shadow: none;
+        }
+    }
+}
+
+/* ------------------------ */
+/* --- Ability Use Form --- */
+/* ------------------------ */
+
+#ability-use-form {
+    .notes {
+        display: none;
+    }
+
+    .form-group:last-child {
+        display: block;
+    }
+
+    select, select option {
+        background: $black3;
+        border: none;
+        color: $white;
+    }
+}
+
+/* ----------------- */
+/* --- Rolltable --- */
+/* ----------------- */
+
+.sheet header.sheet-header h1 input {
+    font-weight: 900;
+    border: none;
+    padding: 10px;
+}
+
+.roll-table-config {
+    textarea {
+        color: $white;
+        padding: 5px 10px;
+    }
+
+    .table-result input[type="text"],
+    .table-result select {
+        border: none;
+    }
+
+    .table-header {
+        border: none;
+        font-weight: 900;
+        background: $black3;
+        border-radius: 5px;
+    }
+}
+
+/* -------------------- */
+/* --- DnD 5e Sheet --- */
+/* -------------------- */
+
+.dnd5e {
+    input[type="text"],
+    input[type="number"],
+    select {
+        font-family: 'roboto';
+        color: $white;        
+        background: $black3;
+    }
+
+    input[type="text"]:hover,
+    input[type="number"]:hover,
+    input[type="text"]:focus,
+    input[type="number"]:focus {
+        box-shadow: $shadow;
+    }    
+
+    .tag {
+        border-color: $black4L;
+    }
+
+    button {
+        background: $black3;
+        border: none;
+
+        &:hover {
+            background: $black3L;
+        }
+    }
+    
+    .item-summary h1,
+    .item-summary h2 {
+        border: none;
+        font-weight: 900;
+        margin-top: 20px;
+    }
+
+    .form-group label {
+        color: rgba(255,255,255,.7);
+    }
+}
+
+.dnd5e.sheet {
+    .window-content {
+        background: $black2;
+        color: $white;
+        font-size: 0.875rem;
+        padding: 10px;
+        overflow: auto;
+    }
+
+    .items-list .item {
+        border: none;
+        padding: 6px 0px;
+        position: relative;
+
+        &:not(:last-child):after {
+            content: '';
+            display: block;
+            width: 75%;
+            height: 1px;
+            position: absolute;
+            bottom: 0;
+            left: 12.5%;
+            background: $black3L;
+        }
+
+        .item-name {
+            color: $white;
+    
+            h3, h4 {
+                font-weight: 500;
+            }
+    
+            .item-image {
+                border-radius: 5px;
+            }
+        }
+
+        .item-controls a:hover {
+            color: white;
+        }
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        &:hover {
+            border: none;
+        }
+
+        &:focus {
+            border: none;
+            box-shadow: $shadow;
+        }
+    }
+
+    select {
+        color: rgba(255,255,255,87);
+        background: $black3;
+        border: none;
+    }
+
+    .sheet-navigation {
+        border-bottom: 1px solid $black3;
+        margin-bottom: 15px;
+
+        .item {
+            font-family: 'roboto';
+            font-weight: 900;
+            border: none;
+            font-size: 1rem;
+            width: 100%;
+            display: block;
+            margin: 0;
+
+            &.active {
+                border: none;
+                text-shadow: none;
+                background: $black3;
+                border-radius: 5px 5px 0 0;
+            }
+        }
+    }
+
+    .editable h4.rollable:hover,
+    .editable .rollable:hover > h4 {
+        text-shadow: none;
+        color: white;
+    }
+
+    .items-list .items-header {
+        border: none;
+        margin: 0;
+        height: auto;
+        margin-bottom: 5px;
+
+        &:not(:first-child) {
+            margin-top: 25px;
+        }
+
+        h3 {
+            padding: 0;
+            font-family: 'roboto';
+            color: $white;
+            font-weight: 900;
+            font-size: 1.25rem;
+        }
+    }
+
+    .filter-list {
+        align-items: flex-end;
+
+        .filter-item {
+            border: none;
+            background: $black3;
+            padding-top: 5px;
+            border-radius: 5px 5px 0 0;
+            padding-bottom: 3px;
+    
+            &:hover,
+            &.active {
+                text-shadow: none;
+                border: none;
+                background: $black3L;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .item-buttons span {
+        border: none;
+    }
+
+    // TinyMCE Toolbar
+
+    .tox { 
+        &.tox-tinymce .tox-editor-container .tox-editor-header {
+            display: block;
+    
+            .tox-toolbar-overlord {
+                position: absolute;
+                bottom: 0;
+                right: 15px;
+                width: 100%;
+                background: $black3;   
+            }
+        }
+
+        .tox-tbtn {
+            display: none;
+
+            &[title="Save"] {
+                display: block;
+                width: 100%!important;
+                height: 100%!important;
+                padding: 5px;
+
+                .tox-icon {
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
+
+        .tox-toolbar__group {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    .tox-sidebar-wrap {
+        padding-bottom: 40px;
+    }
+
+
+    // Character Sheet
+
+
+    &.actor {
+        &.character {
+            min-height: 745px;
+        }
+
+        h4.box-title {
+            color: $white;
+            font-family: 'Roboto';
+            font-weight: 900;
+            font-size: .875rem;
+            margin: 0;
+            border: none;
+            font-weight: 500;
+
+            input {
+                padding: 0;
+                font-weight: 500;
+            }
+        }
+
+        .sheet-header {
+            border: none;
+            display: grid;
+            grid-template-columns: 160px auto;
+            grid-column-gap: 15px;
+            margin-bottom: 15px;
+
+            img.profile {
+                border: none;
+            }
+
+            .header-details {
+                font-family: 'roboto';
+                color: $white;
+                display: block;
+            }
+
+            h1.charname {
+                height: auto;
+
+                input {
+                    color: $white;
+                    font-weight: 900;
+                    font-size: 1.75rem;
+                    margin-left: -10px;
+                    width: calc(100% + 10px);
+                    margin-top: 0;
+                }
+            }
+
+            .summary {
+                border: none;
+
+                li {
+                    border: none;
+                    border-left: 3px solid rgba(255,255,255,.7);
+                }
+
+                .proficiency span {
+                    color: $white;
+                    font-size: .875rem;
+                    text-align: left;
+                    padding-left: 10px;
+                    font-weight: 900;
+                    color: rgba(255,255,255,.7);
+                }
+
+                span {
+                    color: rgba(255,255,255,.7);
+                }
+            }
+
+            .attributes {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                grid-column-gap: 5px;
+                margin-top: 15px;
+                
+                .attribute {
+                    border: none;
+                    background: $black3;
+                    border-radius: 5px;
+                    padding: 7px;
+                    height: auto;
+                }
+
+                input.temphp {
+                    padding: 0;
+                    font-size: 12px;
+                }
+
+                .hit-dice {
+                    font-size: 1.25rem;
+                    font-weight: 900;
+                }
+
+                a.rest {
+                    border: none;
+                    background: $black4;
+                    padding: 3px;
+                    margin: 0;
+
+                    &:hover {
+                        background: $black4L;
+                    }
+                }
+
+                .initiative .attribute-footer input {
+                    padding: 0;
+                }
+            }
+
+        }
+
+        &.character .sheet-header {
+            .header-exp {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                grid-template-areas: "lvl exp bar";
+                grid-column-gap: 20px;
+                justify-content: flex-start;
+                border-radius: 5px;
+                background: none;
+                width: 100%;
+                height: fit-content;
+                margin: 0;
+                margin-top: -10px;
+                padding: 0;
+                text-align: left;  
+            }
+
+            .charlevel {
+                font-size: 1rem;
+                color: rgba(255,255,255,.7);
+
+                label {
+                    font-weight: 400;
+                }
+
+                span {
+                    font-weight: 900;
+                }
+            }
+
+            .experience {
+                font-size: 0.813rem;
+                margin-bottom: 0;
+                flex: auto;
+                display: block;
+                height: fit-content;
+
+                input {
+                    padding: 3px;
+                    height: fit-content;
+                    font-size: .813rem;
+                    width: 50px;
+                    text-align: right;
+                    color: rgba(255,255,255,.7);
+                }
+
+                span.max {
+                    font-weight: 400;
+                    color: rgba(255,255,255,.7);
+                }
+            }
+
+            .xpbar {
+                background: rgba(255,255,255,.4);
+                border: none;
+                margin: 0;
+                height: 3px;
+                flex: auto;
+                width: 150px;
+                align-self: center;
+                grid-area: exp;
+
+                .bar {
+                    border: none;
+                    height: 100%;
+                    border-radius: 3px;
+                    margin: 0;
+                    background: rgba(255,255,255,.7);
+                }
+            }
+        }
+
+        .ability-scores {
+            border: none;
+
+            .ability {
+                border: none;
+                position: relative;
+
+                input.ability-score {
+                    padding: 0;
+                    font-weight: 900;
+                    font-size: 1.25rem;
+                    line-height: 1;
+                }
+
+                .ability-modifiers span.ability-mod, 
+                .ability-modifiers span.ability-save {
+                    border: none;
+                    font-family: 'roboto';
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 25%;
+                    display: block;
+                    width: 50%;
+                    height: 1px;
+                    background: rgba(255,255,255,.2);
+                }
+
+                &:last-child:after {
+                    display: none;
+                }
+            }
+        }
+
+        ul.attributes li.attribute {
+            border: none;
+            background: $black3;
+
+            .attribute-value {
+                font-family: 'roboto';
+                margin: 3px 0 5px 0;
+
+                &.multiple input {
+                    padding: 0;
+                    font-weight: 900;
+                    font-size: 1.25rem;
+                    flex: auto;
+                }
+    
+                & > * {
+                    font-size: 1.25rem;
+                    font-weight: 900;
+                }
+            }
+
+            .attribute-footer {
+                font-family: 'roboto';
+            }
+
+            &.resource .attribute-value input {
+                padding: 0;
+            }
+        }
+
+        &.character ul.skills-list {
+            border: none;
+            background: $black3;
+            border-radius: 5px;
+            padding: 3px;
+
+            li.skill:nth-child(even) {
+                background: rgba(255,255,255,.03);
+            }
+        }
+
+        .counters {
+            border: none;
+            position: relative;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+
+            .counter h4 {
+                color: $white;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 25%;
+                display: block;
+                width: 50%;
+                height: 1px;
+                background: $black4L;
+            }
+        }
+
+        .traits {
+            select {
+                padding: 0;
+            }
+
+            i.fas:hover {
+                color: white;
+                text-shadow: none;
+            }
+        }
+
+        .inventory-filters {
+            border-bottom: 1px solid $black3;
+
+            .currency input[type="text"] {
+                border: none;
+            }
+        }
+
+        .items-list {
+            .items-header {
+                div {
+                    color: $white;
+                    border: none;
+                }
+    
+                .item-controls a {
+                    color: $white;
+                }
+            }
+
+            .item div {
+                border: none;
+            }
+
+            .item .item-uses input {
+                padding: 0;
+            }
+        }
+
+        .spell-slots {
+            input {
+                padding: 0;
+            }
+
+            .slot-max-override {
+                color: rgba(255,255,255,.4);
+
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+
+        .spell-component.C,
+        .spell-component.R {
+            background: #7a7971;
+        }
+
+        .spellcasting-ability {
+            display: grid;
+            grid-template-areas:
+                "name dc"
+                "attr attr";
+            margin-bottom: 10px;
+
+            select {
+                grid-area: attr;
+                margin: 0;
+                margin-right: 100px;
+            }
+        }
+
+        &.character .inventory .item-controls .item-toggle:hover,
+        &.character .spellbook .item-controls .item-toggle:hover {
+            color: white;
+        }
+
+        .inventory-list .item-summary {
+            color: $white;
+        }
+
+        &.character .characteristics {
+            label {
+                font-family: 'roboto';
+                font-weight: 900;
+                font-size: .875rem;
+            }
+
+            textarea {
+                border: none;
+                color: $white;
+            }
+        }
+
+        // NPC Sheet
+
+        &.npc {
+            min-height: 706px;
+
+            .header-exp {
+                display: block;
+                height: auto;
+                text-align: left;
+                margin-top: -17px;
+
+                .cr {
+                    display: inline-block;
+                    font-size: 1rem;
+                    color: rgba(255,255,255,.7);
+
+                    input {
+                        font-size: 1rem;
+                        color: rgba(255,255,255,.7);
+                    }
+
+                    label {
+                        font-weight: 900;
+                    }
+                }
+
+                .experience {
+                    display: inline-block;
+                    font-size: 1rem;
+                }
+            }
+
+            .sheet-header {
+                margin-bottom: 5px;
+
+                .summary {
+                    font-size: .813rem;
+                    font-weight: 400;
+                    height: fit-content;
+
+                    li {
+                        padding-left: 10px;
+                        margin: 0;
+                        margin-top: 5px;
+                    }
+
+                    input {
+                        padding: 0;
+                    }
+                }
+
+                ul.attributes {
+                    grid-template-columns: 1fr 1fr 1fr;
+                    margin-top: 5px;
+
+                    li.attribute {
+                        .attribute-value {
+                            margin: 0;
+
+                            &.multiple input:first-child {
+                                text-align: right;
+                                padding-right: 5px;
+                            }
+
+                            &.multiple input:last-child {
+                                text-align: left;
+                                padding-left: 5px;
+                            }
+                        }
+
+                        .attribute-footer input {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+
+            .sheet-navigation {
+                margin-bottom: 10px;
+            }
+
+            ul.skills-list {
+                border: none;
+                background: #252423;
+                border-radius: 5px;
+                padding: 3px;
+
+                li.skill {
+                    font-size: 11px;
+
+                    .skill-ability {
+                        text-align: center;
+                    }
+                    
+                }
+            }
+
+            .inventory-filters {
+                display: block;
+            }
+
+            .spellcasting-ability {
+                display: flex;
+                justify-content: flex-end;
+
+                select {
+                    margin-right: 10px;
+                }
+            }
+
+            .filter-list {
+                margin-left: 30%;
+            }
+        }
+    }
+
+
+    // Item Sheet
+
+
+    &.item {
+        .sheet-header {
+            border: none;
+
+            .header-details {
+                font-family: 'roboto';
+                font-size: 1rem;
+            }
+
+            h1 {
+                height: fit-content;
+                padding: 0;
+
+                input {
+                    font-weight: 900;
+                    padding: 0;
+                    width: 100%;
+                    font-size: 1.375rem;
+                    height: auto;
+                }
+            }
+
+            .item-subtitle {
+                border-radius: 5px;
+                height: 60px;
+                padding: 0;
+
+                .item-type {
+                    font-weight: 900;
+                    font-family: 'roboto condensed';
+                    color: $white;
+                    font-size: 1rem;
+                }
+
+                .item-status {
+                    font-size: .875rem;
+                    font-family: 'roboto condensed';
+                }
+            }
+
+            .summary {
+                border: none;
+                height: fit-content;
+
+                li {
+                    border: none;
+                    font-size: 0.813rem;
+                    color: $white;
+                    font-weight: 400;
+                    height: auto;
+                    margin: 0;
+                    position: relative;
+                    padding-left: 6px;
+
+                    &:before {
+                        content: '';
+                        width: 3px;
+                        height: 50%;
+                        display: block;
+                        position: absolute;
+                        top: 25%;
+                        left: -3px;
+                        background: rgba(255,255,255,87);
+                    }
+
+                    input {
+                        padding: 0;
+                    }
+                }
+            }
+
+            img.profile {
+                border: none;
+                padding: 2px;
+                border-radius: 5px;
+            }
+        }
+
+        .sheet-navigation {
+            margin-top: 5px;
+
+            .item {
+                font-size: .875rem;
+            }
+        }
+
+        .sheet-body {
+            .item-properties {
+                border: none;
+
+                .properties-list li {
+                    border-radius: 5px;
+                    border-color: $black4L;
+                }
+            }
+        }
+
+        .form-header,
+        h4.damage-header {
+            font-family: 'roboto';
+            border: none;
+            font-weight: 900;
+            margin-left: 0;
+            margin-top: 20px;
+            color: $white;
+            font-size: 1.25rem;
+        }
+
+        .details {
+            input[type="text"], input[type="number"], select {
+                border: none;
+                background: $black3;
+            }
+
+            .spell-materials {
+                grid-column: 1 / -1;
+            }
+        }
+
+        .damage-parts .damage-part {
+            grid-column: 1 / -1;
+            margin-bottom: 6px;
+        }
+
+        .item-betterRolls {
+            input[type="text"], input[type="number"], select {
+                border: none;
+                background: $black3;
+                height: auto;
+                margin-right: 2px;
+            }
+        }    
+        
+        .recharge.form-group input[type="text"] {
+            flex: 0px;
+        }
+    }
+}
+
+/* ---------------------------- */
+/* --- Spellcast Dialog Box --- */
+/* ---------------------------- */
+
+form  .form-group.spell-lvl-btn {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    label {
+        text-align: center;
+    }
+
+    .form-fields {
+        margin: auto;
+
+        .spell-lvl-btn__label {
+            padding: 0;
+            margin-right: 10px;
+            position: relative;
+
+            &:last-child {
+                margin-right: 0;
+            }
+            
+            .spell-lvl-btn__btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 5px;
+                background: $black3;            
+                font-size: 16px;
+                font-weight: 900;            
+                user-select: none;
+    
+                &:hover {
+                    background: $black3L;
+                    cursor: pointer;
+                }
+            }
+    
+            input {
+                display: none;
+    
+                &:checked + .spell-lvl-btn__btn {
+                    background: $black3L;
+                    box-shadow: $shadow;
+                }
+            }
+
+            .available-slots {
+                position: absolute;
+                top: -4px;
+                right: -4px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 15px;
+                height: 15px;
+                background: $black4L;
+                font-size: 11px;
+                line-height: 1;
+                border-radius: 50%;
+            }
+        }
+    }
+}
