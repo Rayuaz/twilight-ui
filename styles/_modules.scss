@@ -477,15 +477,19 @@ section.token-mold {
             color: $white;
         }
 
-    }
+    }   
 
+}
+
+// TinyMCE Toolbar
+
+.tidy5e.sheet {
     .tox-sidebar-wrap { //TinyMCE background
         background: transparent!important;
         padding: 0!important;
-        padding-bottom: 40px!important;
     }
 
-    .tox { // TinyMCE Toolbar
+    .tox { 
         &.tox-tinymce .tox-editor-container .tox-editor-header {
             display: block;
     
@@ -494,7 +498,12 @@ section.token-mold {
                 bottom: 0;
                 right: 15px;
                 width: 100%;
-                background: $black3;   
+                background: $black3;
+            }
+
+            .tox-toolbar-overlord, 
+            .tox-toolbar__primary {
+                background: transparent;
             }
         }
 
@@ -520,8 +529,32 @@ section.token-mold {
         }
     }
 
-    
+    &.actor {
+        .tox-editor-container .tox-editor-header {
+            border: none;
+        }
 
+        .tox.tox-tinymce .tox-editor-container .tox-toolbar-overlord {
+            right: 0;
+            bottom: 5px;
+
+            button {
+                background: $black4;
+    
+                &:hover {
+                    background: $black4L;
+                }
+            }
+        }
+
+        h1, h2, h3, h4 {
+            color: $white;
+        }
+    }
+
+    &.item .tox.tox-tinymce .tox-editor-container .tox-toolbar-overlord {
+        right: 0;
+    }
 }
 
 .tidy5e .materials {
@@ -783,4 +816,59 @@ section.token-mold {
 #drawing-config .tab[data-tab="multilevel-tokens"] hr {
     border: none;
     border-top: 1px solid $black4L;
+}
+
+
+/* ------------------------------------- */
+/* --- Crash's Tracking and Training --- */
+/* ------------------------------------- */
+
+.dnd5e.sheet, .tidy5e.sheet .crash-training {
+    .activity-type {
+        color: $white;
+    }
+    
+    .activity-override {
+        color: $white;
+    }
+    
+    .items-list {
+        color: $white;
+    }
+}
+
+.tidy5eDark .tidy5e.sheet .crash-training .crash-training-controls div {
+    color: $white;
+}
+
+.dnd5e.sheet .crash-training {
+    .items-list .items-header {
+        border: none;
+    }
+
+    .crash-training-controls div {
+        border: none;
+        background: $black3;
+        color: $white;
+
+        &:hover {
+            text-shadow: none;
+            color: $white;
+            background: $black3L;
+        }
+    }
+}
+
+form.crash-tracked-item-app {
+    .form-header {
+        color: $white;
+        font-family: 'roboto';
+        font-weight: 900;
+        border: none;
+        margin-top: 15px;
+    }
+
+    .form-group label {
+        color: rgba(255,255,255,.7);
+    }
 }

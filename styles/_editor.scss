@@ -11,6 +11,10 @@
     overflow-y: scroll;
     padding: 0 5px 0 10px;
 
+    .tox.tox-tinymce .tox-editor-container .tox-editor-header {
+        display: none;
+    }
+
     &.editable input[name="name"] {
         font-family: 'roboto';
         font-weight: 900;
@@ -56,16 +60,9 @@
         max-height: none;
         min-height: calc(100% - 102px);
         height: fit-content;
-
-        .editor-content {
-            padding: 25px;
-            padding-top: 0;
-
-            .bottom-spacer {
-                display: none;
-            }
-        }
-
+        padding: 25px;
+        padding-top: 0;
+        
         .editor-edit {
             background-color: $black3;
             box-shadow: none;
@@ -340,8 +337,4 @@ div.tox {
     }
 
 
-}
-
-.tox.tox-tinymce .tox-editor-container .tox-editor-header {
-    display: none;
 }
