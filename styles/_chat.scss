@@ -152,15 +152,33 @@ a.entity-link, a.inline-roll {
     &:hover {
         background: $black3L;
     }
+
+    &.icon.heart-plus {
+        position: relative;
+
+        &:after {
+            content: url("/modules/twilight-ui/img/heart-plus.svg");
+            position: absolute;
+            top: 7.5px;
+            left: 7.5px;
+            display: block;
+            width: 15px;
+            height: 15px;
+        }
+    }
 }
 
 .dice-roll .dice-formula, .dice-roll .dice-total {
     line-height: 34px;
 }
 
+.dice-tooltip .part-header .part-flavor {
+    color: $white;
+}
+
 .chat-message.whisper {
     background: $black2;
-    border-color: $white!important;
+    border-color: rgba(78,101,126,.87)!important;
 }
 
 .xmidi-qol-flex-container table {
