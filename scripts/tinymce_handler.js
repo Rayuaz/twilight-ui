@@ -108,11 +108,10 @@ Hooks.on('ready', function() {
     function tinymceHandler(elem, isJournal, windowContent) {
 
         if (isJournal) {
-            css = `<style>#tinymce{padding: 25px;height: 100vh;overflow:hidden;}.bottom-spacer{height: 50px}</style>`;
+            css = `<style>#tinymce{height: 100vh;overflow:hidden;}</style>`;
             elem.find("head").append(css);
 
             let windowheight = parseInt(windowContent.outerHeight());
-            console.log(windowheight);
 
             let editorHeight = parseInt($('.tox-tinymce').css('height'));
             $('.tox-tinymce').css('height', `${editorHeight + 100 + 'px'}`);
@@ -131,7 +130,6 @@ Hooks.on('ready', function() {
         } else {
 
             setTimeout(() => {
-                console.log($('tox.tox-silver-sink.tox-tinymce-aux'));
                 $('tox.tox-silver-sink.tox-tinymce-aux').css('display: none');
             }, 300);
 
