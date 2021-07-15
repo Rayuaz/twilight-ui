@@ -7,16 +7,26 @@
         "email": "alan@tpk.gg",
         "discord": "Sua mãe, Aquela Católica#2512"
     },
-    "version": "1.01",
+    "version": "1.02",
     "minimumCoreVersion": "0.7",
     "compatibleCoreVersion": "0.8.8",
     "scripts": [
-        "scripts/tinymce_handler.js",
-        "scripts/directory_colors.js",
-        "scripts/spell_level_buttons.js"
+        "scripts/tinymce_handler.js"
     ],
     "styles": [
         "twilight-ui.css"
+    ],
+    "dependencies": [
+        {
+            "name": "colored-folder-contents",
+            "type": "module",
+            "manifest": "https://github.com/Rayuaz/colored-folder-contents/releases/latest/download/module.json"
+        },
+        {
+            "name": "spell-level-buttons-for-dnd5e",
+            "type": "module",
+            "manifest": "https://github.com/Rayuaz/spell-level-buttons-for-dnd5e/releases/latest/download/module.json"
+        }
     ],
     "manifest": "https://github.com/Rayuaz/twilight-ui/releases/latest/download/module.json",
 	"url": "https://github.com/Rayuaz/twilight-ui",
