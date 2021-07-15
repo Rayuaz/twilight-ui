@@ -12,3 +12,7 @@ This is my first module and I'm not a developer, so there are a few features I w
 # Screenshots
 
 ![](screenshot.jpg)
+
+# Credits
+
+The whole thing is based on [Legend Keeper](https://www.legendkeeper.com/)'s UI. The journal mimics pretty much 1:1 the logend Keeper interface.
