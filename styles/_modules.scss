@@ -872,3 +872,685 @@ form.crash-tracked-item-app {
         color: rgba(255,255,255,.7);
     }
 }
+
+
+
+/* ----------------------- */
+/* --- Simple Calendar --- */
+/* ----------------------- */
+
+
+// --- Buttons ---
+
+
+.simple-calendar,
+.simple-calendar-configuration,
+.simple-calendar-note {
+    .control {
+        border: none;
+        box-shadow: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        background-color: $black3;
+        color: $white;
+        font-family: 'roboto';
+        font-weight: 500;
+        transition: all .15s ease-in-out;
+
+        &::before {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            margin-right: 5px;
+        }
+
+        &:hover {
+            background-color: $black3L;
+            color: $white;
+        }
+
+        &.save {
+            background-color: $black3;
+
+            &:hover {
+                background-color: $black3L;
+            }
+        }
+
+        &.delete:hover {
+            background-color: rgb(192, 41, 41);
+        }
+    }
+}
+
+
+// --- Calendar ---
+
+
+.simple-calendar #simpleCalendar {
+    .calendar {
+        box-shadow: none;
+        border: none;
+        background-color: $black3!important;
+        color: $white;
+        border-radius: 5px;
+        margin: 0;
+
+        .calendar-header {
+            background-color: $black3!important;
+
+            .current-date {
+                font-weight: 900;
+            }
+
+            a:hover {
+                color: white;
+            }
+        }
+
+        .days .week .day {
+            border-radius: 0;
+            transition: all .15s ease-in-out;
+
+            &:hover {
+                background-color: $black3L;
+                border-radius: 10px;
+                box-shadow: $shadow;
+            }
+
+            &.current {
+                background-color: rgba(56, 13, 99, 0.5);
+                box-shadow: 0 0 10px #9b8dff inset;
+                border-radius: 10px;
+
+                &:hover {
+                    background-color: rgba(81, 22, 141, 0.5);
+                }
+            }
+
+            &.selected {
+                background-color: $black3L;
+                border-radius: 10px;
+                box-shadow: $shadow;
+
+                &:hover {
+                    background-color: $black4L;
+                }
+            }
+
+            .moons {
+                right: 0;
+
+                .moon-phase {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    position: relative;
+                    background-image: none;
+
+                    &:after {
+                        content: '';
+                        background-size: cover;
+                        display: block;
+                        position: absolute;
+                        width: 14px;
+                        height: 14px;
+                        top: -2px;
+                        left: -2px;
+                    }
+
+                    &.new:after {
+                        background-image: url("./img/simple-calendar/new.svg") ;
+                    }
+                    &.waxing-crescent:after {
+                        background-image: url("./img/simple-calendar/waxing-crescent.svg") ;
+                    }
+                    &.first-quarter:after {
+                        background-image: url("./img/simple-calendar/first-quarter.svg") ;
+                    }
+                    &.waxing-gibbous:after {
+                        background-image: url("./img/simple-calendar/waxing-gibbous.svg") ;
+                    }
+                    &.full:after {
+                        background-image: url("./img/simple-calendar/full.svg") ;
+                    }
+                    &.waning-gibbous:after {
+                        background-image: url("./img/simple-calendar/waning-gibbous.svg");
+                    }
+                    &.last-quarter:after {
+                        background-image: url("./img/simple-calendar/last-quarter.svg") ;
+                    }
+                    &.waning-crescent:after {
+                        background-image: url("./img/simple-calendar/waning-crescent.svg") ;
+                    }
+                }
+            }
+            
+        }
+    }
+
+    // Time Display
+
+    .time-display {
+        background-color: $black3;
+        color: $white;
+        box-shadow: none;
+        border: none;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 1rem;
+
+        .clock {
+            transform: scale(1);
+        }
+    }
+
+    .calendar-controls {
+        margin: 0;
+    }
+
+    // Time & Date Controls
+
+    .controls {
+        margin-bottom: 0;
+
+        .time-controls {
+            background-color: transparent;
+            color: $white;
+            box-shadow: none;
+            border-radius: 5px;
+            padding-top: 0;
+        }
+
+        .date-controls {
+            @extend .time-controls;
+            padding-top: .5rem;
+        }
+
+        .date-apply-wrapper {
+            @extend .date-controls;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    // Notes
+
+    .date-notes {
+        margin-top: 20px;
+        padding: 0 10px;
+
+        .date-notes-header {
+            border: none;
+        }
+    
+        .note {
+            border: none;
+            box-shadow: none;
+            background-color: transparent;
+            padding: 10px;
+            position: relative;
+            line-height: 1;
+            transition: all .15s ease-in-out;
+            color: rgba(255,255,255,.7);
+
+            &:nth-child(2) {
+                border: none;
+            }
+            
+            &:before {
+                content: '';
+                display: block;
+                width: 3px;
+                height: 50%;
+                position: absolute;
+                top: 25%;
+                left: 0;
+                background-color: rgba(255,255,255,.7);
+            }
+            
+            &:hover {
+                background-color: $black3;
+                border-radius: 5px;
+                color: white;
+
+                &:before {
+                    background-color: white;
+                }
+            }
+            
+        }
+    }
+
+    // Compact Calendar
+
+    .compact-calendar {
+        .season-moon-info {
+            background-color: transparent!important;
+            border: none;
+
+            .notes-wrapper .add-note {
+                line-height: 1;
+                height: fit-content;
+                padding: 4px;
+                padding-left: 9px;
+                text-align: center;
+            }
+        }
+
+        .note-list {
+            border: none;
+            margin-top: 10px;
+
+            .note {
+                border: none;
+
+                &:nth-child(odd) {
+                    background-color: rgba(255,255,255,.02);
+                }
+
+                &:hover {
+                    background-color: $black3;
+                }
+            }
+        }
+    }
+}
+
+
+// --- Notes ---
+
+
+.simple-calendar-note #simpleCalendarNotes {
+    .editor {
+        min-width: auto;
+
+        .tox.tox-tinymce {
+            padding-bottom: 0;
+
+            .tox-editor-container .tox-editor-header {
+                display: none;
+            }
+        }
+    }
+
+    .control.save {
+        padding: 10px;
+        height: auto;
+    }
+
+    & > form {
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        & > p:first-child {
+            margin: 0;
+            color: rgba(255,255,255,.6);
+            font-size: 12px;
+        }
+
+        .note-author {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: rgba(255,255,255,.6);
+        }
+
+        .edit-controls {
+            margin-top: 17px;
+
+            .control {
+                padding: 7px 30px;
+            }
+        }
+    }
+}
+
+
+// --- Configuration ---
+
+
+.simple-calendar-configuration #simpleCalendarConfiguration {
+    .tabs {
+        border-color: $black4L;
+
+        .item {
+            border: none;
+            border-radius: 0;
+        }
+    
+        .item.active,
+        .item:hover {
+            background-color: $black3L;
+            color: $white;
+            border: none;
+            border-radius: 5px 5px 0 0;
+        }
+    }
+
+    .tab {
+        background-color: $black2;
+        color: $white;
+        border: none;
+
+        .form-group {
+            display: flex;
+
+            label {
+                color: rgba(255,255,255,.8);
+            }
+
+            p.notes, p.hint {
+                color: rgba(255,255,255,.6);
+            }
+        }
+
+        &[data-tab="generalSettings"] .settings-group {
+            & > .form-group:nth-child(2) {
+                display: grid;
+
+                .notes {
+                    grid-column: 1 / 2;
+                }
+            }
+
+            .import-group {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                color: rgba(255,255,255,.6);
+                
+                p {
+                    font-size: .813rem;
+                    line-height: 1.5;
+                }
+    
+                .import-options {
+                    margin-top: 20px;
+                }
+            }
+
+            .table-header {
+                width: calc(100% + 80px);
+                padding: 10px 40px;
+                margin-left: -40px;
+                background: $black1;
+            }
+        }
+
+        .form-group {
+            border: none;
+        }
+
+        .f-table {
+            border: none;
+
+            .row {
+                justify-content: space-between;
+                padding: 5px 40px;
+                width: calc(100% + 80px);
+                margin-left: -40px;
+
+                &:nth-child(odd) {
+                    background-color: rgba(255,255,255,.02);
+                }
+                
+                input, select {
+                    border: none;
+                    border-radius: 5px;
+                }
+
+                input[type="text"] {
+                    padding: 5px 10px;
+                }
+
+                input[type="color"] {
+                    background-color: $black3;
+                    border: none;
+                    border-radius: 5px;
+                }
+
+                .options {
+                    padding: 0;
+
+                    h3 {
+                        border: none;
+                        margin-top: 20px;
+                        font-weight: 900;
+                    }
+                }
+
+                &.head {
+                    background-color: transparent;
+                    border: none;
+                    text-align: left;
+                }
+            }
+        }
+    }
+
+    .config-save {
+        background: $black2;
+        border: none;
+        padding-bottom: 10px;
+        height: auto;
+
+        .control {
+            height: 35px;
+        }
+    }
+}
+
+
+/* -------------------------- */
+/* --- Compendium Browser --- */
+/* -------------------------- */
+
+
+.compendium-browser {
+    .tabs {
+        border-bottom: 1px solid $black4L;
+
+        .item {
+            padding-bottom: 5px;
+        }
+    }
+
+    .control-area {
+        overflow-x: auto;
+
+        .filtercontainer {
+            border: none;
+            padding: 0;
+    
+            input, select {
+                border: none;
+                padding: 5px 10px;
+            }
+    
+            button {
+                border: none;
+                background: $black3;
+    
+                &:hover {
+                    background: $black3L;
+                }
+            }
+    
+            h3 {
+                font-weight: 900;
+                font-size: 1.25rem;
+                margin-top: 20px;
+            }
+    
+            .filter {
+                dt {
+                    padding: 0;
+                    font-weight: 500;
+                    color: rgba(255,255,255,.7);
+                }
+
+                .multiselect {
+                    border: none;
+                    background: $black3;
+                    border-radius: 5px;
+                    line-height: 27px;
+                    
+                    & > label:first-child {
+                        display: flex;
+                        align-items: center;
+                        position: relative;
+                        width: 100%;
+                        padding: 0;
+                        padding-left: 10px;
+                        border-radius: 5px;
+                        height: 100%;
+                        font-weight: 500;
+
+                        &:hover {
+                            cursor: pointer;
+                            background: $black3L;
+                        }
+
+                        &:after {
+                            content: '\203A';
+                            display: block;
+                            font-size: 1.25rem;
+                            font-weight: 900;
+                            transform: rotate(90deg);
+                            position: absolute;
+                            right: 10px;
+                            top: 0;
+                            height: 100%;
+                        }
+                    }
+
+                    dl {
+                        display: grid;
+                        grid-template-columns: 1fr 30px;
+                        padding: 5px;
+
+                        dt {
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            border-radius: 5px 0 0 5px;
+                            padding-top: 0;
+
+                            &:hover {
+                                background: $black3L;
+
+                                & + dd {
+                                    background: $black3L;
+                                }
+                            }
+                        }
+
+                        dd {
+                            width: 100%;
+                            padding: 0;
+                            margin: 0;
+                            border-radius: 0 5px 5px 0;
+                            display: flex;
+                            align-items: center;
+                            justify-items: center;
+                        }
+                    }
+                }
+
+                &[data-path="data.level"] .multiselect dl {
+                    display: grid;
+                    grid-template-columns: repeat(10, 1fr);
+
+                    dt label {
+                        text-align: right;
+                        width: 100%;
+                    }
+                }
+
+                select.small-select {
+                    padding: 0;
+                    padding-left: 10px;
+                    width: 46px;
+                }
+
+                input.small-input {
+                    width: calc(100% - 53px);
+                    border: none;
+                    margin-left: 3px;
+                    background: $black3;
+                }
+            }
+        }
+    }
+
+    .list-area {
+        overflow: unset;
+        padding: 0;
+
+        ul {
+            padding-right: 5px;
+        }
+    }
+
+    .spell-browser {
+        #CBSpells .spell-tags {
+            max-width: none;
+            font-weight: 500;
+        }
+    }
+
+    .feat-browser {
+        #CBFeats .feat-tags {
+            color: rgba(255,255,255,.6);
+        }
+    }
+
+    #CBNPCs .npc-tags {
+        display: grid;
+        grid-template-columns: 1fr 1fr 3fr;
+
+        span {
+            color: rgba(255,255,255,.7);
+
+            &.type {
+                text-align: right;
+                padding-right: 10px;
+            }
+        }
+    }
+
+    .settings .settings-group {
+        border: none;
+        padding: 0;
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 900;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+
+        label {
+            color: rgba(255,255,255,.7);
+            transition: all .15s ease-in-out;
+
+            &:hover {
+                color: white;
+                cursor: pointer;
+            }
+
+            h4 {
+                font-weight: 500;
+            }
+
+            input {
+                margin-left: 0;
+            }
+        }
+    }
+
+    
+}
