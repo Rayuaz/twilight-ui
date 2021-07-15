@@ -963,8 +963,11 @@ form  .form-group.spell-lvl-btn {
                 font-size: 16px;
                 font-weight: 900;            
                 user-select: none;
+                border: none;
+                transition: all .15s ease-in-out;
     
                 &:hover {
+                    box-shadow: none;
                     background: $black3L;
                     cursor: pointer;
                 }
