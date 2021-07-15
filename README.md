@@ -11,8 +11,4 @@ This is my first module and I'm not a developer, so there are a few features I w
 
 # Screenshots
 
-![](./screenshots/001.jpg)
-![](./screenshots/002.jpg)
-![](./screenshots/003.jpg)
-![](./screenshots/004.jpg)
-![](./screenshots/005.jpg)
+![](screenshot.jpg)
