@@ -87,6 +87,8 @@
 
     input[type="text"],
     input[type="number"] {
+        border: none;
+
         &:hover {
             border: none;
         }
@@ -111,7 +113,7 @@
             font-family: 'roboto';
             font-weight: 900;
             border: none;
-            font-size: 1rem;
+            font-size: .875rem;
             width: 100%;
             display: block;
             margin: 0;
@@ -216,10 +218,27 @@
     }
 
 
-    // Character Sheet
+    // Actor Sheet
 
 
     &.actor {
+        input {
+            border: none;
+
+            &:hover {
+                border: none;
+            }
+        }
+
+        .summary span {
+            font-size: .875rem;
+            padding-left: 10px;
+        }
+
+
+        // Character Sheet
+
+
         &.character {
             min-height: 745px;
         }
@@ -289,6 +308,11 @@
                 span {
                     color: rgba(255,255,255,.7);
                 }
+
+                input {
+                    font-size: .875rem;
+                    padding-left: 10px;
+                }
             }
 
             .attributes {
@@ -311,7 +335,7 @@
                 }
 
                 .hit-dice {
-                    font-size: 1.25rem;
+                    font-size: 1.25rem!important;
                     font-weight: 900;
                 }
 
@@ -334,6 +358,7 @@
         }
 
         &.character .sheet-header {
+
             .header-exp {
                 display: grid;
                 grid-template-columns: auto auto auto;
@@ -714,6 +739,43 @@
                 margin-left: 30%;
             }
         }
+
+        
+        // Vehicle Sheet
+
+
+        &.vehicle {
+            min-height: 730px;
+
+            .header-details {
+                .charnam {
+                    padding: 0;
+                    height: fit-content;
+        
+                    input {
+                        margin-left: -10px;
+                    }
+                }
+
+                .attributes {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+            }
+
+            .counters .counter-value > input:last-child {
+                text-align: right;
+            }
+
+            .traits .form-group:first-child {
+                grid-template-columns: 1fr;
+            }
+
+            .ability-scores .ability .ability-modifiers .ability-mod {
+                flex: auto;
+                margin-top: 5px;
+                font-weight: 400;
+            }
+        }
     }
 
 
@@ -836,6 +898,14 @@
 
             .spell-materials {
                 grid-column: 1 / -1;
+            }
+
+            .spell-components {
+                display: flex;
+            }
+
+            .weapon-properties {
+                display: flex;
             }
         }
 
