@@ -213,7 +213,7 @@ form {
         label {
             font-size: 0.813rem;
             font-weight: 700;
-            color: var(--secondary-color);
+            color: rgba(255,255,255,.7);
         }
 
         .form-fields {
@@ -612,6 +612,12 @@ form {
     }
 }
 
+#compendium h3 {
+    background: transparent;
+    border: none;
+    font-weight: 900;
+}
+
 // Folder Items
 
 .compendium .directory-list .directory-item {
@@ -641,7 +647,6 @@ form {
     background: $black2;
     padding: 0;
     border-radius: 7px;
-    width: 40px;
 
     .control-tools {
         @extend #controls
