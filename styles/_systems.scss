@@ -113,16 +113,18 @@
             font-family: 'roboto';
             font-weight: 900;
             border: none;
-            font-size: .875rem;
+            font-size: .813rem;
             width: 100%;
             display: block;
             margin: 0;
+            transition: all .15s ease-in-out;
 
-            &.active {
+            &.active, &:hover {
                 border: none;
                 text-shadow: none;
                 background: $black3;
                 border-radius: 5px 5px 0 0;
+                box-shadow: $shadow;
             }
         }
     }

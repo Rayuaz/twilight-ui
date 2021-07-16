@@ -166,3 +166,16 @@ a:hover {
 label.checkbox:hover {
     cursor: pointer;
 }
+
+a.entity-link, a.inline-roll, a.gmroll.inline-roll {
+    background-color: $black3;
+
+    &:hover {
+        text-shadow: none;
+        background: $black3L;
+    }
+}
+
+a.gmroll.inline-roll {
+    background: #26282e;
+}

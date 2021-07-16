@@ -26,22 +26,37 @@
 /* ------------------ */
 /* --- App Window --- */
 /* ------------------ */
-  
+.app {
+    background: darken($black2, 2%);
+
+    &#sidebar {
+        background: $black1;
+    }
+}
+
 .window-app {
-    .window-header .window-title {
-        font-weight: 500;
+    border-radius: 5px;
+
+    .window-header {
+        border: none;
+        
+        .window-title {
+            font-weight: 500;
+        }
     }
 
     .tabs:not(.tidy5e-navigation):not(.sheet-navigation) .item {
         transition: all .15s ease-in-out;
         font-weight: 500;
         border-radius: 0;
+        color: $white;
 
         &:hover {
             box-shadow: $shadow;
             background: $black3L;
             text-shadow: none;
             border-radius: 5px 5px 0 0;
+            cursor: pointer;
         }
 
         &.active {
@@ -49,6 +64,7 @@
             background: $black3L;
             text-shadow: none;
             border-radius: 5px 5px 0 0;
+            border: none;
         }
     }
 
@@ -58,7 +74,24 @@
 
     nav.sheet-tabs {
         border-top: none;
-        margin-top: 0;
+        height: fit-content;
+        border-color: $black3L;
+
+        &:first-child {
+            margin-top: -10px;
+        }
+
+        .item {
+            padding: 5px 0;
+            font-size: .813rem;
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+
+            i {
+                margin-bottom: 5px;
+            }
+        }
     }
 
     .window-content {
@@ -156,13 +189,17 @@
 /* --- Settings Window --- */
 /* ----------------------- */
 
-#client-settings {
-    .tab.active {
-        margin: 0;
-    }
-    
-    nav.tabs {
-        border: none;
+#client-settings.window-app {
+    .window-content {
+        padding-top: 10px;
+
+        .tab.active {
+            margin: 0;
+        }
+        
+        nav.tabs {
+            border: none;
+        }
     }
 }
 
@@ -207,7 +244,11 @@ form {
 
         &:not(.submenu) {
             display: grid;
-            grid-template-columns: 2fr 3fr;
+            grid-template-columns: 40% 60%;
+
+            & > *:last-child:nth-child(odd) {
+                grid-column: 1 / -1;
+            }
         }
         
         label {
@@ -240,7 +281,7 @@ form {
     .notes,
     .hint {
         color: $white;
-        opacity: 0.5;
+        opacity: 0.6;
         grid-column: 1/-1;
         font-size: 0.813rem;
         font-weight: 500;
@@ -252,11 +293,6 @@ form {
     background: $black3;
     color: $white;
     border: none;
-}
-
-// Workaround too many tabs on Drawing config window
-#drawing-config .sheet-tabs {
-    height: fit-content;
 }
 
 // Override for the macro-sheet
@@ -409,11 +445,31 @@ form {
     width: 320px;
     padding: 10px;
 
+    .directory .directory-header .header-search {
+        margin-bottom: 3px;
+    }
+
     &.collapsed {
         padding: 0;
 
         #sidebar-tabs > .item.active {
             border: none;
+        }
+    }
+
+    .sidebar-tab .header-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 5px;
+        margin-bottom: 3px;
+
+        button {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        & > *:last-child:nth-child(odd) {
+            grid-column: 1 / -1;
         }
     }
 
@@ -446,6 +502,35 @@ form {
                 i {
                     color: $white;
                     text-shadow: none!important;
+                }
+            }
+        }
+    }
+}
+
+/* --------------------- */
+/* --- Journal Image --- */
+/* --------------------- */
+
+.window-app.image-popout {
+    .window-content {
+        padding: 0;
+
+        form.editable {
+            padding: 0;
+            overflow: hidden;
+
+            .form-group.picker {
+                display: flex;
+                
+                button {
+                    background: $black3;
+                    border: none;
+                    border-radius: 5px;
+            
+                    &:hover {
+                        background: $black3L;
+                    }
                 }
             }
         }
@@ -514,7 +599,7 @@ form {
 }
 
 #journal li.journal {
-    padding: 10px;
+    padding: 8px 10px;
 }
 
 /* ------------------- */
@@ -593,11 +678,22 @@ form {
 /* --- Compendium packs --- */
 /* ------------------------ */
 
-#compendium li.folder>.folder-header {
-    background: $black2!important;
+#compendium .create-compendium {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    &:hover {
-        background: $black3L!important;
+#compendium li.folder {
+    padding: 0;
+
+    & > .folder-header {
+        background: $black2;
+    
+        &:hover {
+            filter: brightness(1.1);
+        }
     }
 }
 

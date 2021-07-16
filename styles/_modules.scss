@@ -562,7 +562,7 @@ section.token-mold {
 }
 
 .tidy5e.sheet.item .sheet-body .editor .editor-content, .tidy5eDark .tidy5e.sheet.actor {
-    a.entity-link, a.inline-roll {
+    a.entity-link, a.inline-roll, a.gmroll.inline-roll {
         padding: 2px 5px;
         background: $black4;
         border-color: $black4L;
@@ -571,6 +571,10 @@ section.token-mold {
         &:hover {
             background: $black4L;
         }
+    }
+
+    a.gmroll.inline-roll {
+        background: #26282e;
     }
 }
 
@@ -1215,10 +1219,12 @@ form.crash-tracked-item-app {
 .simple-calendar-configuration #simpleCalendarConfiguration {
     .tabs {
         border-color: $black4L;
+        margin-top: 10px;
 
         .item {
             border: none;
             border-radius: 0;
+            font-size: .813rem;
         }
     
         .item.active,
@@ -1550,7 +1556,662 @@ form.crash-tracked-item-app {
                 margin-left: 0;
             }
         }
+    }    
+}
+
+
+/* ---------------------------------- */
+/* --- Compendium & Macro Folders --- */
+/* ---------------------------------- */
+
+
+.form-compendium-list,
+.form-folder-list,
+.form-macro-list,
+.form-folder-list {
+    border-color: $black4;
+    border-radius: 5px;
+
+    .form-header {
+        margin-bottom: 10px;
     }
 
+    hr {
+        border: none;
+        border-bottom: 1px solid $black4;
+    }
+}
+
+
+/* ---------------------------------- */
+/* --- Compendium & Macro Folders --- */
+/* ---------------------------------- */
+
+
+div.CodeMirror {
+    background: rgba(255,255,255,.7);
+}
+
+
+/* -------------------------- */
+/* --- Thandul Togglables --- */
+/* -------------------------- */
+
+
+#controls .control-tool {
+    i.fa-thandul {
+        height: 25px;
+        width: 25px;
+    }
+
+    .thandulTogglables {
+        top: -140px;
+        left: 230px;
+    }
+}
+
+
+/* ---------------------------- */
+/* --- Blitz SocketSettings --- */
+/* ---------------------------- */
+
+
+#client-settings form .notes.socket-settings-button {
+    background: $black3!important;
+    padding-left: 10px;
+    text-align: center;
+
+    &:hover {
+        background: $black3L!important;
+    }
+}
+
+
+/* ------------------------ */
+/* --- Blitz Soundboard --- */
+/* ------------------------ */
+
+
+#soundboard-app {
+    .btn {
+        border-color: $black4;
+        color: $white;
+        border-radius: 5px;
     
+        &:hover {
+            background: $black3L;
+        }
+    }
+
+    .notes {
+        color: rgba(255,255,255,.7)!important;
+
+        &.sb-warning {
+            color: rgb(206, 81, 81)!important;
+        }
+    }
+
+    input[type="text"] {
+        border: none;
+        margin-left: 0!important;
+    }
+
+    .soundboard-container > div {
+        gap: 10px;
+
+        button {
+            padding: 1px 10px;
+        }
+
+        .sb-collapse-div {
+            gap: 7px;
+        }
+    }
+
+    .sb-extended-options.active {
+        background: $black4;
+    }
+
+    #volume-container,
+    .window-header,
+    #toolbar {
+        background: darken($black2, 2%);
+    }
+
+    #toolbar {
+        padding: 0 15px;
+        padding-bottom: 5px;
+
+        .btn {
+            background: $black3!important;
+    
+            &:hover {
+                background: $black3L!important;
+            }
+        }
+    }
+
+    .soundboard-container .btn-secondary {
+        background: $black3L!important;
+        border: none;
+    }
+
+    .soundboard-container .dropdown-menu {
+        background: $black4;
+        color: $white;
+    }
+}
+
+#soundboard-packagemanager-app .soundboard-packman-container {
+    margin-top: 30px;
+
+    .no-packs {
+        text-shadow: none;
+        color: rgba(255,255,255,.6);
+    }
+}
+
+
+/* ----------------------- */
+/* --- Monk's Tokenbar --- */
+/* ----------------------- */
+
+// Anywhere there's actor lists
+
+.monks-tokenbar .sheet {
+    margin-top: 20px;
+
+    .items-list .items-header {
+        border: none;
+        color: $white;
+        margin-bottom: 10px;
+        
+        h3 {
+            font-family: 'roboto';
+            font-weight: 900;
+            padding: 0;
+        }
+
+        .item-controls a:hover {
+            text-shadow: none;
+            color: white;
+        }
+    }
+
+    .item-list .item {
+        border: none;
+        margin-bottom: 15px;
+
+        h4 {
+            color: $white;
+            font-weight: 500;
+        }
+    }
+
+    select {
+        color: $white;
+        padding: 0 5px;
+        border: none;
+        background: $black3;
+
+        optgroup {
+            background: $black3;            
+        }
+    }
+}
+
+// Request saving throw
+
+#requestsavingthrow {
+    .request-header {
+        background: $black1;
+        padding: 2px 10px;
+        box-shadow: none;
+        border: none;
+    }
+
+    .request-grid > div {
+        color: rgba(255,255,255,.6);
+        border: none;
+        padding: 3px 4px;
+        transition: all .15s ease-in-out;
+    
+        &.selected, &:hover {
+            box-shadow: none;
+            border: none;
+            background: $black3L;
+            color: $white;
+        }
+    }
+}
+
+// Contested Rolls
+
+#contestedroll {
+    min-height: 350px;
+
+    .form-group {    
+        &:nth-child(2) {
+            margin-bottom: 20px;
+        }
+    
+        &.sheet {
+            margin: 0;
+        }
+    }
+}
+
+// Tokenbar controls, at the bottom
+
+#tokenbar:not(.hidectrl) .bar-controls .tokenbar-buttons {
+    div:not(.disabled) {
+        border: none;
+        transition: all .15s ease-in-out;
+
+        &:hover {
+            filter: none;
+            border: none;
+            background: $black3L;
+            box-shadow: $shadow;
+            border-radius: 5px;
+        }
+
+        i:hover {
+            color: $white;
+        }
+    }
+}
+
+#tokenbar .bar-controls .tokenbar-buttons div.active:not(.disabled),
+#tokenbar[movement="free"] #movement-free:not(.disabled),
+#tokenbar[movement="none"] #movement-none:not(.disabled),
+#tokenbar[movement="combat"] #movement-combat:not(.disabled) {
+    box-shadow: 0 0 5px #9b8dff inset;
+    border-radius: 7px;
+    background: rgba(56, 13, 99, 0.5);
+
+    i {
+        border: none;
+        color: white!important;
+
+        &:hover {
+            color: $white;
+        }
+    }
+}
+
+#tokenbar .token .token-icon {
+    transition: all .15s ease-in-out;
+}
+
+// Chat messages
+
+.monks-tokenbar.chat-card {
+    .card-header {
+        border: none;
+        margin-bottom: -10px;
+    
+        h3 {
+            font-family: 'roboto';
+            font-weight: 900;
+            color: $white;
+    
+            &:hover {
+                text-shadow: none;
+                color: $white;
+            }
+        }
+    }
+
+    .message-content {
+        .items-list {
+            padding: 0;
+
+            li.item {
+                margin-bottom: 5px;
+
+                .dice-roll {
+                    .dice-total {
+                        height: auto;
+                        display: grid;
+                        grid-template-columns: 1.5fr 1fr 1fr;
+        
+                        .item-control {
+                            transition: all .15s ease-in-out;
+        
+                            &:hover {
+                                text-shadow: none;
+                                background: $black3;
+                            }
+                        }
+                    }
+    
+                    .dice-tooltip {
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }        
+    }
+
+    .card-footer {
+        border-color: rgba(255,255,255,0.1);
+
+        .grab-message {
+            border: none;
+        }
+    }
+
+    &.assignxp {
+        .item-row {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 5px;
+
+            .item-control {
+                position: absolute;
+                bottom: -5px;
+                right: -30px;
+                line-height: 1;
+                background: $black3;
+                padding: 3px 5px;
+                border-radius: 5px;
+                z-index: 2;
+                transition: all .15s ease-in-out;
+                visibility: hidden;
+
+                i {
+                    visibility: visible;
+                    color: $white;
+                }
+
+                &:hover {
+                    text-shadow: none;
+                    background: $black4;
+                }
+            }
+
+            div.xp-result.dice-total.flexrow {
+                font-size: 1rem;
+                grid-template-columns: 1fr;
+                align-items: center;
+            }
+        }
+    }
+}
+
+
+/* --------------------------- */
+/* --- Combat Utility belt --- */
+/* --------------------------- */
+
+
+.cub-puter ul.gadget-list {
+    background: $black3;
+    border: none;
+    border-radius: 5px;
+    max-height: none;
+
+    li {
+        padding: 3px 5px;
+
+        &:hover {
+            text-shadow: none;
+            background: $black3L;
+        }
+    }
+}
+
+
+/* ---------------------- */
+/* --- Party Overview --- */
+/* ---------------------- */
+
+
+#party-overview-button {
+    margin-bottom: 5px;
+}
+
+div.party-overview .table-row {
+    border: none;
+
+    &:nth-child(2n) {
+        background: rgba(255,255,255,.02);
+    }
+
+    .num span:first-child {
+        border-color: $black4L!important;
+    }
+
+    .button {
+        flex-basis: 50px;
+
+        button {
+            padding: 0;
+        }
+    }
+
+    .text {
+        padding-left: 10px;
+    }
+}
+
+
+/* ----------------- */
+/* --- GM Screen --- */
+/* ----------------- */
+
+
+.gm-screen-app.gm-screen-drawer {
+    &.expanded {
+        width: calc((var(--gm-screen-width) / 100 * (100vw - var(--gm-screen-right-offset) - var(--sidebar-width))) - 15px); // subtract 15px from the sidebar padding
+        right: calc((var(--sidebar-width) + var(--gm-screen-right-offset)) + 15px); // add 15px from the sidebar padding
+    }
+
+    .gm-screen-actions button {
+        background: $black2;
+    }
+
+    .gm-screen-grid-cell-content-wrapper {
+        box-shadow: none;
+    }
+}
+
+
+/* ------------------------------- */
+/* --- Monk's Enhanced Journal --- */
+/* ------------------------------- */
+
+#MonksEnhancedJournal.maximized {
+    width: calc(100vw - 328px)!important;
+}
+
+
+#MonksEnhancedJournal .monks-enhanced-journal {    
+    .sidebar {
+        background: $black2;
+        border-left: 1px solid $black3;
+    
+        #journal-directory {
+            .folder-header {
+                border-radius: 5px 5px 5px 0;
+            }
+            .subdirectory {
+                padding: 5px;
+                padding-bottom: 2px;
+                border-radius: 0 0 0 5px;
+            }
+    
+            .directory-item.entity {
+                border: none;
+            }
+    
+            .directory-header .header-search input {
+                background: $black4;
+                border: none;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .mainbar {
+        & > div {
+            border-color: $black3L;
+        }
+
+        .tab-bar {
+            .journal-tab {
+                background: $black3;
+                border: none;
+                margin-right: 5px;
+                font-family: 'roboto';
+                border-radius: 5px 5px 0 0;
+                font-weight: 500;
+                transition: all .15s ease-in-out;
+                font-size: .813rem;
+    
+                &:hover, &.active {
+                    box-shadow: $shadow;
+                    background: $black3L;
+                }
+            }
+
+            .tab-button {
+                transition: .15s ease-in-out;
+
+                &:hover {
+                    text-shadow: none;
+                    color: white;
+                }
+            }
+        }
+
+        .bookmark-bar {
+            border: none;
+
+            .bookmark-button {
+                border: none;
+                background: $black3;
+                border-radius: 5px;
+                transition: all .15s ease-in-out;
+
+                &:hover {
+                    background: $black3L;
+                }
+                
+                &.add-bookmark {
+                    padding: 2px;
+                    padding-left: 3px;                    
+                }
+            }
+        }
+
+        .navigation {
+            background: transparent;
+            border: none;
+
+            .nav-button {
+                background: $black3;
+                border: none;
+                transition: all .15s ease-in-out;
+
+                &:hover {
+                    background: $black3L;
+                    box-shadow: none;
+                }
+            }
+
+            input {
+                background: $black4;
+            }
+        }
+    }
+
+    .editable .header-name {
+        border: none;
+
+        input[name="name"] {
+            margin-bottom: 0;
+            padding-left: 0;
+            margin-top: 10px;
+        }
+    }
+
+    .editor {
+        padding: 0;
+        padding-right: 15px;
+
+        .tox .tox-editor-container .tox-editor-header {
+            .tox-menubar {
+                background: transparent;
+                padding: 0;
+            }
+    
+            .tox-toolbar-overlord {
+                right: 0;
+                border-radius: 5px;
+    
+                .tox-toolbar__primary {
+                    border: none;
+    
+                    button[title="Save"] {
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .blank {
+        color: $white!important;
+        opacity: 1!important;
+
+        & > div:last-child {
+            & > div:first-child {
+                background: transparent!important;
+                border: none!important;
+                font-weight: 900;
+            }
+
+            & > div:last-child {
+                font-weight: 400!important;
+                
+                .recent-link {
+                    transition: all .15s ease-in-out;
+
+                    &:hover {
+                        background: $black3L;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* ------------------ */
+/* --- Moulinette --- */
+/* ------------------ */
+
+
+#moulinette {
+    .sheet-tabs {
+        border-color: $black3L;
+    }
+
+    .form-group.search {
+        display: flex;
+        gap: 5px;
+    
+        .search {
+            margin: 0;
+        }
+    
+        .filepicker {
+            margin: 0;
+        }
+    }
 }
