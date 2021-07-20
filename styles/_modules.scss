@@ -2005,10 +2005,8 @@ div.party-overview .table-row {
 
 
 .gm-screen-app.gm-screen-drawer {
-    &.expanded {
-        width: calc((var(--gm-screen-width) / 100 * (100vw - var(--gm-screen-right-offset) - var(--sidebar-width))) - 15px); // subtract 15px from the sidebar padding
-        right: calc((var(--sidebar-width) + var(--gm-screen-right-offset)) + 15px); // add 15px from the sidebar padding
-    }
+    width: calc((var(--gm-screen-width) / 100 * (100vw - var(--gm-screen-right-offset) - var(--sidebar-width))) - 15px); // subtract 15px from the sidebar padding
+    right: calc((var(--sidebar-width) + var(--gm-screen-right-offset)) + 15px); // add 15px from the sidebar padding
 
     .gm-screen-actions button {
         background: $black2;
@@ -2017,6 +2015,10 @@ div.party-overview .table-row {
     .gm-screen-grid-cell-content-wrapper {
         box-shadow: none;
     }
+}
+
+.gm-screen-container.window-content.tab {
+    margin: 0;
 }
 
 
@@ -2213,5 +2215,135 @@ div.party-overview .table-row {
         .filepicker {
             margin: 0;
         }
+    }
+}
+
+
+/* ---------------------------------- */
+/* --- Giffyglyph's Monster Maker --- */
+/* ---------------------------------- */
+
+
+.gmm-modal .modal__header + .modal__body {
+    color: black;
+}
+
+.gmm-window .editor .tox-tinymce {
+    background: $black2;
+}
+
+.gmm-blueprint .blueprint__form .form-group__body .html-field {
+    .tox-toolbar-overlord,
+    .tox-toolbar__primary {
+        width: 100%;
+    }
+
+    .tox-editor-header {
+        padding: 0;
+    }
+
+    .tox .tox-tbtn[title="Save"] {
+        width: 100%;
+        border-radius: 0;
+        height: 100%;
+
+        &:hover {
+            background: $black3L;
+        }
+    }
+}
+
+.gmm-blueprint.blueprint--monster.blueprint--monster--vanity {
+    .ability-ranking .move-down,
+    .ability-ranking .move-up,
+    .save-ranking .move-down,
+    .save-ranking .move-up {
+        color: black;
+    }
+}
+
+.gmm-window .accordion-section .editor {
+    p, pre, h1, h2, h3, h4, h5, h6, li {
+        color: black;
+    }
+}
+
+.gmm-blueprint .blueprint__form .form-group__body {
+    input, select, .checkbox {
+        color: black;
+    }
+}
+
+.gmm-blueprint.blueprint--monster.blueprint--monster--vanity {
+    .ability-ranking .value,
+    .save-ranking .value,
+    .items .item__title {
+        color: black;
+    }
+}
+
+.gmm-artifact.artifact--action.artifact--action--vanity .action__body {
+    .item__name,
+    .item__recharge button {
+        color: black;
+    }
+}
+
+.gmm-artifact.artifact--monster.artifact--monster--vanity .button--text {
+    color: black;
+}
+
+.gmm-forge .forge__options .forge__controls button i {
+    color: black;
+}
+
+.gmm-modal {
+    .modal__form .form-group__body select,
+    .gmm-modal .modal__dialog {
+        color: black;
+    }
+}
+
+.gmm-forge.forge--monster {
+    .gmm-modal.modal--ability-check .abilities .ability,
+    .gmm-modal.modal--basic-attack-save .attacks .attack,
+    .gmm-modal.modal--basic-attack-save .defences .defence,
+    .gmm-modal.modal--basic-damage .damages .damage {
+        color: black;
+    }
+
+    .gmm-modal.modal--about .support {
+        color: black;
+    }
+}
+
+.gmm-artifact.artifact--action.artifact--action--vanity .action__body  {
+    background: transparent;
+}
+
+// Button on the sidebar
+#sidebar .giffyglyph .btn-group {
+    margin: 0;
+}
+
+
+/* -------------------------- */
+/* --- Sidebar Aesthetics --- */
+/* -------------------------- */
+
+
+.directory .directory-list .directory-item.journal {
+    max-height: 48px;
+
+    .sidebar-image {
+        object-fit: cover;
+        margin-left: 0;
+        padding: 0;
+        height: 48px;
+        width: 48px;
+        flex: 0 0 32px;
+        margin-left: -10px;
+        margin-top: -8px;
+        border-radius: 5px 0 0 5px;
     }
 }
