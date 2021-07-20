@@ -461,7 +461,11 @@ form {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 5px;
-        margin-bottom: 3px;
+        margin-bottom: 5px;
+
+        .flexrow {
+            gap: 5px;
+        }
 
         button {
             margin: 0;
@@ -617,8 +621,12 @@ form {
         align-items: center;
         margin-bottom: 5px;
 
+        &.context {
+            border: none;
+        }
+
         &:hover {
-            filter: brightness(1.4);
+            box-shadow: 0 0 20px #000 inset, 0 0 40px #000 inset;
         }
 
         h3 {
@@ -629,7 +637,7 @@ form {
         }
 
         a:hover {
-            text-shadow: none;
+            text-shadow: 1px 1px 3px #000;
         }
     }
 
