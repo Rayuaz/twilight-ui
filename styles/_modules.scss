@@ -2347,3 +2347,14 @@ div.party-overview .table-row {
         border-radius: 5px 0 0 5px;
     }
 }
+
+
+/* ---------------------------------- */
+/* --- Simultaneous Combat System --- */
+/* ---------------------------------- */
+
+#scsApp .window-content {
+    @extend .app;
+    border: none;
+    padding: 1px;
+}
