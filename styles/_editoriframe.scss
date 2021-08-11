@@ -2,20 +2,20 @@
 
 #tinymce {
     padding-top: 0;
-    color: $white;
+    color: $white1;
 }
 
 .editor-content, #tinymce {
 
     p, pre, div, span, h1, h2, h3, h4, h5, h6, ol, ul, em, strong {
         font-family: 'Roboto', sans-serif;
-        color: $white;
+        color: $white1;
         font-size: 1rem;
         line-height: 1.625rem;
     }
 
     ul {
-        color: $white!important;
+        color: $white1!important;
         font-family: 'roboto'!important;
         font-size: 1rem!important;
     }
@@ -33,12 +33,13 @@
 
     pre {
         white-space: normal;
+        color: $white1!important;
     }
 
     h1, h2, h3, h4, h5, h6 {
         font-weight: 900;
         border-bottom: none;
-        color: $white!important;
+        color: $white1!important;
         font-family: 'roboto'!important;
     }
 
@@ -123,7 +124,7 @@
 
     hr {
         border: none;
-        background-color: $white;
+        background-color: $white1;
         height: 1px;
         opacity: .2;
     }
@@ -139,12 +140,12 @@
         }
 
         tr:nth-child(even) {
-            background-color: #252423;
+            background-color: $black2L;
         }
 
         td {
             padding: 10px 5px;
-            color: $white;
+            color: $white1;
         }
         
     }

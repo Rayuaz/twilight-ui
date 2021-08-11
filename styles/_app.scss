@@ -27,7 +27,7 @@
 /* --- App Window --- */
 /* ------------------ */
 .app {
-    background: darken($black2, 2%);
+    background: $black1L;
 
     &#sidebar {
         background: $black1;
@@ -49,10 +49,9 @@
         transition: all .15s ease-in-out;
         font-weight: 500;
         border-radius: 0;
-        color: $white;
+        color: $white1;
 
         &:hover {
-            box-shadow: $shadow;
             background: $black3L;
             text-shadow: none;
             border-radius: 5px 5px 0 0;
@@ -60,7 +59,6 @@
         }
 
         &.active {
-            box-shadow: $shadow;
             background: $black3L;
             text-shadow: none;
             border-radius: 5px 5px 0 0;
@@ -110,17 +108,13 @@
     }
 
     .notes {
-        color: $white;
+        color: $white2;
         margin-top: 0;
         padding: 5px 0;
         padding-bottom: 8px;
         margin-bottom: 15px;
         font-weight: 400;
         border: none;
-    }
-
-    input[type="checkbox"] {
-        justify-self: center;
     }
 
     .window-resizable-handle,
@@ -139,14 +133,10 @@
 
 .window-app .window-content, .tidy5e.sheet.actor .window-content {
     background: $black2;
-    color: $white;
+    color: $white1;
 }
 
 .dnd5e .form-group {
-    label {
-        color: var(--secondary-color);
-    }
-
     .form-fields button {
         border: none;
         background: $black3;
@@ -160,7 +150,7 @@
 // Hit Dice Window
 .window-app.hd-config {
     input.current, input.max {
-        color: $white;
+        color: $white1;
     }
 
     input {
@@ -209,7 +199,7 @@
 
 #client-settings.app.window-app.form #config-tabs {
     .settings-list h2.module-header span {
-        color: $white;
+        color: $white1;
         opacity: 0.5;
     }
 
@@ -221,7 +211,7 @@
 
 #module-management .package-list {
     .package-title, .package-metadata, .package-description {
-        color: $white;
+        color: $white1;
     }
 }
 
@@ -231,7 +221,7 @@
 
 form {
     button {
-        color: $white;
+        color: $white1;
         background: $black3;
         border: none;
     }
@@ -240,49 +230,57 @@ form {
 
     .form-group, 
     .form-group-stacked {
-        margin: 6px 0;
+        margin: 0;
+        padding: 5px;
+        border-radius: 5px;
 
         &:not(.submenu) {
             display: grid;
-            grid-template-columns: 40% 60%;
+            grid-template-columns: 2fr 6fr;
+            grid-gap: 10px;
+
+            &:not(:first-child) {
+                margin-top: -5px;
+            }
 
             & > *:last-child:nth-child(odd) {
                 grid-column: 1 / -1;
+
+                &.notes {
+                    margin-left: 26%;
+                }
             }
+        }
+
+        input[type="checkbox"] {
+            margin: 0;
         }
         
         label {
+            text-align: right;
             font-size: 0.813rem;
-            font-weight: 700;
-            color: rgba(255,255,255,.7);
-        }
-
-        .form-fields {
-            justify-content: center;
-
-            & > label.checkbox {
-                align-items: center;
-                justify-content: center;
-                padding: 4px;
-            }
+            font-weight: 500;
+            color: $white1;
         }
 
         span.units {
-            color: rgba(255,255,255,.4);
+            color: $white3;
             font-weight: 400;
+        }
+
+        &:hover {
+            background: $black1L;
         }
     }
 
-    .form-group.stacked,
-    .form-group-stacked {
-        grid-template-columns: 1fr;
+    .form-group.stacked {
+        grid-template-columns: 2fr 6fr;
+        grid-gap: 10px;
     }
 
     .notes,
     .hint {
-        color: $white;
-        opacity: 0.6;
-        grid-column: 1/-1;
+        color: $white2;
         font-size: 0.813rem;
         font-weight: 500;
     }
@@ -291,7 +289,7 @@ form {
 
 .window-app textarea {
     background: $black3;
-    color: $white;
+    color: $white1;
     border: none;
 }
 
@@ -325,7 +323,7 @@ form {
 // Macro Window
 
 .macro-sheet .form-group.command .furnace-macro-command textarea {
-    color: $white;
+    color: $white1;
     -webkit-text-fill-color: unset;
 }
 
@@ -335,7 +333,7 @@ form {
 
 .scene-sheet {
     .form-header {
-        color: $white;
+        color: $white1;
         border: none;
         font-weight: 900;
         font-size: 1.25rem;
@@ -486,26 +484,28 @@ form {
             transition: all .15s ease-in-out;
             border: none;
 
+            i {
+                text-shadow: none!important;
+            }
+
             &:hover {
-                box-shadow: $shadow;
                 background: $black3L;
                 border-radius: 5px 5px 0 0;
         
                 i {
                     text-shadow: none!important;
-                    color: $white;
+                    color: $white1;
                 }
             }
 
             &.active {
-                box-shadow: $shadow;
-                background: $black3L;
+                box-shadow: none;
+                background: $black4L;
                 border: none;
                 border-radius: 5px 5px 0 0;
         
                 i {
-                    color: $white;
-                    text-shadow: none!important;
+                    color: $white1;
                 }
             }
         }
@@ -595,7 +595,7 @@ form {
 .directory .directory-header .header-search input {
     background: $black4;
     border-color: transparent;
-    color: $white;
+    color: $white1;
 }
 
 .directory .action-buttons button {
@@ -753,7 +753,7 @@ form {
     border-radius: 7px;
 
     .control-tools {
-        @extend #controls
+        @extend #controls;
     }
 
     .scene-control, .control-tool {
@@ -775,7 +775,7 @@ form {
 
         &.active, &:hover {
             border: none;
-            box-shadow: 0 0 3px #6f6f6f inset, 0 0 3px #6f6f6f inset, 0 0 3px #6f6f6f inset, 0 0 3px #6f6f6f inset;
+            box-shadow: $shadow;
             background: $black3L;
             border-radius: 7px;
         }
@@ -792,9 +792,11 @@ form {
 
         .control-tool.toggle {
             border: none;
-            box-shadow: 0 0 3px #9b8dff inset;
+            box-shadow: 0 0 3px $accent2L inset;
+            background: $accent2;
+
             &.active, &:hover {
-                box-shadow: 0 0 10px #9b8dff inset;
+                box-shadow: 0 0 10px $accent2L inset;
             }
         }
     }
@@ -863,7 +865,7 @@ form {
                 right: 0;
                 font-size: 13px;
                 border-radius: 0 0 0 6px;
-                background: #0d0c0a;
+                background: $black1;
             }
 
             &.inactive {
@@ -927,7 +929,7 @@ form {
                 &:hover:after {
                     border-radius: 6px;
                     box-shadow: $shadow;
-                    background: rgba(255,255,255,.1);
+                    background: $highlight;
                 }
             }
 
@@ -1010,18 +1012,16 @@ form {
 
         &.gm {
             border: none;
-            box-shadow: 0 0 3px #9b8dff inset;
-            background: #2e1846;
+            box-shadow: 0 0 3px $accent2L inset;
+            background: $accent2;
 
             &:hover {
-                box-shadow: 0 0 7px #9b8dff inset;
-                background: #49296b;
+                box-shadow: 0 0 10px $accent2L inset;
             }
 
             &.view,
             &.context {
-                box-shadow: 0 0 7px #9b8dff inset;
-                background: #49296b;
+                box-shadow: 0 0 10px $accent2L inset;
             }
         }
 
@@ -1047,7 +1047,7 @@ form {
     select, select option {
         background: $black3;
         border: none;
-        color: $white;
+        color: $white1;
     }
 }
 
@@ -1063,7 +1063,7 @@ form {
 
 .roll-table-config {
     textarea {
-        color: $white;
+        color: $white1;
         padding: 5px 10px;
     }
 
