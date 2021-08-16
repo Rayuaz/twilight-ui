@@ -50,15 +50,21 @@ select,
 select option {
     color: $white1;
     background-color: $black3;
+    border: none;
 }
 
 input,
-textarea,
-select {
+textarea {
     &:hover, &:focus {
         background: $black3L;
         box-shadow: $shadow;
     }
+}
+
+select:hover,
+select:focus {
+    background: $black3L;
+    box-shadow: none;
 }
 
 input[type="checkbox"], 
@@ -96,7 +102,6 @@ input::placeholder {
 .form-group select {
     border: none;
     padding: 5px 10px;
-    height: 100%;
     font-size: 0.813rem;
 }
 
@@ -154,6 +159,11 @@ input[type="range"] + .range-value {
 
 /* -------------- */
 
+hr {
+    border: none;
+    border-bottom: 1px solid $black3;
+}
+
 img {
     border: none;
     border-radius: 0;
@@ -192,4 +202,12 @@ a.entity-link, a.inline-roll, a.gmroll.inline-roll {
                 color: $accent1L;
             }
         }
+}
+
+/* ------------------- */
+
+table {
+    tr:nth-child(even) {
+        background: $black2L;
+    }
 }

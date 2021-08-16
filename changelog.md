@@ -5,6 +5,7 @@
 - Tidied up the colors
 - Added CSS Variables
 - Redesigned the `.form-groups` to be easier to navigate trough the forms
+- Added a submodule to separate long form sections into tabs
 
 ### Module Compatibility
 
@@ -21,3 +22,6 @@
 - Removed `whitespace: nowrap` from `.message-sender` in chat
 - Changed entity links to be a little less disruptive to the flow of reading
 - Changed `.tab`s and `select`s styling to make it less ambiguous with `input[type="text"]`s
+- Did what I could to make the Midi QoL settings form not broken...
+- Fixed background color for Monk's Token Toolbar dropdown menus
+- Changed the Simple Calendar settings styles

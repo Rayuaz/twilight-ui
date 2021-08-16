@@ -50,6 +50,7 @@
         font-weight: 500;
         border-radius: 0;
         color: $white1;
+        align-items: center;
 
         &:hover {
             background: $black3L;
@@ -71,13 +72,12 @@
     }
 
     nav.sheet-tabs {
-        border-top: none;
+        border: none;
         height: fit-content;
-        border-color: $black3L;
-
-        &:first-child {
-            margin-top: -10px;
-        }
+        border-bottom: 1px solid $black3L;
+        margin-bottom: 0;
+        background: $black3;
+        border-radius: 5px 5px 0 0;
 
         .item {
             padding: 5px 0;
@@ -190,6 +190,58 @@
         nav.tabs {
             border: none;
         }
+
+        #config-tabs {
+            border: none;
+        }
+
+        .module-header {
+            padding: 1em 0;
+        }
+    }
+
+    &.tui-form.form section.window-content {
+        .module-section {
+            border: none;
+            position: relative;
+
+            &:not(:last-child):after {
+                content: '';
+                background: $black3;
+                display: block;
+                position: absolute;
+                height: 1px;
+                width: 90%;
+                left: 5%;
+                bottom: 0;
+            }
+
+            h2.module-header {
+                padding: 10px;
+                font-size: 1.125rem;
+
+                &:before {
+                    color: $white3;
+                }
+
+                &:hover {
+                    background: $black2L;
+                    border-radius: 10px;
+
+                    &:before {
+                        color: $accent1;
+                    }
+                }
+            }
+
+            &.active .module-header:before {
+                color: $accent1;
+            }
+        }
+
+        .tab[data-tab="system"] .module-header {
+            padding-left: 40px;
+        }
     }
 }
 
@@ -202,16 +254,22 @@
         color: $white1;
         opacity: 0.5;
     }
-
-    .tab[data-tab="modules"] .settings-list h2.module-header {
-        padding: 1em 0;
-        margin: 0;
-    }
 }
 
 #module-management .package-list {
     .package-title, .package-metadata, .package-description {
         color: $white1;
+    }
+}
+
+// Permission config
+
+#permissions-config li.permission {
+    border: none;
+    
+    .hint {
+        color: $white2;
+        font-weight: 400;
     }
 }
 
@@ -224,9 +282,7 @@ form {
         color: $white1;
         background: $black3;
         border: none;
-    }
-    
-    
+    }    
 
     .form-group, 
     .form-group-stacked {
@@ -234,30 +290,11 @@ form {
         padding: 5px;
         border-radius: 5px;
 
-        &:not(.submenu) {
-            display: grid;
-            grid-template-columns: 2fr 6fr;
-            grid-gap: 10px;
-
-            &:not(:first-child) {
-                margin-top: -5px;
-            }
-
-            & > *:last-child:nth-child(odd) {
-                grid-column: 1 / -1;
-
-                &.notes {
-                    margin-left: 26%;
-                }
-            }
-        }
-
         input[type="checkbox"] {
             margin: 0;
         }
         
         label {
-            text-align: right;
             font-size: 0.813rem;
             font-weight: 500;
             color: $white1;
@@ -267,15 +304,6 @@ form {
             color: $white3;
             font-weight: 400;
         }
-
-        &:hover {
-            background: $black1L;
-        }
-    }
-
-    .form-group.stacked {
-        grid-template-columns: 2fr 6fr;
-        grid-gap: 10px;
     }
 
     .notes,
@@ -284,19 +312,77 @@ form {
         font-size: 0.813rem;
         font-weight: 500;
     }
+
+    h1.form-header,
+    h2.form-header,
+    h3.form-header {
+        color: $white1;
+        border: none;
+        font-weight: 900;
+        
+        &:not(:first-child) {
+            margin-top: 20px;
+        }
+    }
     
+}
+
+
+
+.app.tui-form .window-content {
+    padding-top: 5px;
+
+    .form-group {
+        padding-right: 10px;
+
+        &:hover {
+            background: $black1L;
+        }
+
+        &.has-checkbox {
+            &:hover,
+            label:hover {
+                cursor: pointer;
+            }
+        }
+
+        &:not(:last-child) {
+            border: none;
+            position: relative;
+    
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                height: 1px;
+                width: 90%;
+                bottom: 0;
+                left: 5%;
+                background: $black3;
+            }
+        }
+
+        &.has-checkbox:hover {
+            cursor: pointer;
+        }
+
+        .notes, .hint {
+            margin-top: 5px;
+        }
+    }    
+}
+
+.sheet .tab > .notes:first-child {
+    background: $black3L;
+    padding: 5px;
+    border-radius: 0 0 5px 5px;
+    text-align: center;
 }
 
 .window-app textarea {
     background: $black3;
     color: $white1;
     border: none;
-}
-
-// Override for the macro-sheet
-
-.macro-sheet form .form-group {
-    display: flex;
 }
 
 #drawing-config {
@@ -332,23 +418,8 @@ form {
 /* --------------------------- */
 
 .scene-sheet {
-    .form-header {
-        color: $white1;
-        border: none;
-        font-weight: 900;
-        font-size: 1.25rem;
-
-        &:not(:first-child) {
-            margin-top: 40px;
-        }
-    }
-    
     .window-content {
         padding: 25px;
-    }
-    
-    .notes {
-        padding-top: 0;
     }
 }
 

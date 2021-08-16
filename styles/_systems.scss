@@ -39,7 +39,8 @@
     }
 
     .form-group label {
-        color: $white2;
+        color: $white1;
+        font-weight: 500;
     }
 }
 
@@ -122,9 +123,8 @@
             &.active, &:hover {
                 border: none;
                 text-shadow: none;
-                background: $black3;
+                background: $black3L;
                 border-radius: 5px 5px 0 0;
-                box-shadow: $shadow;
             }
         }
     }
@@ -874,6 +874,10 @@
         }
 
         .sheet-body {
+            .form-item {
+                justify-content: center;
+            }
+            
             .item-properties {
                 border: none;
 
@@ -882,10 +886,18 @@
                     border-color: $black4L;
                 }
             }
+
+            input[type="range"]+.range-value {
+                line-height: 1.2;
+            }
+
+            label.checkbox {
+                font-weight: 400;
+                font-size: .75rem;
+            }
         }
 
-        .form-header,
-        h4.damage-header {
+        .form-header {
             font-family: 'roboto';
             border: none;
             font-weight: 900;
@@ -895,10 +907,109 @@
             font-size: 1.25rem;
         }
 
+        h4.damage-header {
+            color: $white1;
+            font-weight: 500;
+            font-size: .813rem;
+            text-align: right;
+
+            margin-right: 10px;
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: 4fr 6fr;
+            grid-gap: 20px;
+            justify-content: center;
+            align-items: center;
+
+            a {
+                width: 100%;
+                text-align: center;
+                background: $black3;
+                color: $white1;
+                border-radius: 5px;
+                background: transparent;
+                border: 2px dashed $black3L;
+                transition: all .15s ease-in-out;
+
+                &:after {
+                    content: 'Add damage';
+                    margin-left: 5px;
+                    font-weight: 400;
+                    
+                }
+
+                &:hover {
+                    text-shadow: none;
+                    background: $black3L;
+                    border-style: solid;
+                }
+            }
+        }
+
+        .damage-parts {
+            padding-right: 0;
+
+            &:hover {
+                background: transparent;
+            }
+
+            .damage-part {
+                display: grid;
+                grid-gap: 5px;
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: 
+                    "dmg dmg"
+                    "ctx typ";
+                padding: 10px 0;
+                padding-left: calc(40% + 10px);
+                padding-right: 10px;
+                border-radius: 10px;
+                position: relative;
+
+                &:not(:first-child) {
+                    margin-top: -10px;
+                }
+    
+                &:hover {
+                    background: $black1L;
+                }
+    
+                input {
+                    margin: 0!important;
+                }
+    
+                input:first-child {
+                    grid-area: dmg;
+                }
+    
+                .delete-damage {
+                    position: absolute;
+                    top: 10px;
+                    left: calc(40% - 30px);
+                    color: $white1;
+                    background: $black3;
+                    padding: 5px;
+                    width: auto;
+                    line-height: 1;
+                    border-radius: 4px;
+                    font-size: .75rem;
+
+                    &:hover {
+                        text-shadow: none;
+                        background: $black3L;
+                    }
+                }
+            }
+        }
+
         .details {
             input[type="text"], input[type="number"], select {
-                border: none;
                 background: $black3;
+                border: none;
+
+                &:hover {
+                    background: $black3L;
+                }
             }
 
             .spell-materials {
@@ -912,11 +1023,6 @@
             .weapon-properties {
                 display: flex;
             }
-        }
-
-        .damage-parts .damage-part {
-            grid-column: 1 / -1;
-            margin-bottom: 6px;
         }
 
         .item-betterRolls {

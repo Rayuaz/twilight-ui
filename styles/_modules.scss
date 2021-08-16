@@ -662,6 +662,41 @@ section.token-mold {
     }
 }
 
+// Settings window
+
+.app.window-app.tidy5e.settings {
+    border: none;
+
+    .window-content {
+        overflow: scroll;
+    }
+
+    .setting {
+        background: transparent;
+        position: relative;
+        padding: 10px;
+        border-radius: 10px;
+
+        &:hover {
+            background: $black1L;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 5%;
+            width: 90%;
+            height: 1px;
+            background: $black3;
+        }
+
+        .notes {
+            margin-bottom: 0;
+        }
+    }
+}
+
 /* --------------------------- */
 /* --- Collapsible headers --- */
 /* --------------------------- */
@@ -1224,6 +1259,7 @@ form.crash-tracked-item-app {
 
         .form-group {
             display: flex;
+            border: none;
 
             label {
                 color: $white1;
@@ -1267,18 +1303,43 @@ form.crash-tracked-item-app {
             }
         }
 
-        .form-group {
-            border: none;
+        .settings-group {
+            div.form-group {
+                border: none;
+    
+                label {
+                    flex: 2;
+                    text-align: right;
+                }
+    
+                div.form-fields {
+                    flex: 3;
+                }
+            }
+        }
+
+        &[data-tab="generalSettings"].general-settings .settings-group {
+            label {
+                text-align: left;
+            }
+
+            .notes {
+                padding: 0;
+            }
         }
 
         .f-table {
             border: none;
 
             .row {
-                justify-content: space-between;
                 padding: 5px 40px;
                 width: calc(100% + 80px);
                 margin-left: -40px;
+                gap: 10px;
+
+                div {
+                    flex: 1;
+                }
 
                 &:nth-child(odd) {
                     background-color: $black2L;
@@ -1301,18 +1362,33 @@ form.crash-tracked-item-app {
 
                 .options {
                     padding: 0;
+                    flex: 0 0 100%;
 
                     h3 {
                         border: none;
                         margin-top: 20px;
                         font-weight: 900;
                     }
+
+                    div.form-group {
+                        border: none;
+            
+                        label {
+                            flex: 2;
+                            text-align: right;
+                        }
+            
+                        div.form-fields {
+                            flex: 3;
+                        }
+                    }
                 }
 
                 &.head {
                     background-color: transparent;
                     border: none;
-                    text-align: left;
+                    text-align: center;
+                    flex: 1;
                 }
             }
         }
@@ -1923,6 +1999,12 @@ div.CodeMirror {
     }
 }
 
+// Settings menu
+
+.monks-tokenbar.editstats .tt-menu {
+    background: $black4;
+}
+
 
 /* --------------------------- */
 /* --- Combat Utility belt --- */
@@ -2334,8 +2416,112 @@ div.party-overview .table-row {
 /* --- Simultaneous Combat System --- */
 /* ---------------------------------- */
 
+
 #scsApp .window-content {
     @extend .app;
     border: none;
     padding: 1px;
+}
+
+
+/* --------------------- */
+/* --- Form Sections --- */
+/* --------------------- */
+
+
+.dnd5e, .tidy5e {
+    .sheet-body nav.form-tabs {
+        margin-top: 0;
+        gap: 5px;
+    }
+}
+
+/* ---------------- */
+/* --- Midi QoL --- */
+/* ---------------- */
+
+#midi-qol-settings .midi-qol-box {
+    font-size: 1.25rem;
+    font-weight: 900;
+    border: none;
+    border-bottom: 1px solid $black3L;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+
+    .midi-qol-faint {
+        color: $white2;
+        font-weight: 400;
+        font-size: .813rem;
+        padding-left: 40px;
+        padding-right: 40%;
+    }
+
+    label {
+        flex: 0 0 100%;
+        text-align: left;
+    }
+
+    .form-group {
+        padding-left: 40px;
+        position: relative;
+
+        &:after {
+            display: none;
+        }
+
+        .form-fields {
+            max-width: 60%;
+            
+            input[type="checkbox"] {
+                position: absolute;
+                top: 15px;
+                left: 10px;
+            }
+        }
+    }
+}
+
+
+/* ------------------ */
+/* --- Small Time --- */
+/* ------------------ */
+
+
+#client-settings.tui-form #smalltime-darkness-config {
+    flex: 0 1 auto;
+    margin-left: -33px;
+}
+
+
+/* --------------------- */
+/* --- Custom Hotbar --- */
+/* --------------------- */
+
+
+div#client-settings.tui-form {
+    div#chbSetDiv {
+        background: $accent2;
+        border: none;
+        border-radius: 10px 10px 0 0;
+        padding-left: 40px;
+
+        &:after {
+            display: none;
+        }
+
+        label {
+            padding: 0;
+        }
+    }
+
+    div#coreSetDiv {
+        background: $accent2;
+        border: none;
+        border-radius: 0 0 10px 10px;
+        padding-bottom: 10px;
+
+        &:after {
+            display: none;
+        }
+    }
 }
