@@ -257,8 +257,34 @@
 }
 
 #module-management .package-list {
-    .package-title, .package-metadata, .package-description {
-        color: $white1;
+    .package {
+        border: none;
+        position: relative;
+        padding: 5px 0;
+
+        &:hover {
+            background: $black2L;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            height: 1px;
+            width: 90%;
+            bottom: 0;
+            left: 5%;
+            background: $black3;
+        }
+
+        .package-title {
+            font-weight: 500;
+        }
+
+        .package-title,
+        .package-metadata,
+        .package-description {
+            color: $white1;
+        }
     }
 }
 
@@ -779,7 +805,8 @@ form {
 #compendium li.compendium-pack {
     background: $black2;
     border-radius: 5px;
-    margin-bottom: 5px!important;
+    margin: 5px!important;
+    margin-top: 0!important;
     padding: 5px 10px!important;
 
     &:hover {
@@ -895,6 +922,26 @@ form {
 
     div {
         margin: 0;
+    }
+
+    button {
+        padding: 5px;
+        margin: 0;
+        margin-bottom: 3px;
+
+        &[data-action="players"] {
+            margin-top: 20px;
+        }
+    }
+
+    div#combat-utility-belt {
+        
+
+        h4:first-child {
+            @extend h2;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
     }
 }
 

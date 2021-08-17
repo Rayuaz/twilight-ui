@@ -2032,7 +2032,6 @@ div.CodeMirror {
 /* --- Party Overview --- */
 /* ---------------------- */
 
-
 #party-overview-button {
     margin-bottom: 5px;
 }
@@ -2058,6 +2057,18 @@ div.party-overview .table-row {
 
     .text {
         padding-left: 10px;
+    }
+}
+
+.dnd5e button.party-overview {
+    background: $black3;
+    border: none;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 5px;
+
+    &:hover {
+        background: $black3L;
     }
 }
 
@@ -2523,5 +2534,19 @@ div#client-settings.tui-form {
         &:after {
             display: none;
         }
+    }
+}
+
+
+/* --------------------- */
+/* --- Custom Hotbar --- */
+/* --------------------- */
+
+
+.polyglot-lang-select select {
+    background: $black3;
+
+    &:hover {
+        background: $black3L;
     }
 }
