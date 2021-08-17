@@ -2,13 +2,14 @@
     "name": "twilight-ui",
     "title": "Twilight UI",
     "description": "A dark theme for Foundry",
-    "author": {
+    "author": "Sua Mãe, Aquela Católica",
+    "authors": {
         "Name": "Sua Mãe, Aquela Católica",
         "email": "alan@tpk.gg",
         "discord": "Sua mãe, Aquela Católica#2512"
     },
     "version": "1.06",
-    "minimumCoreVersion": "0.7",
+    "minimumCoreVersion": "0.8.8",
     "compatibleCoreVersion": "0.8.8",
     "scripts": [
         "scripts/tinymce_handler.js"
@@ -26,6 +27,11 @@
             "name": "spell-level-buttons-for-dnd5e",
             "type": "module",
             "manifest": "https://github.com/Rayuaz/spell-level-buttons-for-dnd5e/releases/latest/download/module.json"
+        },
+        {
+            "name": "twilight-forms",
+            "type": "module",
+            "manifest": "https://github.com/Rayuaz/twilight-forms/releases/latest/download/module.json"
         }
     ],
     "manifest": "https://github.com/Rayuaz/twilight-ui/releases/latest/download/module.json",
