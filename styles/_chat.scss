@@ -1,16 +1,16 @@
 .chat-message {
     background: $black2;
-    color: $white;
+    color: $white1;
     border-color: $black4!important;
     font-family: 'Roboto';
 
     .message-header {
-        color: $white;
+        color: $white1;
 
         .message-sender {
-            text-shadow: none!important;
             font-weight: 900;
             margin-bottom: 3px;
+            white-space: normal;
         }
     }
 
@@ -25,19 +25,18 @@
 
 .chat-message .table-draw {
     .table-description {
-        color: $white;
+        color: $white1;
         opacity: .7;
     }
 
     .table-results .table-result img.result-image {
-        background: rgba(255,255,255,.6);
+        background: $white2;
         border-radius: 5px;
-        padding: 2px;
     }
 }
 
 .dnd5e.chat-card .card-header, .midi-qol-nobox, .dnd5e.chat-card .card-footer {
-    border-color: rgba(255,255,255,0.1);
+    border-color: $black4L;
 }
 
 .dnd5e.chat-card {
@@ -47,12 +46,12 @@
         margin: 3px 0;
     
         h3 {
-            color: $white;
+            color: $white1;
             font-family: 'roboto';
             font-size: 1rem;
 
             &:hover {
-                color: $white;
+                color: $white1;
                 text-shadow: 0 0 10px var(--primary-accent);
                 cursor: pointer;
             }
@@ -69,6 +68,20 @@
 }
 
 .dice-roll {
+    .dice-total {
+        &.critical {
+            background: $success;
+            border-color: $success;
+            color: $white1;
+        }
+
+        &.fumble {
+            background: $failure;
+            border-color: $failure;
+            color: $white1;
+        }
+    }
+
     .dice-row {
         gap: 5px;
     }
@@ -96,22 +109,28 @@
     }
 
     .dice-row {
+        margin-bottom: 3px;
+
         .failure, .success {
-            color: $white;
+            color: $white1;
         }
 
         .dice-total.success {
-            background: #418824;
-            border-color: #418824;
+            background: $success;
+            border-color: $success;
         }
 
         .dice-total.failure {
-            background: #cc2d2d;
-            border-color: #cc2d2d;
+            background: $failure;
+            border-color: $failure;
         }
 
         .mixed {
-            color: #596cf3;
+            color: $mixed-roll;
+        }
+
+        .red-crit-damage {
+            color: $success;
         }
     }
 }
@@ -141,7 +160,7 @@
 .die-result-overlay-br button, .xmidi-qol-flex-container button {
     background-color: $black3;
     border: none;
-    color: $white;
+    color: $white1;
     width: 30px;
     height: 30px;
 
@@ -169,12 +188,12 @@
 }
 
 .dice-tooltip .part-header .part-flavor {
-    color: $white;
+    color: $white1;
 }
 
 .chat-message.whisper {
-    background: #1c1d20;
-    border-color: rgba(78,101,126,.87)!important;
+    background: $whisper;
+    border-color: $whisperBorder!important;
 }
 
 .xmidi-qol-flex-container table {
@@ -183,11 +202,11 @@
 
 #chat-form textarea {
     background: $black3;
-    color: $white;
+    color: $white1;
 }
 
 #chat-controls .roll-type-select {
-    color: $white;
+    color: $white1;
     background: $black4;
 }
 

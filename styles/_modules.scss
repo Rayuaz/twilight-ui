@@ -32,7 +32,7 @@
 section.token-mold {
     margin-bottom: 5px;
     padding-bottom: 9px;
-    border-color: rgba(255,255,255,.5);
+    border-color: $black4L;
 }
 
 /* ----------------- */
@@ -50,7 +50,7 @@ section.token-mold {
 
 .dice-calculator__input-wrapper > textarea {
     font-size: 1.25rem;
-    color: $white;
+    color: $white1;
     font-family: 'Roboto';
     font-weight: 900;
     background: $black4;
@@ -125,10 +125,10 @@ section.token-mold {
     }
 
     &.dice-calculator--dark {
-        background-color: darken($black2, 3%);
+        background-color: $black1L;
 
         &:hover {
-            background-color: lighten(darken($black2, 3%), 5%);
+            background-color: $black1;
         }
     }
 }
@@ -408,8 +408,22 @@ section.token-mold {
                 padding: 0;
                 margin: 5px 0;
 
+                margin: 0;
+                padding: 10px;
+                border-radius: 5px;
+
+                &:not(:first-child) {
+                    margin-top: -5px;
+                }
+
+                &:hover {
+                    background: $black1L;
+                }
+
                 label {
                     margin: 0;
+                    font-weight: 500;
+                    color: $white1;
 
                     &.checkbox { // The properties checkboxes
                         background: var(--prepared);
@@ -428,7 +442,40 @@ section.token-mold {
                     }
                 }
             }
+        }
 
+        .tab.details .form-group {
+            &.stacked {
+                display: grid;
+                grid-gap: 10px;
+            }
+
+            &.spell-components,
+            &.weapon-properties {
+                display: flex;
+                gap: 1px;
+                padding-left: 145px;
+
+                label {
+                    text-align: start;
+
+                    &:not(.checkbox) {
+                        margin-left: -122px;
+                        padding-right: 10px;
+                        margin-right: 0;
+                        width: fit-content;
+                        flex: 0;
+                    }
+
+                    &.checkbox {
+                        flex: 0 0 calc(100% / 3 - 1px);
+                    }
+                }
+            }
+
+            &.spell-components label:not(.checkbox) {
+                padding-right: 15px;
+            }
         }
 
         //Damage section looks fucked up with display: flex
@@ -474,7 +521,7 @@ section.token-mold {
         .tab.effects .items-list .items-header h3 {
             font-size: 13px;
             padding: 5px;
-            color: $white;
+            color: $white1;
         }
 
     }   
@@ -548,7 +595,7 @@ section.token-mold {
         }
 
         h1, h2, h3, h4 {
-            color: $white;
+            color: $white1;
         }
     }
 
@@ -562,19 +609,31 @@ section.token-mold {
 }
 
 .tidy5e.sheet.item .sheet-body .editor .editor-content, .tidy5eDark .tidy5e.sheet.actor {
+
     a.entity-link, a.inline-roll, a.gmroll.inline-roll {
-        padding: 2px 5px;
-        background: $black4;
-        border-color: $black4L;
-        color: $white;
+        background: transparent;
+        border: none;
+        padding: 0;
+        color: $accent1;
+        display: inline-flex;
+        transition: all .1s ease-in-out;
+
+        i {
+            color: $accent1;
+            font-size: 75%;
+            align-self: center;
+            display: inline-block;
+            margin-right: 3px;
+            transition: all .1s ease-in-out;
+        }
     
         &:hover {
-            background: $black4L;
-        }
-    }
+            color: $accent1L;
 
-    a.gmroll.inline-roll {
-        background: #26282e;
+            i {
+                color: $accent1L;
+            }
+        }
     }
 }
 
@@ -603,28 +662,39 @@ section.token-mold {
     }
 }
 
-/* ---------------------------- */
-/* --- Automated Animations --- */
-/* ---------------------------- */
+// Settings window
 
-.audio-checkbox {
-    background-color: #292929;
-    padding: 5px 10px;
+.app.window-app.tidy5e.settings {
+    border: none;
 
-    button {
-        background-color: #363535;
-        height: 26px;
-        margin-bottom: 3px;
-        margin-left: 3px;
+    .window-content {
+        overflow: scroll;
     }
 
-    input[name="flags.autoanimations.allSounds.item.delay"], input[name="flags.autoanimations.allSounds.item.volume"], input[name="flags.autoanimations.allSounds.item.file"] {
-        background-color: #363535;
-    }
-}
+    .setting {
+        background: transparent;
+        position: relative;
+        padding: 10px;
+        border-radius: 10px;
 
-.audio-checkbox button:hover {
-    background-color: #3F3F3F;
+        &:hover {
+            background: $black1L;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 5%;
+            width: 90%;
+            height: 1px;
+            background: $black3;
+        }
+
+        .notes {
+            margin-bottom: 0;
+        }
+    }
 }
 
 /* --------------------------- */
@@ -650,7 +720,7 @@ section.token-mold {
         width: 1px;
         height: 15px;
         display: block;
-        background: rgba(255,255,255,.2);
+        background: $black4L;
         position: absolute;
         right: -2px;
         top: 10px;
@@ -684,6 +754,7 @@ section.token-mold {
 
         .tah-subcategory {
             display: block;
+            position: relative;
 
             &:not(:first-child) {
                 margin-top: 15px;
@@ -691,20 +762,17 @@ section.token-mold {
 
             .tah-subtitle {
                 font-weight: 900;
-                position: relative;
                 text-align: left;
                 padding: 0;
                 margin-bottom: 5px;
     
                 &:after {
                     content: '';
-                    position: absolute;
-                    height: 1px;
-                    width: 50%;
                     display: block;
-                    background: rgba(255,255,255,.2);
-                    top: calc(50% - 1px);
-                    left: 25%;
+                    height: 1px;
+                    width: 100%;
+                    margin-top: 3px;
+                    background: $black4L;
                 }
             }
 
@@ -780,9 +848,9 @@ section.token-mold {
 .tagify {
     --tag-bg: $black4;
     --tag-hover: $black4L;
-    --tag-text-color: $white;
-    --tag-text-color--edit: $white;
-    --placeholder-color: $white;
+    --tag-text-color: $white1;
+    --tag-text-color--edit: $white1;
+    --placeholder-color: $white1;
 }
 
 .token-action-hud-taginput {
@@ -791,14 +859,14 @@ section.token-mold {
     border-radius: 5px;
     margin-top: 5px;
     margin-bottom: 10px;
-    color: $white!important;
+    color: $white1!important;
 }
 
 #token-action-hud-index {
     background: $black3!important;
     border: none;
     border-radius: 5px;
-    color: $white!important;
+    color: $white1!important;
 }
 
 .tagify__tag>div {
@@ -810,7 +878,7 @@ section.token-mold {
 /* ------------------------- */
 
 #drawing-config .tab[data-tab="multilevel-tokens"] .form-header {
-    color: $white;
+    color: $white1;
     border: none;
     font-weight: 900;
     font-size: 1.25rem;
@@ -829,20 +897,20 @@ section.token-mold {
 
 .dnd5e.sheet, .tidy5e.sheet .crash-training {
     .activity-type {
-        color: $white;
+        color: $white1;
     }
     
     .activity-override {
-        color: $white;
+        color: $white1;
     }
     
     .items-list {
-        color: $white;
+        color: $white1;
     }
 }
 
 .tidy5eDark .tidy5e.sheet .crash-training .crash-training-controls div {
-    color: $white;
+    color: $white1;
 }
 
 .dnd5e.sheet .crash-training {
@@ -853,11 +921,11 @@ section.token-mold {
     .crash-training-controls div {
         border: none;
         background: $black3;
-        color: $white;
+        color: $white1;
 
         &:hover {
             text-shadow: none;
-            color: $white;
+            color: $white1;
             background: $black3L;
         }
     }
@@ -865,7 +933,7 @@ section.token-mold {
 
 form.crash-tracked-item-app {
     .form-header {
-        color: $white;
+        color: $white1;
         font-family: 'roboto';
         font-weight: 900;
         border: none;
@@ -873,7 +941,7 @@ form.crash-tracked-item-app {
     }
 
     .form-group label {
-        color: rgba(255,255,255,.7);
+        color: $white2;
     }
 }
 
@@ -896,7 +964,7 @@ form.crash-tracked-item-app {
         padding: 5px 10px;
         border-radius: 5px;
         background-color: $black3;
-        color: $white;
+        color: $white1;
         font-family: 'roboto';
         font-weight: 500;
         transition: all .15s ease-in-out;
@@ -909,7 +977,7 @@ form.crash-tracked-item-app {
 
         &:hover {
             background-color: $black3L;
-            color: $white;
+            color: $white1;
         }
 
         &.save {
@@ -935,7 +1003,7 @@ form.crash-tracked-item-app {
         box-shadow: none;
         border: none;
         background-color: $black3!important;
-        color: $white;
+        color: $white1;
         border-radius: 5px;
         margin: 0;
 
@@ -980,54 +1048,6 @@ form.crash-tracked-item-app {
                     background-color: $black4L;
                 }
             }
-
-            .moons {
-                right: 0;
-
-                .moon-phase {
-                    width: 10px;
-                    height: 10px;
-                    border-radius: 50%;
-                    position: relative;
-                    background-image: none;
-
-                    &:after {
-                        content: '';
-                        background-size: cover;
-                        display: block;
-                        position: absolute;
-                        width: 14px;
-                        height: 14px;
-                        top: -2px;
-                        left: -2px;
-                    }
-
-                    &.new:after {
-                        background-image: url("./img/simple-calendar/new.svg") ;
-                    }
-                    &.waxing-crescent:after {
-                        background-image: url("./img/simple-calendar/waxing-crescent.svg") ;
-                    }
-                    &.first-quarter:after {
-                        background-image: url("./img/simple-calendar/first-quarter.svg") ;
-                    }
-                    &.waxing-gibbous:after {
-                        background-image: url("./img/simple-calendar/waxing-gibbous.svg") ;
-                    }
-                    &.full:after {
-                        background-image: url("./img/simple-calendar/full.svg") ;
-                    }
-                    &.waning-gibbous:after {
-                        background-image: url("./img/simple-calendar/waning-gibbous.svg");
-                    }
-                    &.last-quarter:after {
-                        background-image: url("./img/simple-calendar/last-quarter.svg") ;
-                    }
-                    &.waning-crescent:after {
-                        background-image: url("./img/simple-calendar/waning-crescent.svg") ;
-                    }
-                }
-            }
             
         }
     }
@@ -1036,7 +1056,7 @@ form.crash-tracked-item-app {
 
     .time-display {
         background-color: $black3;
-        color: $white;
+        color: $white1;
         box-shadow: none;
         border: none;
         border-radius: 5px;
@@ -1060,7 +1080,7 @@ form.crash-tracked-item-app {
 
         .time-controls {
             background-color: transparent;
-            color: $white;
+            color: $white1;
             box-shadow: none;
             border-radius: 5px;
             padding-top: 0;
@@ -1096,7 +1116,7 @@ form.crash-tracked-item-app {
             position: relative;
             line-height: 1;
             transition: all .15s ease-in-out;
-            color: rgba(255,255,255,.7);
+            color: $white2;
 
             &:nth-child(2) {
                 border: none;
@@ -1110,11 +1130,11 @@ form.crash-tracked-item-app {
                 position: absolute;
                 top: 25%;
                 left: 0;
-                background-color: rgba(255,255,255,.7);
+                background-color: $white2;
             }
             
             &:hover {
-                background-color: $black3;
+                background-color: $highlight;
                 border-radius: 5px;
                 color: white;
 
@@ -1149,12 +1169,8 @@ form.crash-tracked-item-app {
             .note {
                 border: none;
 
-                &:nth-child(odd) {
-                    background-color: rgba(255,255,255,.02);
-                }
-
                 &:hover {
-                    background-color: $black3;
+                    background-color: $highlight;
                 }
             }
         }
@@ -1191,7 +1207,7 @@ form.crash-tracked-item-app {
 
         & > p:first-child {
             margin: 0;
-            color: rgba(255,255,255,.6);
+            color: $white2;
             font-size: 12px;
         }
 
@@ -1199,7 +1215,7 @@ form.crash-tracked-item-app {
             position: absolute;
             top: 0;
             right: 0;
-            color: rgba(255,255,255,.6);
+            color: $white2;
         }
 
         .edit-controls {
@@ -1230,7 +1246,7 @@ form.crash-tracked-item-app {
         .item.active,
         .item:hover {
             background-color: $black3L;
-            color: $white;
+            color: $white1;
             border: none;
             border-radius: 5px 5px 0 0;
         }
@@ -1238,18 +1254,19 @@ form.crash-tracked-item-app {
 
     .tab {
         background-color: $black2;
-        color: $white;
+        color: $white1;
         border: none;
 
         .form-group {
             display: flex;
+            border: none;
 
             label {
-                color: rgba(255,255,255,.8);
+                color: $white1;
             }
 
             p.notes, p.hint {
-                color: rgba(255,255,255,.6);
+                color: $white2;
             }
         }
 
@@ -1266,7 +1283,7 @@ form.crash-tracked-item-app {
                 box-shadow: none;
                 border: none;
                 padding: 0;
-                color: rgba(255,255,255,.6);
+                color: $white2;
                 
                 p {
                     font-size: .813rem;
@@ -1286,21 +1303,46 @@ form.crash-tracked-item-app {
             }
         }
 
-        .form-group {
-            border: none;
+        .settings-group {
+            div.form-group {
+                border: none;
+    
+                label {
+                    flex: 2;
+                    text-align: right;
+                }
+    
+                div.form-fields {
+                    flex: 3;
+                }
+            }
+        }
+
+        &[data-tab="generalSettings"].general-settings .settings-group {
+            label {
+                text-align: left;
+            }
+
+            .notes {
+                padding: 0;
+            }
         }
 
         .f-table {
             border: none;
 
             .row {
-                justify-content: space-between;
                 padding: 5px 40px;
                 width: calc(100% + 80px);
                 margin-left: -40px;
+                gap: 10px;
+
+                div {
+                    flex: 1;
+                }
 
                 &:nth-child(odd) {
-                    background-color: rgba(255,255,255,.02);
+                    background-color: $black2L;
                 }
                 
                 input, select {
@@ -1320,18 +1362,33 @@ form.crash-tracked-item-app {
 
                 .options {
                     padding: 0;
+                    flex: 0 0 100%;
 
                     h3 {
                         border: none;
                         margin-top: 20px;
                         font-weight: 900;
                     }
+
+                    div.form-group {
+                        border: none;
+            
+                        label {
+                            flex: 2;
+                            text-align: right;
+                        }
+            
+                        div.form-fields {
+                            flex: 3;
+                        }
+                    }
                 }
 
                 &.head {
                     background-color: transparent;
                     border: none;
-                    text-align: left;
+                    text-align: center;
+                    flex: 1;
                 }
             }
         }
@@ -1395,7 +1452,7 @@ form.crash-tracked-item-app {
                 dt {
                     padding: 0;
                     font-weight: 500;
-                    color: rgba(255,255,255,.7);
+                    color: $white2;
                 }
 
                 .multiselect {
@@ -1510,7 +1567,7 @@ form.crash-tracked-item-app {
 
     .feat-browser {
         #CBFeats .feat-tags {
-            color: rgba(255,255,255,.6);
+            color: $white2;
         }
     }
 
@@ -1519,7 +1576,7 @@ form.crash-tracked-item-app {
         grid-template-columns: 1fr 1fr 3fr;
 
         span {
-            color: rgba(255,255,255,.7);
+            color: $white2;
 
             &.type {
                 text-align: right;
@@ -1540,7 +1597,7 @@ form.crash-tracked-item-app {
         }
 
         label {
-            color: rgba(255,255,255,.7);
+            color: $white2;
             transition: all .15s ease-in-out;
 
             &:hover {
@@ -1589,7 +1646,7 @@ form.crash-tracked-item-app {
 
 
 div.CodeMirror {
-    background: rgba(255,255,255,.7);
+    background: $white2;
 }
 
 
@@ -1635,7 +1692,7 @@ div.CodeMirror {
 #soundboard-app {
     .btn {
         border-color: $black4;
-        color: $white;
+        color: $white1;
         border-radius: 5px;
     
         &:hover {
@@ -1644,7 +1701,7 @@ div.CodeMirror {
     }
 
     .notes {
-        color: rgba(255,255,255,.7)!important;
+        color: $white2!important;
 
         &.sb-warning {
             color: rgb(206, 81, 81)!important;
@@ -1675,7 +1732,7 @@ div.CodeMirror {
     #volume-container,
     .window-header,
     #toolbar {
-        background: darken($black2, 2%);
+        background: $black1L;
     }
 
     #toolbar {
@@ -1698,7 +1755,7 @@ div.CodeMirror {
 
     .soundboard-container .dropdown-menu {
         background: $black4;
-        color: $white;
+        color: $white1;
     }
 }
 
@@ -1707,7 +1764,7 @@ div.CodeMirror {
 
     .no-packs {
         text-shadow: none;
-        color: rgba(255,255,255,.6);
+        color: $white2;
     }
 }
 
@@ -1723,7 +1780,7 @@ div.CodeMirror {
 
     .items-list .items-header {
         border: none;
-        color: $white;
+        color: $white1;
         margin-bottom: 10px;
         
         h3 {
@@ -1743,13 +1800,13 @@ div.CodeMirror {
         margin-bottom: 15px;
 
         h4 {
-            color: $white;
+            color: $white1;
             font-weight: 500;
         }
     }
 
     select {
-        color: $white;
+        color: $white1;
         padding: 0 5px;
         border: none;
         background: $black3;
@@ -1771,7 +1828,7 @@ div.CodeMirror {
     }
 
     .request-grid > div {
-        color: rgba(255,255,255,.6);
+        color: $white2;
         border: none;
         padding: 3px 4px;
         transition: all .15s ease-in-out;
@@ -1780,7 +1837,7 @@ div.CodeMirror {
             box-shadow: none;
             border: none;
             background: $black3L;
-            color: $white;
+            color: $white1;
         }
     }
 }
@@ -1817,7 +1874,7 @@ div.CodeMirror {
         }
 
         i:hover {
-            color: $white;
+            color: $white1;
         }
     }
 }
@@ -1835,7 +1892,7 @@ div.CodeMirror {
         color: white!important;
 
         &:hover {
-            color: $white;
+            color: $white1;
         }
     }
 }
@@ -1854,11 +1911,11 @@ div.CodeMirror {
         h3 {
             font-family: 'roboto';
             font-weight: 900;
-            color: $white;
+            color: $white1;
     
             &:hover {
                 text-shadow: none;
-                color: $white;
+                color: $white1;
             }
         }
     }
@@ -1895,7 +1952,7 @@ div.CodeMirror {
     }
 
     .card-footer {
-        border-color: rgba(255,255,255,0.1);
+        border-color: $black4L;
 
         .grab-message {
             border: none;
@@ -1924,7 +1981,7 @@ div.CodeMirror {
 
                 i {
                     visibility: visible;
-                    color: $white;
+                    color: $white1;
                 }
 
                 &:hover {
@@ -1940,6 +1997,12 @@ div.CodeMirror {
             }
         }
     }
+}
+
+// Settings menu
+
+.monks-tokenbar.editstats .tt-menu {
+    background: $black4;
 }
 
 
@@ -1969,7 +2032,6 @@ div.CodeMirror {
 /* --- Party Overview --- */
 /* ---------------------- */
 
-
 #party-overview-button {
     margin-bottom: 5px;
 }
@@ -1978,7 +2040,7 @@ div.party-overview .table-row {
     border: none;
 
     &:nth-child(2n) {
-        background: rgba(255,255,255,.02);
+        background: $black2L;
     }
 
     .num span:first-child {
@@ -1995,6 +2057,18 @@ div.party-overview .table-row {
 
     .text {
         padding-left: 10px;
+    }
+}
+
+.dnd5e button.party-overview {
+    background: $black3;
+    border: none;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 5px;
+
+    &:hover {
+        background: $black3L;
     }
 }
 
@@ -2167,7 +2241,7 @@ div.party-overview .table-row {
     }
 
     .blank {
-        color: $white!important;
+        color: $white1!important;
         opacity: 1!important;
 
         & > div:last-child {
@@ -2353,8 +2427,126 @@ div.party-overview .table-row {
 /* --- Simultaneous Combat System --- */
 /* ---------------------------------- */
 
+
 #scsApp .window-content {
     @extend .app;
     border: none;
     padding: 1px;
+}
+
+
+/* --------------------- */
+/* --- Form Sections --- */
+/* --------------------- */
+
+
+.dnd5e, .tidy5e {
+    .sheet-body nav.form-tabs {
+        margin-top: 0;
+        gap: 5px;
+    }
+}
+
+/* ---------------- */
+/* --- Midi QoL --- */
+/* ---------------- */
+
+#midi-qol-settings .midi-qol-box {
+    font-size: 1.25rem;
+    font-weight: 900;
+    border: none;
+    border-bottom: 1px solid $black3L;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+
+    .midi-qol-faint {
+        color: $white2;
+        font-weight: 400;
+        font-size: .813rem;
+        padding-left: 40px;
+        padding-right: 40%;
+    }
+
+    label {
+        flex: 0 0 100%;
+        text-align: left;
+    }
+
+    .form-group {
+        padding-left: 40px;
+        position: relative;
+
+        &:after {
+            display: none;
+        }
+
+        .form-fields {
+            max-width: 60%;
+            
+            input[type="checkbox"] {
+                position: absolute;
+                top: 15px;
+                left: 10px;
+            }
+        }
+    }
+}
+
+
+/* ------------------ */
+/* --- Small Time --- */
+/* ------------------ */
+
+
+#client-settings.tui-form #smalltime-darkness-config {
+    flex: 0 1 auto;
+    margin-left: -33px;
+}
+
+
+/* --------------------- */
+/* --- Custom Hotbar --- */
+/* --------------------- */
+
+
+div#client-settings.tui-form {
+    div#chbSetDiv {
+        background: $accent2;
+        border: none;
+        border-radius: 10px 10px 0 0;
+        padding-left: 40px;
+
+        &:after {
+            display: none;
+        }
+
+        label {
+            padding: 0;
+        }
+    }
+
+    div#coreSetDiv {
+        background: $accent2;
+        border: none;
+        border-radius: 0 0 10px 10px;
+        padding-bottom: 10px;
+
+        &:after {
+            display: none;
+        }
+    }
+}
+
+
+/* --------------------- */
+/* --- Custom Hotbar --- */
+/* --------------------- */
+
+
+.polyglot-lang-select select {
+    background: $black3;
+
+    &:hover {
+        background: $black3L;
+    }
 }

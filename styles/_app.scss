@@ -27,7 +27,7 @@
 /* --- App Window --- */
 /* ------------------ */
 .app {
-    background: darken($black2, 2%);
+    background: $black1L;
 
     &#sidebar {
         background: $black1;
@@ -49,10 +49,10 @@
         transition: all .15s ease-in-out;
         font-weight: 500;
         border-radius: 0;
-        color: $white;
+        color: $white1;
+        align-items: center;
 
         &:hover {
-            box-shadow: $shadow;
             background: $black3L;
             text-shadow: none;
             border-radius: 5px 5px 0 0;
@@ -60,7 +60,6 @@
         }
 
         &.active {
-            box-shadow: $shadow;
             background: $black3L;
             text-shadow: none;
             border-radius: 5px 5px 0 0;
@@ -73,13 +72,12 @@
     }
 
     nav.sheet-tabs {
-        border-top: none;
+        border: none;
         height: fit-content;
-        border-color: $black3L;
-
-        &:first-child {
-            margin-top: -10px;
-        }
+        border-bottom: 1px solid $black3L;
+        margin-bottom: 0;
+        background: $black3;
+        border-radius: 5px 5px 0 0;
 
         .item {
             padding: 5px 0;
@@ -110,17 +108,13 @@
     }
 
     .notes {
-        color: $white;
+        color: $white2;
         margin-top: 0;
         padding: 5px 0;
         padding-bottom: 8px;
         margin-bottom: 15px;
         font-weight: 400;
         border: none;
-    }
-
-    input[type="checkbox"] {
-        justify-self: center;
     }
 
     .window-resizable-handle,
@@ -139,14 +133,10 @@
 
 .window-app .window-content, .tidy5e.sheet.actor .window-content {
     background: $black2;
-    color: $white;
+    color: $white1;
 }
 
 .dnd5e .form-group {
-    label {
-        color: var(--secondary-color);
-    }
-
     .form-fields button {
         border: none;
         background: $black3;
@@ -160,7 +150,7 @@
 // Hit Dice Window
 .window-app.hd-config {
     input.current, input.max {
-        color: $white;
+        color: $white1;
     }
 
     input {
@@ -200,6 +190,58 @@
         nav.tabs {
             border: none;
         }
+
+        #config-tabs {
+            border: none;
+        }
+
+        .module-header {
+            padding: 1em 0;
+        }
+    }
+
+    &.tui-form.form section.window-content {
+        .module-section {
+            border: none;
+            position: relative;
+
+            &:not(:last-child):after {
+                content: '';
+                background: $black3;
+                display: block;
+                position: absolute;
+                height: 1px;
+                width: 90%;
+                left: 5%;
+                bottom: 0;
+            }
+
+            h2.module-header {
+                padding: 10px;
+                font-size: 1.125rem;
+
+                &:before {
+                    color: $white3;
+                }
+
+                &:hover {
+                    background: $black2L;
+                    border-radius: 10px;
+
+                    &:before {
+                        color: $accent1;
+                    }
+                }
+            }
+
+            &.active .module-header:before {
+                color: $accent1;
+            }
+        }
+
+        .tab[data-tab="system"] .module-header {
+            padding-left: 40px;
+        }
     }
 }
 
@@ -209,19 +251,51 @@
 
 #client-settings.app.window-app.form #config-tabs {
     .settings-list h2.module-header span {
-        color: $white;
+        color: $white1;
         opacity: 0.5;
-    }
-
-    .tab[data-tab="modules"] .settings-list h2.module-header {
-        padding: 1em 0;
-        margin: 0;
     }
 }
 
 #module-management .package-list {
-    .package-title, .package-metadata, .package-description {
-        color: $white;
+    .package {
+        border: none;
+        position: relative;
+        padding: 5px 0;
+
+        &:hover {
+            background: $black2L;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            height: 1px;
+            width: 90%;
+            bottom: 0;
+            left: 5%;
+            background: $black3;
+        }
+
+        .package-title {
+            font-weight: 500;
+        }
+
+        .package-title,
+        .package-metadata,
+        .package-description {
+            color: $white1;
+        }
+    }
+}
+
+// Permission config
+
+#permissions-config li.permission {
+    border: none;
+    
+    .hint {
+        color: $white2;
+        font-weight: 400;
     }
 }
 
@@ -231,74 +305,110 @@
 
 form {
     button {
-        color: $white;
+        color: $white1;
         background: $black3;
         border: none;
-    }
-    
-    
+    }    
 
     .form-group, 
     .form-group-stacked {
-        margin: 6px 0;
+        margin: 0;
+        padding: 5px;
+        border-radius: 5px;
 
-        &:not(.submenu) {
-            display: grid;
-            grid-template-columns: 40% 60%;
-
-            & > *:last-child:nth-child(odd) {
-                grid-column: 1 / -1;
-            }
+        input[type="checkbox"] {
+            margin: 0;
         }
         
         label {
             font-size: 0.813rem;
-            font-weight: 700;
-            color: rgba(255,255,255,.7);
-        }
-
-        .form-fields {
-            justify-content: center;
-
-            & > label.checkbox {
-                align-items: center;
-                justify-content: center;
-                padding: 4px;
-            }
+            font-weight: 500;
+            color: $white1;
         }
 
         span.units {
-            color: rgba(255,255,255,.4);
+            color: $white3;
             font-weight: 400;
         }
     }
 
-    .form-group.stacked,
-    .form-group-stacked {
-        grid-template-columns: 1fr;
-    }
-
     .notes,
     .hint {
-        color: $white;
-        opacity: 0.6;
-        grid-column: 1/-1;
+        color: $white2;
         font-size: 0.813rem;
         font-weight: 500;
+    }
+
+    h1.form-header,
+    h2.form-header,
+    h3.form-header {
+        color: $white1;
+        border: none;
+        font-weight: 900;
+        
+        &:not(:first-child) {
+            margin-top: 20px;
+        }
     }
     
 }
 
-.window-app textarea {
-    background: $black3;
-    color: $white;
-    border: none;
+
+
+.app.tui-form .window-content {
+    padding-top: 5px;
+
+    .form-group {
+        padding-right: 10px;
+
+        &:hover {
+            background: $black1L;
+        }
+
+        &.has-checkbox {
+            &:hover,
+            label:hover {
+                cursor: pointer;
+            }
+        }
+
+        &:not(:last-child) {
+            border: none;
+            position: relative;
+    
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                height: 1px;
+                width: 90%;
+                bottom: 0;
+                left: 5%;
+                background: $black3;
+            }
+        }
+
+        &.has-checkbox:hover {
+            cursor: pointer;
+        }
+
+        .notes, .hint {
+            margin-top: 5px;
+        }
+    }    
 }
 
-// Override for the macro-sheet
+.sheet .tab > .notes:first-child {
+    background: $black3L;
+    padding: 5px;
+    border-radius: 0 0 5px 5px;
+    text-align: center;
+}
 
-.macro-sheet form .form-group {
-    display: flex;
+.window-app textarea {
+    background: $black3;
+    color: $white1;
+    border: none;
 }
 
 #drawing-config {
@@ -325,7 +435,7 @@ form {
 // Macro Window
 
 .macro-sheet .form-group.command .furnace-macro-command textarea {
-    color: $white;
+    color: $white1;
     -webkit-text-fill-color: unset;
 }
 
@@ -334,23 +444,8 @@ form {
 /* --------------------------- */
 
 .scene-sheet {
-    .form-header {
-        color: $white;
-        border: none;
-        font-weight: 900;
-        font-size: 1.25rem;
-
-        &:not(:first-child) {
-            margin-top: 40px;
-        }
-    }
-    
     .window-content {
         padding: 25px;
-    }
-    
-    .notes {
-        padding-top: 0;
     }
 }
 
@@ -486,26 +581,28 @@ form {
             transition: all .15s ease-in-out;
             border: none;
 
+            i {
+                text-shadow: none!important;
+            }
+
             &:hover {
-                box-shadow: $shadow;
                 background: $black3L;
                 border-radius: 5px 5px 0 0;
         
                 i {
                     text-shadow: none!important;
-                    color: $white;
+                    color: $white1;
                 }
             }
 
             &.active {
-                box-shadow: $shadow;
-                background: $black3L;
+                box-shadow: none;
+                background: $black4L;
                 border: none;
                 border-radius: 5px 5px 0 0;
         
                 i {
-                    color: $white;
-                    text-shadow: none!important;
+                    color: $white1;
                 }
             }
         }
@@ -595,7 +692,7 @@ form {
 .directory .directory-header .header-search input {
     background: $black4;
     border-color: transparent;
-    color: $white;
+    color: $white1;
 }
 
 .directory .action-buttons button {
@@ -708,7 +805,8 @@ form {
 #compendium li.compendium-pack {
     background: $black2;
     border-radius: 5px;
-    margin-bottom: 5px!important;
+    margin: 5px!important;
+    margin-top: 0!important;
     padding: 5px 10px!important;
 
     &:hover {
@@ -753,7 +851,7 @@ form {
     border-radius: 7px;
 
     .control-tools {
-        @extend #controls
+        @extend #controls;
     }
 
     .scene-control, .control-tool {
@@ -775,7 +873,7 @@ form {
 
         &.active, &:hover {
             border: none;
-            box-shadow: 0 0 3px #6f6f6f inset, 0 0 3px #6f6f6f inset, 0 0 3px #6f6f6f inset, 0 0 3px #6f6f6f inset;
+            box-shadow: $shadow;
             background: $black3L;
             border-radius: 7px;
         }
@@ -792,9 +890,11 @@ form {
 
         .control-tool.toggle {
             border: none;
-            box-shadow: 0 0 3px #9b8dff inset;
+            box-shadow: 0 0 3px $accent2L inset;
+            background: $accent2;
+
             &.active, &:hover {
-                box-shadow: 0 0 10px #9b8dff inset;
+                box-shadow: 0 0 10px $accent2L inset;
             }
         }
     }
@@ -822,6 +922,26 @@ form {
 
     div {
         margin: 0;
+    }
+
+    button {
+        padding: 5px;
+        margin: 0;
+        margin-bottom: 3px;
+
+        &[data-action="players"] {
+            margin-top: 20px;
+        }
+    }
+
+    div#combat-utility-belt {
+        
+
+        h4:first-child {
+            @extend h2;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
     }
 }
 
@@ -863,7 +983,7 @@ form {
                 right: 0;
                 font-size: 13px;
                 border-radius: 0 0 0 6px;
-                background: #0d0c0a;
+                background: $black1;
             }
 
             &.inactive {
@@ -927,7 +1047,7 @@ form {
                 &:hover:after {
                     border-radius: 6px;
                     box-shadow: $shadow;
-                    background: rgba(255,255,255,.1);
+                    background: $highlight;
                 }
             }
 
@@ -1010,18 +1130,16 @@ form {
 
         &.gm {
             border: none;
-            box-shadow: 0 0 3px #9b8dff inset;
-            background: #2e1846;
+            box-shadow: 0 0 3px $accent2L inset;
+            background: $accent2;
 
             &:hover {
-                box-shadow: 0 0 7px #9b8dff inset;
-                background: #49296b;
+                box-shadow: 0 0 10px $accent2L inset;
             }
 
             &.view,
             &.context {
-                box-shadow: 0 0 7px #9b8dff inset;
-                background: #49296b;
+                box-shadow: 0 0 10px $accent2L inset;
             }
         }
 
@@ -1047,7 +1165,7 @@ form {
     select, select option {
         background: $black3;
         border: none;
-        color: $white;
+        color: $white1;
     }
 }
 
@@ -1063,7 +1181,7 @@ form {
 
 .roll-table-config {
     textarea {
-        color: $white;
+        color: $white1;
         padding: 5px 10px;
     }
 

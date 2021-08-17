@@ -8,13 +8,13 @@ body,
 }
 
 ::selection {
-    background-color: #cce2ff;
+    background-color: $selection;
     color: $black1;
 }
 
 ::-webkit-scrollbar-track {
     box-shadow: none;
-    background: rgba(255,255,255,.02);
+    background: $black2L;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -48,17 +48,23 @@ input[type="date"],
 input[type="time"],
 select,
 select option {
-    color: $white;
+    color: $white1;
     background-color: $black3;
+    border: none;
 }
 
 input,
-textarea,
-select {
+textarea {
     &:hover, &:focus {
         background: $black3L;
         box-shadow: $shadow;
     }
+}
+
+select:hover,
+select:focus {
+    background: $black3L;
+    box-shadow: none;
 }
 
 input[type="checkbox"], 
@@ -71,7 +77,7 @@ input[type="range"] {
 }
 
 button {
-    color: $white;
+    color: $white1;
     background-color: $black3;
     border: none;
     font-family: 'roboto';
@@ -89,14 +95,13 @@ button {
 }
 
 input::placeholder {
-    color: rgba(255,255,255,.3);
+    color: $white3;
 }
 
 .form-group input:not([type="checkbox"]),
 .form-group select {
     border: none;
     padding: 5px 10px;
-    height: 100%;
     font-size: 0.813rem;
 }
 
@@ -127,7 +132,7 @@ input[type=range]::-webkit-slider-thumb {
     height: 16px;
     width: 16px;
     border-radius: 50%;
-    background: $white;
+    background: $white1;
     cursor: pointer;
     margin-top: -5.5px;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
@@ -154,6 +159,11 @@ input[type="range"] + .range-value {
 
 /* -------------- */
 
+hr {
+    border: none;
+    border-bottom: 1px solid $black3;
+}
+
 img {
     border: none;
     border-radius: 0;
@@ -168,14 +178,36 @@ label.checkbox:hover {
 }
 
 a.entity-link, a.inline-roll, a.gmroll.inline-roll {
-    background-color: $black3;
+        background: transparent;
+        border: none;
+        padding: 0;
+        color: $accent1;
+        display: inline-flex;
+        transition: all .1s ease-in-out;
 
-    &:hover {
-        text-shadow: none;
-        background: $black3L;
-    }
+        i {
+            color: $accent1;
+            font-size: 75%;
+            align-self: center;
+            display: inline-block;
+            margin-right: 3px;
+            transition: all .1s ease-in-out;
+        }
+    
+        &:hover {
+            color: $accent1L;
+            text-shadow: none;
+
+            i {
+                color: $accent1L;
+            }
+        }
 }
 
-a.gmroll.inline-roll {
-    background: #26282e;
+/* ------------------- */
+
+table {
+    tr:nth-child(even) {
+        background: $black2L;
+    }
 }

@@ -1,15 +1,61 @@
-$black1: #0d0c0a;
+body {
+    --tui-black1: #0d0c0a;
+    --tui-black1L: #141211;
+    --tui-black2: #191716;
+    --tui-black2L: #1E1C1B;
+    --tui-black3: #252423;
+    --tui-black3L: #2F2E2D;
+    --tui-black4: #363535;
+    --tui-black4L: #3F3F3F;
 
-$black2: #191716;
+    --tui-white1: rgba(255,255,255,.87);
+    --tui-white2: rgba(255,255,255,.6);
+    --tui-white3: rgba(255,255,255,.4);
+    --tui-highlight: rgba(255,255,255,.05);
 
-$black3: #252423;
-$black3L: #2F2E2D;
+    --tui-accent1: #f56d12;
+    --tui-accent1L: #ff9955;
+    --tui-accent2: #21122F;
+    --tui-accent2L: #9b8dff;
 
-$black4: #363535;
-$black4L: #3F3F3F;
+    --tui-success: #418824;
+    --tui-failure: #cc2d2d;
+    --tui-mixed-roll: #596cf3;
 
-$white: rgba(255,255,255,.87);
+    --tui-chat-message-whisper: #1c1d20;
+    --tui-chat-message-whisper-border: rgba(78,101,126,.87);
 
-$highlight: rgba(255,255,255,.05);
+    --tui-selection: #cce2ff;
 
-$shadow: 0 0 3px #6f6f6f inset, 0 0 3px #6f6f6f inset, 0 0 3px #6f6f6f inset, 0 0 3px #6f6f6f inset;
+    --tui-shadow: 0 0 3px #6f6f6f inset, 0 0 3px #6f6f6f inset, 0 0 3px #6f6f6f inset, 0 0 3px #6f6f6f inset;
+}
+
+$black1: var(--tui-black1);
+$black1L: var(--tui-black1L);
+$black2: var(--tui-black2);
+$black2L: var(--tui-black2L);
+$black3: var(--tui-black3);
+$black3L: var(--tui-black3L);
+$black4: var(--tui-black4);
+$black4L: var(--tui-black4L);
+
+$white1: var(--tui-white1);
+$white2: var(--tui-white2);
+$white3: var(--tui-white3);
+$highlight: var(--tui-highlight);
+
+$accent1: var(--tui-accent1);
+$accent1L: var(--tui-accent1L);
+$accent2: var(--tui-accent2);
+$accent2L: var(--tui-accent2L);
+
+$success: var(--tui-success);
+$failure: var(--tui-failure);
+$mixed-roll: var(--tui-mixed-roll);
+
+$whisper: var(--tui-chat-message-whisper);
+$whisperBorder: var(--tui-chat-message-whisper-border);
+
+$selection: var(--tui-selection);
+
+$shadow: var(--tui-shadow);

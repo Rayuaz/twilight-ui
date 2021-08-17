@@ -123,7 +123,7 @@ div.tox {
     }
 
     .tox-tbtn {
-        color: rgba(255,255,255,.5);
+        color: $white2;
         font-family: 'roboto';
         transition: all .15s ease-in-out;
         margin: 0;
@@ -132,7 +132,7 @@ div.tox {
 
         &__select-chevron svg,
         svg {
-            fill: rgba(255,255,255,.5);
+            fill: $white2;
         }
 
         &--enabled {
@@ -142,21 +142,21 @@ div.tox {
         &:hover {
             cursor: pointer;
             background: $black4L;
-            color: $white;
+            color: $white1;
 
             svg {
-                fill: $white;
+                fill: $white1;
             }
         }
 
         &:focus:not(.tox-tbtn--diabled) svg {
-            fill: $white;
+            fill: $white1;
         }
 
         &--select:focus {
             box-shadow: none!important;
             background: $black4!important;
-            color: $white!important;
+            color: $white1!important;
         }
         
     }
@@ -169,14 +169,14 @@ div.tox {
     }
 
     .tox-collection__item {
-        color: rgba(255,255,255,.5);
+        color: $white2;
 
         &-caret svg {
-            fill: rgba(255,255,255,.4);
+            fill: $white2;
         }
 
         &-accessory {
-            color: rgba(255,255,255,.2);
+            color: $white3;
         }
     } 
     
@@ -189,24 +189,24 @@ div.tox {
             background-color: $black4L;
     
             &:not(.tox-collection__item--state-disabled) {
-                color: $white;
+                color: $white1;
             }
         }
 
         .tox-collection__item--enabled {
             background-color: $black4L;
-            color: $white;
+            color: $white1;
             
             svg {
-                fill: $white;
+                fill: $white1;
             }
 
             &:hover {
                 background: $black4L;
-                color: $white;
+                color: $white1;
 
                 svg {
-                    fill: $white;
+                    fill: $white1;
                 }
             }
         }
@@ -221,7 +221,7 @@ div.tox {
                 width: 75%;
                 height: 1px;
                 display: block;
-                background: rgba(255,255,255,.2);
+                background: $white3;
                 position: absolute;
                 top: 0;
                 left: 12.5%;
@@ -245,7 +245,7 @@ div.tox {
 
         &__header {
             background-color: $black2;
-            color: $white;
+            color: $white1;
         }
 
         &__title {
@@ -259,7 +259,7 @@ div.tox {
         }
 
         &__body-nav-item {
-            color: $white;
+            color: $white1;
             background: $black3;
             padding: 5px 10px;
             border-radius: 5px;
@@ -276,7 +276,7 @@ div.tox {
     .tox-form__group--stretched .tox-textarea {
         background: $black3;
         border: none;
-        color: $white;
+        color: $white1;
 
         &:hover {
             background: $black3;
@@ -287,10 +287,10 @@ div.tox {
     .tox-button {
         background: $black3;
         border: none;
-        color: $white;
+        color: $white1;
 
         &--naked {
-            color: $white;
+            color: $white1;
         }
     
         &--secondary {
@@ -304,7 +304,7 @@ div.tox {
 
     .tox-label,
     .tox-toolbar-label {
-        color: $white;
+        color: $white1;
         font-weight: 500;
     }
 
@@ -313,7 +313,7 @@ div.tox {
     .tox-textfield,
     .tox-toolbar-textfield {
         background: $black3;
-        color: $white;
+        color: $white1;
 
         &:focus {
             background: $black3L;
@@ -321,7 +321,7 @@ div.tox {
     }
 
     .tox-listbox__select-chevron svg {
-        fill: $white;
+        fill: $white1;
     }
 
     .tox-form__grid--2col>.tox-form__group {
@@ -329,10 +329,10 @@ div.tox {
     }
 
     .tox-checkbox {
-        color: $white;
+        color: $white1;
 
         &__icons .tox-checkbox-icon__unchecked svg {
-            fill: $white;
+            fill: $white1;
         }
     }
 
