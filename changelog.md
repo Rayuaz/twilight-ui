@@ -1,5 +1,9 @@
 # Twilight UI Changelog
 
+## v1.07
+
+- Added basic support for Lib Themer
+
 ## v1.06
 
 - Tidied up the colors

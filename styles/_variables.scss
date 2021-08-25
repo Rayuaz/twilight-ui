@@ -27,34 +27,34 @@ body {
 
     --tui-selection: #cce2ff;
 
-    --tui-shadow: 0 0 3px #6f6f6f inset, 0 0 3px #6f6f6f inset, 0 0 3px #6f6f6f inset, 0 0 3px #6f6f6f inset;
+    --tui-shadow: 0 0 3px var(--tui-white2) inset;
 }
 
-$black1: var(--tui-black1);
-$black1L: var(--tui-black1L);
-$black2: var(--tui-black2);
-$black2L: var(--tui-black2L);
-$black3: var(--tui-black3);
-$black3L: var(--tui-black3L);
-$black4: var(--tui-black4);
-$black4L: var(--tui-black4L);
+$black1: var(--palette-app-background-dark, var(--tui-black1));
+$black1L: var(--palette-app-background, var(--tui-black1L));
+$black2: var(--palette-app-background-active, var(--tui-black2));
+$black2L: var(--palette-app-background-hover, var(--tui-black2L));
+$black3: var(--palette-dialog-background, var(--tui-black3));
+$black3L: var(--palette-dialog-background-hover, var(--tui-black3L));
+$black4: var(--palette-dialog-background-active, var(--tui-black4));
+$black4L: var(--palette-dialog-background-light, var(--tui-black4L));
 
 $white1: var(--tui-white1);
 $white2: var(--tui-white2);
 $white3: var(--tui-white3);
 $highlight: var(--tui-highlight);
 
-$accent1: var(--tui-accent1);
-$accent1L: var(--tui-accent1L);
-$accent2: var(--tui-accent2);
-$accent2L: var(--tui-accent2L);
+$accent1: var(--palette-primary, var(--tui-accent1));
+$accent1L: var(--palette-primary-light, var(--tui-accent1L));
+$accent2: var(--palette-secondary, var(--tui-accent2));
+$accent2L: var(--palette-secondary-light, var(--tui-accent2L));
 
-$success: var(--tui-success);
-$failure: var(--tui-failure);
-$mixed-roll: var(--tui-mixed-roll);
+$success: var(--palette-success, var(--tui-success));
+$failure: var(--palette-danger, var(--tui-failure));
+$mixed-roll: var(--palette-info, var(--tui-mixed-roll));
 
-$whisper: var(--tui-chat-message-whisper);
-$whisperBorder: var(--tui-chat-message-whisper-border);
+$whisper: var(--palette-app-background-light, var(--tui-chat-message-whisper));
+$whisperBorder: var(--palette-app-background-light, var(--tui-chat-message-whisper-border));
 
 $selection: var(--tui-selection);
 

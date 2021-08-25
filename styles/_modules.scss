@@ -2805,3 +2805,26 @@ div#client-settings.tui-form {
         }
     }
 }
+
+
+/* ------------------ */
+/* --- Lib Themer --- */
+/* ------------------ */
+
+
+#libThemerDialog {
+    .window-content {
+        nav ul li {
+            color: $white1;
+            font-size: .875rem;
+        }
+        
+        main {
+            background: $black2;
+
+            footer {
+                background: transparent;
+            }
+        }
+    }
+}
