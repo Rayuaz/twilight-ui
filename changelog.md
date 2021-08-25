@@ -6,13 +6,16 @@
 - Added CSS Variables
 - Redesigned the `.form-groups` to be easier to navigate trough the forms
 - Added a submodule to separate long form sections into tabs
+- Fixed `.control-tools` height.
 
 ### Module Compatibility
 
+- Sets Tidy 5e sheet's color scheme to dark
 - A few fixes for Simple Calendar
     - Removed the work-around-CSS from the moon icons
     - Changed the Simple Calendar settings styles
 - Did what I could to make the Midi QoL settings form not broken...
+- Added compatibility for Chat Reactions
 
 ### A bunch of minor tweaks:
 
@@ -26,6 +29,9 @@
 - Changed `.tab`s and `select`s styling to make it less ambiguous with `input[type="text"]`s
 - Fixed background color for Monk's Token Toolbar dropdown menus
 - Added styles for the settings tab and the manage modules window
+- Tweaked Small Time's background color to match the rest of the app
+- Changed `.roll-type-select`'s background color to match the other selects
+- Fixed Socket Settings' buttons styling
 
 ## v1.05
 
