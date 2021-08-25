@@ -16,7 +16,7 @@
         "scripts/module_compatibility.js"
     ],
     "styles": [
-        "twilight-ui.css"
+        "styles/twilight-ui.css"
     ],
     "dependencies": [
         {
