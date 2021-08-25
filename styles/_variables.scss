@@ -35,15 +35,15 @@ $black1L: var(--palette-app-background-light, var(--tui-black1L));
 $black2: var(--palette-dialog-background, var(--tui-black2));
 $black2L: var(--palette-dialog-background-light, var(--tui-black2L));
 
-$black3: var(--palette-dialog-background, var(--tui-black3));
-$black3L: var(--palette-dialog-background-light, var(--tui-black3L));
-$black4: var(--palette-dialog-background-active, var(--tui-black4));
-$black4L: var(--palette-dialog-background-light, var(--tui-black4L));
+$black3: var(--palette-primary, var(--tui-black3));
+$black3L: var(--palette-primary-light, var(--tui-black3L));
+$black4: var(--palette-dialog-darker, var(--tui-black4));
+$black4L: var(--palette-dialog-dark, var(--tui-black4L));
 
 $white1: var(--palette-dialog-background-contrast-text, var(--tui-white1));
 $white2: var(--palette-dialog-background-shaded-text, var(--tui-white2));
-$white3: var(--tui-white3);
-$highlight: var(--tui-highlight);
+$white3: var(--palette-app-background-contrast-text, var(--tui-white3));
+$highlight: var(--palette-dark, var(--tui-highlight));
 
 $accent1: var(--palette-primary, var(--tui-accent1));
 $accent1L: var(--palette-primary-light, var(--tui-accent1L));
@@ -57,6 +57,6 @@ $mixed-roll: var(--palette-info, var(--tui-mixed-roll));
 $whisper: var(--palette-app-background-light, var(--tui-chat-message-whisper));
 $whisperBorder: var(--palette-app-background-light, var(--tui-chat-message-whisper-border));
 
-$selection: var(--tui-selection);
+$selection: var(--palette-light, var(--tui-highlight));
 
 $shadow: var(--tui-shadow);
