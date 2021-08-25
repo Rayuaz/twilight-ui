@@ -1,12 +1,16 @@
-/*
- *  Tidy 5e Sheet
- */
-
 Hooks.on("ready", function() {
+
+    /*
+    *  Tidy 5e Sheet
+    */
 
     if (game.modules.get('tidy5e-sheet')?.active ?? false) {
         game.settings.set("tidy5e-sheet", "colorScheme", "dark");
     }
+
+    /*
+    *  Lib Themer
+    */
 
     if (game.modules.get('lib-themer')?.active ?? false) {
         game.modules.get('lib-themer').api.registerTheme('twiligh-ui', {
