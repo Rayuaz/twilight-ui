@@ -874,6 +874,11 @@
         }
 
         .sheet-body {
+
+            .sheet-tabs .item {
+                align-items: center;
+            }
+
             .form-item {
                 justify-content: center;
             }

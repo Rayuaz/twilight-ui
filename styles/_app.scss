@@ -852,6 +852,7 @@ form {
 
     .control-tools {
         @extend #controls;
+        height: auto;
     }
 
     .scene-control, .control-tool {

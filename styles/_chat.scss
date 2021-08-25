@@ -206,8 +206,7 @@
 }
 
 #chat-controls .roll-type-select {
-    color: $white1;
-    background: $black4;
+    @extend select;
 }
 
 .xmidi-qol-flex-container thead {

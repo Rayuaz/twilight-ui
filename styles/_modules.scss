@@ -386,6 +386,10 @@ section.token-mold {
         input[type="checkbox"]:checked {
             background-color: $black3;
         }
+
+        .sheet-tabs .item {
+            justify-content: center;
+        }
         
         //Properties sidebar
         .item-properties .properties-list li {
@@ -442,6 +446,103 @@ section.token-mold {
                     }
                 }
             }
+
+            h4.damage-header {
+                color: $white1;
+                font-weight: 500;
+                font-size: .813rem;
+                text-align: right;
+    
+                margin-right: 10px;
+                margin-top: 10px;
+                display: grid;
+                grid-template-columns: 4fr 6fr;
+                grid-gap: 20px;
+                justify-content: center;
+                align-items: center;
+    
+                a {
+                    width: calc(100% - 10px);
+                    text-align: center;
+                    background: $black3;
+                    color: $white1;
+                    border-radius: 5px;
+                    background: transparent;
+                    border: 2px dashed $black3L;
+                    transition: all .15s ease-in-out;
+                    padding: 5px 10px;
+    
+                    &:after {
+                        content: 'Add damage';
+                        margin-left: 5px;
+                        font-weight: 400;
+                        
+                    }
+    
+                    &:hover {
+                        text-shadow: none;
+                        background: $black3L;
+                        border-style: solid;
+                    }
+                }
+            }
+    
+            .damage-parts {
+                padding-right: 0;
+    
+                &:hover {
+                    background: transparent;
+                }
+    
+                .damage-part {
+                    display: grid;
+                    grid-gap: 5px;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-areas: 
+                        "dmg dmg"
+                        "ctx typ";
+                    padding: 10px 0;
+                    padding-left: calc(40% + 10px);
+                    padding-right: 10px;
+                    border-radius: 10px;
+                    position: relative;
+                    border: none;
+    
+                    &:not(:first-child) {
+                        margin-top: -10px;
+                    }
+        
+                    &:hover {
+                        background: $black1L;
+                    }
+        
+                    input {
+                        margin: 0!important;
+                    }
+        
+                    input:first-child {
+                        grid-area: dmg;
+                    }
+        
+                    .delete-damage {
+                        position: absolute;
+                        top: 10px;
+                        left: calc(40% - 30px);
+                        color: $white1;
+                        background: $black3;
+                        padding: 5px;
+                        width: auto;
+                        line-height: 1;
+                        border-radius: 4px;
+                        font-size: .75rem;
+    
+                        &:hover {
+                            text-shadow: none;
+                            background: $black3L;
+                        }
+                    }
+                }
+            }
         }
 
         .tab.details .form-group {
@@ -478,24 +579,6 @@ section.token-mold {
             }
         }
 
-        //Damage section looks fucked up with display: flex
-        .damage-parts {
-            display: block;
-
-            .damage-part input[type="text"]:first-child {
-                margin-right: 0;
-            }
-
-            .damage-part input[type="text"]:nth-child(2) {
-                margin: 0 5px;
-            }
-
-            li {
-                border: none;
-                margin-top: 4px;
-            }
-        }
-
         //Damage formula save DC
         .tab.details .form-group.input-select .form-fields input[name="data.save.dc"] {
             padding: 5px 0;
@@ -524,7 +607,11 @@ section.token-mold {
             color: $white1;
         }
 
+        
+
     }   
+
+    
 
 }
 
@@ -1107,42 +1194,61 @@ form.crash-tracked-item-app {
         .date-notes-header {
             border: none;
         }
-    
-        .note {
+
+        .note-list {
             border: none;
-            box-shadow: none;
-            background-color: transparent;
-            padding: 10px;
-            position: relative;
-            line-height: 1;
-            transition: all .15s ease-in-out;
-            color: $white2;
 
-            &:nth-child(2) {
+            .note {
                 border: none;
-            }
-            
-            &:before {
-                content: '';
-                display: block;
-                width: 3px;
-                height: 50%;
-                position: absolute;
-                top: 25%;
-                left: 0;
-                background-color: $white2;
-            }
-            
-            &:hover {
-                background-color: $highlight;
-                border-radius: 5px;
-                color: white;
-
-                &:before {
-                    background-color: white;
+                box-shadow: none;
+                background-color: transparent;
+                padding: 10px;
+                position: relative;
+                line-height: 1;
+                transition: all .15s ease-in-out;
+                color: $white2;
+    
+                &:nth-child(2) {
+                    border: none;
                 }
+                
+                &:before {
+                    content: '';
+                    display: block;
+                    width: 3px;
+                    height: 50%;
+                    position: absolute;
+                    top: 25%;
+                    left: 0;
+                    background-color: $white2;
+                }
+                
+                &:hover {
+                    background-color: $highlight;
+                    border-radius: 5px;
+                    color: white;
+    
+                    &:before {
+                        background-color: white;
+                    }
+                }
+
+                .note-details {
+                    .note-icon,
+                    .note-time,
+                    .note-category {
+                        box-shadow: none;
+                        border-radius: 5px;
+                    }
+                }
+
+                .sorting-dragger {
+                    box-shadow: none;
+                    border: none;
+                    background: $black2L;
+                }
+                
             }
-            
         }
     }
 
@@ -1199,32 +1305,31 @@ form.crash-tracked-item-app {
         height: auto;
     }
 
-    & > form {
-        position: relative;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
+    .note-category {
+        background: $black3;
+        box-shadow: none;
+        font-weight: 500;
+        padding: 5px 10px;
+        margin: 0;
+        margin-top: 5px;
+        transition: ease-in-out;
 
-        & > p:first-child {
-            margin: 0;
-            color: $white2;
-            font-size: 12px;
+        &:hover,
+        label:hover {
+            cursor: pointer;
         }
+    }
 
-        .note-author {
-            position: absolute;
-            top: 0;
-            right: 0;
-            color: $white2;
-        }
+    .note-details {
+        gap: 5px;
+    }
 
-        .edit-controls {
-            margin-top: 17px;
+    .edit-controls {
+        border-color: $black3L;
+    }
 
-            .control {
-                padding: 7px 30px;
-            }
-        }
+    .editor {
+        background: $black3;
     }
 }
 
@@ -2503,6 +2608,34 @@ div.party-overview .table-row {
     margin-left: -33px;
 }
 
+#smalltime-app {
+    opacity: 1;
+
+    #displayContainer,
+    #dateDisplay {
+        background: $black1L;
+    }
+
+    #dateDisplay {
+        border-radius: 0 0 5px 5px;
+        box-shadow: none;
+    }
+
+    .arrow {
+        background: $black3;
+        border: none;
+
+        &:hover {
+            border: none;
+            background: $black3L;
+        }
+    }
+
+    #dragHandle {
+        background: $black1L;
+    }
+}
+
 
 /* --------------------- */
 /* --- Custom Hotbar --- */
@@ -2538,15 +2671,137 @@ div#client-settings.tui-form {
 }
 
 
-/* --------------------- */
-/* --- Custom Hotbar --- */
-/* --------------------- */
+/* ---------------- */
+/* --- Polyglot --- */
+/* ---------------- */
 
 
-.polyglot-lang-select select {
-    background: $black3;
+.polyglot-lang-select {
+    align-items: center;
+    margin-bottom: 3px;
+    
+    label {
+        height: fit-content;
+    }
+
+    select {
+        background: $black3;
+    
+        &:hover {
+            background: $black3L;
+        }
+    }
+}
+
+
+/* ---------------------- */
+/* --- Chat Reactions --- */
+/* ---------------------- */
+
+// Reaction Rack
+#chatReactionRack .emoji-button {
+    box-shadow: none;
+    border: none;
+    background: $black1;
 
     &:hover {
+        background: $black3;
+    }
+}
+
+// Emoji Picker
+.emoji-picker__wrapper .emoji-picker {
+    background: $black2;
+    border: none;
+
+    &__search {
+        background: $black3;
+        border: none;
+        color: $white1;
+    }
+
+    &__category-button {
+        color: $white1;
+
+        &:hover {
+            background: $black3L;
+            border-radius: 5px;
+        }
+
+        &:focus {
+            box-shadow: none;
+        }
+
+        &.active {
+            color: $white1;
+            border-color: $white1;
+            background: $black3L;
+            border-radius: 5px;
+        }
+    }
+
+    h2.emoji-picker__category-name {
+        color: $white1;
+    }
+
+    &__emoji:hover {
         background: $black3L;
+        border-radius: 5px;
+    }
+
+    &__preview {
+        border-color: $black4;
+        
+        &-name {
+            color: $white1;
+        }
+    }
+}
+
+
+/* ----------------------- */
+/* --- Socket Settings --- */
+/* ----------------------- */
+
+
+.socket-settings-button {
+    background: $black3!important;
+    border: none;
+    padding: 5px 15px;
+
+    &:hover {
+        background: $black3L!important;
+    }
+}
+
+
+/* ---------------------- */
+/* --- Module Credits --- */
+/* ---------------------- */
+
+
+#moduleCreditsDialog {
+    p, li {
+        line-height: 1.4;
+    }
+
+    h3 {
+        font-weight: 900;
+    }
+
+    code {
+        font-size: .875rem;
+        background: $black4;
+    }
+
+    .window-content {
+        nav ul li {
+            color: $white1;
+            font-size: .875rem;
+        }
+        
+        main {
+            background: $black2;
+        }
     }
 }
