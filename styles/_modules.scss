@@ -2828,3 +2828,314 @@ div#client-settings.tui-form {
         }
     }
 }
+
+
+/* ------------------ */
+/* --- Soundscape --- */
+/* ------------------ */
+
+
+#soundscape_mixer .window-content {
+    padding: 5px;
+
+    .form-group {
+        padding: 0;
+    }
+
+    #SoundScape_mainColumn {
+        background: $black2!important;
+
+        > .form-group {
+            &:first-child {
+                button i {
+                    font-size: 1rem!important;
+                }
+
+                display: grid;
+                grid-template-columns: 1fr 1fr 5fr 1fr 1fr;
+                gap: 5px;
+                padding: 0 5px;
+
+                button,
+                div:nth-child(3) {
+                    max-width: none!important;
+
+                }
+
+                button[name="soundscapeConfig"] {
+                    order: 1;
+                }
+
+                button[name="prevSoundscape"] {
+                    order: 2;
+                }
+
+                div:nth-child(3) {
+                    order: 3;
+                    font-weight: 900;
+                    font-size: 1.25rem!important;
+                    align-items: center;
+                    padding-left: 5px;
+
+                    input {
+                        background: transparent;
+                        font-weight: 500;
+                        margin-right: 27px;
+                        margin-left: 5px;
+
+                        &:hover {
+                            background: $black3L;
+                        }
+                    }
+                }
+
+                button[name="nextSoundscape"] {
+                    order: 4;
+                }
+
+                button[name="soundboardEnable"] {
+                    order: 5;
+                }
+            }
+
+            &:nth-child(2) {
+                margin-top: 13px;
+            }
+        }
+
+        .boxed,
+        .masterBox {
+            border: none;
+            display: flex;
+            flex-direction: column;
+
+            &:hover {
+                background: $black1L;
+            }
+
+            hr {
+                display: none;
+            }
+
+            input[name="panSlider"] {
+                margin-bottom: 10px;
+                margin-top: 5px;
+
+                &::-webkit-slider-thumb {
+                    width: 12px;
+                    height: 12px;
+                    margin-top: -3.5px;
+                }
+            }
+
+            button {
+                margin: 0;
+                align-self: center;
+                left: auto;
+                margin-bottom: 3px;
+
+                div {
+                    font-size: .813rem!important;
+                    text-align: center;
+                    left: auto;
+                    bottom: auto;
+                    line-height: 1;
+                }
+
+                &.FXButton {
+                    margin-bottom: 10px;
+                }
+
+                &.configButton {
+                    font-size: .813rem;
+                    justify-content: center;
+                    align-items: center;
+                    display: flex;
+
+                    i {
+                        margin: 0;
+                    }
+                }
+
+                
+            }
+
+            input[name="volumeNumber"] {
+                padding: 0;
+            }
+
+            .sliderBox {
+                margin: 0;
+                margin-left: calc(50% - 1px);
+            }
+
+            input[name="volumeNumber"] {
+                max-width: 100%!important;
+                width: 100%;
+            }
+
+            .nameDiv {
+                margin-left: 4px;
+            }
+
+            .boxNumber {
+                font-weight: 900;
+                margin-top: 5px;
+                font-size: 1rem!important;
+            }
+
+            button[name="playSound"] {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                i {
+                    font-size: .75rem;
+                    position: static;
+                    margin: 0;
+                    margin-left: 2px;
+                }
+            }
+        }
+
+        .masterBox {
+            background: $black1L;
+            padding-top: 20px;
+
+            .nameDiv {
+                display: flex;
+                align-items: center;
+                margin: 0;
+                margin-left: 2px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    #SoundScape_soundboardColumn {
+        .sbButton {
+            background: $black2L;
+            border-radius: 5px;
+            padding: 0;
+            position: relative;
+
+            &:hover {
+                border-radius: 10px;
+                filter: brightness(1.5);
+            }
+        }
+
+        .sbButtonLabel {
+            border: none;
+            transition: all .15s ease-in-out;
+            position: relative;
+            font-size: .75rem;
+
+            &:after {
+                content: '+';
+                position: absolute;
+                left: calc(50% - 3px);
+                top: calc(50% - 9px);
+                display: block;
+                color: $white1;
+                font-weight: 900;
+                opacity: 0;
+                transition: all .15s ease-in-out;
+            }
+
+            &:hover {
+                background: $black3L;
+                
+
+                &:after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+// Dialog Windows
+
+#soundscape_soundboardConfig,
+#soundscape_soundConfig,
+#soundscape_soundscapeConfig {
+    button[name="submit"] {
+        margin-top: 10px;
+    }
+
+    sblabel {
+        display: flex;
+        align-items: center;
+    }
+}
+
+#soundscape_soundConfig table {
+    border: none;
+    
+    tr {
+        background: transparent;
+    }
+
+    &:first-child {
+        margin-bottom: 20px;
+    }
+}
+
+#soundscape_soundscapeConfig {
+    .ssConfigTab {
+        border: none;
+    }
+
+    table {
+        border: none;
+        margin-bottom: 20px;
+    }
+
+    .ssConfigTabContent > div {
+        gap: 5px;
+
+        &:last-child {
+            margin-top: 5px;
+        }
+
+        button {
+            margin: 0;
+        }
+    }
+}
+
+#soundscape_fxConfig {
+    .window-content form > div{
+        width: 100%!important;
+
+        > div:nth-child(2) {
+            margin: auto;
+            width: 600px!important;
+        }
+
+        h3 {
+            font-weight: 900;
+            font-size: 1.25rem;
+        }
+    }
+    
+    .fxItem {
+        margin-bottom: 5px;
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+
+        .fxColumn {
+            margin: 0;
+            width: 100%!important;
+
+            h3 {
+                font-weight: 700;
+            }
+        }
+    }
+}

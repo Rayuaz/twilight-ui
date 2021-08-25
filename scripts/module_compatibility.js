@@ -1,3 +1,7 @@
+/*
+ *  Tidy 5e Sheet
+ */
+
 Hooks.on("ready", function() {
 
     const hasTidySheet = game.modules.get('tidy5e-sheet')?.active;

@@ -161,7 +161,7 @@ input[type="range"] + .range-value {
 
 hr {
     border: none;
-    border-bottom: 1px solid $black3;
+    border-bottom: 1px solid $black4;
 }
 
 img {
@@ -208,6 +208,10 @@ a.entity-link, a.inline-roll, a.gmroll.inline-roll {
 
 table {
     tr:nth-child(even) {
-        background: $black2L;
+        background: $black1L;
     }
+}
+
+body canvas {
+    border: none;
 }
