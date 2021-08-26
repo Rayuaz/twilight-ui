@@ -1,5 +1,9 @@
 # Twilight UI Changelog
 
+## v1.10
+
+- Added compatibility for Damage Logs
+
 ## v1.09
 
 - Changed the background color for death save successes and failures

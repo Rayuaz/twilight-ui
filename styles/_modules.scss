@@ -3151,9 +3151,9 @@ div#client-settings.tui-form {
 }
 
 
-/* -------------------- */
+/* ------------------- */
 /* --- Module Sets --- */
-/* -------------------- */
+/* ------------------- */
 
 
 #settings .ms2t-switch-container {
@@ -3167,5 +3167,80 @@ div#client-settings.tui-form {
 
     h2 {
         margin: 0;
+    }
+}
+
+
+/* ------------------- */
+/* --- Damage Logs --- */
+/* ------------------- */
+
+
+#damage-log .message.damage-log {
+    background: $black2;
+    border-color: $black4!important;
+
+    img {
+        border: none!important;
+    }
+
+    table {
+        border: none;
+        margin-bottom: 0;
+        border-radius: 5px;
+
+        tr {
+            background: transparent;
+        }
+
+        th:first-child,
+        td:first-child {
+            display: none;
+        }
+
+        .num {
+            text-align: center;
+        }
+    }
+
+    &.damage,
+    &.healing {
+        background: $black2;
+    }
+
+    &.damage {
+        table {
+            background: $failure;
+        }
+    }
+
+    &.healing {
+        table {
+            background: $success;
+        }
+    }
+}
+
+// Navbar
+
+nav.damage-log-nav.tabs {
+    border-color: $black4;
+    box-shadow: none;
+
+    .item {
+        transition: all .15s ease-in-out;
+        
+        &:hover {
+            text-shadow: none;
+            background: $black3L;
+            border-radius: 5px 5px 0 0;
+        }
+
+        &.active {
+            border: none;
+            box-shadow: none;
+            text-shadow: none;
+            background: $black4;
+        }
     }
 }
