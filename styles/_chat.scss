@@ -80,6 +80,16 @@
             border-color: $failure;
             color: $white1;
         }
+
+        &.success {
+            background: $success;
+            border: none;
+        }
+
+        &.failure {
+            background: $failure;
+            border: none;
+        }
     }
 
     .dice-row {

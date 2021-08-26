@@ -155,14 +155,24 @@ section.token-mold {
         font-size: 12px;
     }
 
-    .header-attributes .ac-display .value {
-        font-family: 'Roboto Condensed';
-        font-weight: 900;
-        font-size: 34px;
-        letter-spacing: -3px;
-        text-align: center;
-        margin-left: -2px;
-        padding: 0;
+    .header-attributes .ac-display {
+        .config-button {
+            font-family: 'Roboto Condensed';
+            font-weight: 900;
+            font-size: 34px;
+            letter-spacing: -3px;
+            text-align: center;
+            margin-left: -5px;
+            padding: 0;
+        }
+
+        .attribute-value .property-attribution {
+            background: $black2;
+
+            table tr:nth-child(even) {
+                background: transparent;
+            } 
+        }
     }
 
     .attribute-name {
@@ -3137,5 +3147,25 @@ div#client-settings.tui-form {
                 font-weight: 700;
             }
         }
+    }
+}
+
+
+/* -------------------- */
+/* --- Module Sets --- */
+/* -------------------- */
+
+
+#settings .ms2t-switch-container {
+    align-items: center;
+    margin-top: 20px;
+
+    .ms2t-switch {
+        margin: 0;
+        margin: 0 10px;
+    }
+
+    h2 {
+        margin: 0;
     }
 }

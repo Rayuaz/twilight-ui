@@ -1,5 +1,16 @@
 # Twilight UI Changelog
 
+## v1.09
+
+- Changed the background color for death save successes and failures
+- Fixed Tidy 5e AC display
+- Fixed some weirdness with Module Sets
+
+## v1.08
+
+- Added proper support for Lib Themer
+- Added support for Soundscapes
+
 ## v1.07
 
 - Added basic support for Lib Themer
