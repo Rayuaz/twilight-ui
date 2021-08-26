@@ -27,7 +27,7 @@ body {
 
     --tui-selection: #cce2ff;
 
-    --tui-shadow: 0 0 3px var(--tui-white2) inset;
+    --tui-shadow: 0 0 3px var(--palette-dialog-background-shaded-text, var(--tui-white2)) inset;
 }
 
 $black1: var(--palette-app-background, var(--tui-black1));
@@ -57,6 +57,6 @@ $mixed-roll: var(--palette-info, var(--tui-mixed-roll));
 $whisper: var(--palette-app-background-light, var(--tui-chat-message-whisper));
 $whisperBorder: var(--palette-app-background-light, var(--tui-chat-message-whisper-border));
 
-$selection: var(--palette-light, var(--tui-highlight));
+$selection: var(--palette-light, var(--tui-selection));
 
 $shadow: var(--tui-shadow);
