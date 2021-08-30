@@ -1,7 +1,7 @@
 .chat-message {
     background: $black2;
     color: $white1;
-    border-color: $black4!important;
+    border-color: $black4;
     font-family: 'Roboto';
 
     .message-header {
@@ -203,7 +203,7 @@
 
 .chat-message.whisper {
     background: $whisper;
-    border-color: $whisperBorder!important;
+    border-color: $whisperBorder;
 }
 
 .xmidi-qol-flex-container table {

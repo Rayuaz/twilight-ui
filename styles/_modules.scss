@@ -3178,7 +3178,7 @@ div#client-settings.tui-form {
 
 #damage-log .message.damage-log {
     background: $black2;
-    border-color: $black4!important;
+    border-color: $black4;
 
     img {
         border: none!important;
@@ -3242,5 +3242,84 @@ nav.damage-log-nav.tabs {
             text-shadow: none;
             background: $black4;
         }
+    }
+}
+
+
+/* -------------------- */
+/* --- Dice So Nice --- */
+/* -------------------- */
+
+// Dropdown menus from the settings window
+
+.dice-so-nice {
+    .sfxs-list .sfx {
+        border: none;
+        gap: 10px;
+    }
+
+    .select2-container {
+        &--open .select2-dropdown--below {
+            max-width: 280px!important;
+        }
+
+        &--default.select2-container--focus .select2-selection--multiple {
+            box-shadow: none;
+            border: none;
+        }
+
+        &--default {
+            .select2-selection--multiple {
+                border: none;
+                background: $black3;
+                transition: all .15s ease-in-out;
+            
+                &:hover {
+                    background-size: $black3L;
+                    box-shadow: $shadow;
+                }
+    
+                .select2-selection__choice {
+                    background: $black4;
+                    border: none;
+    
+                    &__remove {
+                        border-radius: 0;
+                        border-color: $black4L;
+    
+                        &:hover {
+                            background: $black4L;
+                            color: $white1;
+                        }
+                    }
+                }
+            }
+
+            .select2-results__option {
+                background: $black3;
+
+                &:first-child {
+                    border-radius: 3px 3px 0 0;
+                }
+
+                &:last-child {
+                    border-radius: 0 0 3px 3px;
+                }
+        
+                &--selected {
+                    background: $black4;
+                }
+
+                &--highlighted.select2-results__option--selectable {
+                    background: $black4L;
+                }
+            }
+        }
+    }    
+
+    .select2-dropdown {
+        background: $black1;
+        color: $white1;
+        border: none;
     }
 }
