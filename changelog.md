@@ -1,5 +1,15 @@
 # Twilight UI Changelog
 
+## v1.12
+
+- Added colored message sender names in chat
+- Removed !important from message borders
+- Fixed dropdown menu styles in Dice So Nice settings
+
+## v1.11
+
+- Fixed text selection background color
+
 ## v1.10
 
 - Added compatibility for Damage Logs
