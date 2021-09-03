@@ -1,5 +1,9 @@
 # Twilight UI Changelog
 
+## v1.13
+
+- Hotfix for the squashed controls tab
+
 ## v1.12
 
 - Added colored message sender names in chat
@@ -64,7 +68,7 @@
 
 ## v1.05
 
--Fixed the background color on Simultaneous Combat System's window.
+- Fixed the background color on Simultaneous Combat System's window.
 
 ## v1.04
 
