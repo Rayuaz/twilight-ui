@@ -1,5 +1,10 @@
 # Twilight UI Changelog
 
+## v1.15
+
+- Optimized the file picker previews for large images
+- Added previews for `.webm`s
+
 ## v1.14
 
 - Revamped the file picker

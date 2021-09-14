@@ -630,6 +630,10 @@ form {
                 opacity: .4;
             }
 
+            video {
+                width: 100%;
+            }
+
             &.picked {
                 font-weight: 400;
                 background: $black3L;
