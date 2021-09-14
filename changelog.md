@@ -1,5 +1,17 @@
 # Twilight UI Changelog
 
+## v1.14
+
+- Revamped the file picker
+- Fixed the height of items in the scene list bar on smaller screens
+- Reverted `.header-actions` to `display: flex`
+- Discovered the existance of the Controls Reference window
+- Fixed Tidy 5e module list exporter background color
+- Fixed DAE configuration window (there's still some stuff left to do, but it won't make your eyes bleed anymore)
+- Fixed Bulk Tasks
+- Changed Enhanced Terrain Layer tools styles
+- Fixed styles for compendium folders inside other compendium folders
+
 ## v1.13
 
 - Hotfix for the squashed controls tab

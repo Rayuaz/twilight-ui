@@ -8,13 +8,14 @@
         "email": "alan@tpk.gg",
         "discord": "Sua mãe, Aquela Católica#2512"
     },
-    "version": "1.13",
+    "version": "1.14",
     "minimumCoreVersion": "0.8.8",
     "compatibleCoreVersion": "0.8.9",
     "scripts": [
         "scripts/tinymce_handler.js",
         "scripts/module_compatibility.js",
-        "scripts/colored_message_sender.js"
+        "scripts/colored_message_sender.js",
+        "scripts/file_picker_preview.js"
     ],
     "styles": [
         "twilight-ui.css"

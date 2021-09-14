@@ -759,6 +759,10 @@ section.token-mold {
     }
 }
 
+/* ------------------------ */
+/* --- Tidy 5e Settings --- */
+/* ------------------------ */
+
 // Settings window
 
 .app.window-app.tidy5e.settings {
@@ -792,6 +796,12 @@ section.token-mold {
             margin-bottom: 0;
         }
     }
+}
+
+// Modules window
+
+#module-management #importExportModal #modalIO {
+    background: $black4;
 }
 
 /* --------------------------- */
@@ -3321,5 +3331,251 @@ nav.damage-log-nav.tabs {
         background: $black1;
         color: $white1;
         border: none;
+    }
+}
+
+
+/* ----------- */
+/* --- DAE --- */
+/* ----------- */
+
+
+// Effects list
+
+div[id^='ActiveEffects-'] {
+    
+    div {
+        border: none!important;
+    };
+
+    .dnd5e.sheet {
+
+        > div {
+            display: flex;
+            justify-content: center;
+        }
+
+        .effect-header {
+            border: none;
+        }
+        
+        .filter-list {
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 10px;
+
+            .filter-item {
+                border-radius: 5px;
+                background: $accent2;
+                box-shadow: 0 0 3px inset $accent2L;
+                transition: all .15s ease-in-out;
+
+                &.active,
+                &:hover {
+                    box-shadow: 0 0 8px inset $accent2L;
+                    border-radius: 7px;
+                }
+            }
+        }       
+
+        .dae-effect-list {
+            > .flexrow:not(:first-child) {
+                background: $black3;
+                margin: 0;
+                padding: 5px;
+
+                &.effect-header {
+                    margin-top: 10px;
+                    border-radius: 5px 5px 0 0;
+                    align-items: center;
+
+                    .effect-label {
+                        align-items: center;
+                        display: flex;
+                        gap: 5px;
+                        line-height: 20px;
+                    }
+
+                    i {
+                        padding-top: 0!important;
+                    }
+
+                    div {
+                        line-height: 20px;
+                    }
+
+                    .effect-controls a {
+                        transition: all .15s ease-in-out;
+
+                        i {
+                            color: $white3;
+                            transition: all .15s ease-in-out;
+                        }
+
+                        &:hover {
+                            text-shadow: none;
+                            background: $black3L;
+                            border-radius: 3px;
+
+                            i {
+                                color: $white1;
+                            }
+                        }
+                    }
+                }
+
+                &.dae-change-list {
+                    border-radius: 0 0 5px 5px;
+                    padding-top: 0;
+
+                    div {
+                        color: $white2;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+// Effect Config
+
+div[id^='ActiveEffectsConfig-'] {
+    .sheet-tabs {
+        gap: 5px;
+    }
+
+    section[data-tab="duration"] {
+        > div:last-child {
+            border: 1px solid $black4!important;
+            border-radius: 5px;
+        }
+    }
+
+    section[data-tab="effects"] {
+        header {
+            border: none;
+        }
+
+        li.effect-change {
+            gap: 5px;
+            border: none;
+
+            &:not(:first-child) {
+                margin-top: 10px;
+                padding-top: 10px;
+                border-top: 1px solid $black4;
+            }
+
+            > .formgroup {
+                display: flex;
+                gap: 5px;
+                flex-direction: column;
+
+                select {
+                    padding: 0 5.5px;
+                }
+            }
+
+            .mode {
+                display: flex;
+                justify-content: center;
+            }
+
+            textarea {
+                min-height: 0;
+            }
+        }
+    }
+}
+
+
+/* ------------------------ */
+/* --- Argon Combat HUD --- */
+/* ------------------------ */
+
+
+.ech-swords {
+    width: 30px;
+    height: 30px;
+}
+
+
+/* ------------------ */
+/* --- Bulk Tasks --- */
+/* ------------------ */
+
+
+#bulk-tasks-menu {
+    hr {
+        display: none;
+    }
+
+
+    
+    .bulk-display {
+        border: none;
+        padding: 0;
+        margin: 0;
+        padding-right: 20px;
+
+        .bm-collapsable {
+            border: none;
+            background: $black3;
+            border-radius: 5px 5px 0 0;
+            margin-bottom: 0;
+            margin-top: 10px;
+            padding: 5px;
+            transition: all .15s ease-in-out;
+
+            &:hover {
+                background: $black3L;
+            }
+        }
+
+        .bm-content {
+            background: $black3;
+            padding: 5px;
+            border-radius: 0 0 5px 5px;
+            width: calc(100% + 10px);
+        }
+
+        
+    }
+}
+
+
+/* ------------------------------ */
+/* --- Enhanced Terrain Layer --- */
+/* ------------------------------ */
+
+
+#terrainlayer-tools-form {
+    .control-tool {
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 0;
+        margin: 0;
+        box-shadow: none;
+
+        @extend button;
+        font-size: 1.25rem;
+        background: $black4;
+
+        &#tl-inc-cost {
+            border-radius: 5px 5px 0 0;
+        }
+
+        &#tl-dec-cost {
+            border-radius: 0 0 5px 5px;
+        }
+
+        &:hover {
+            border: none;
+            background: $black4L;
+            box-shadow: $shadow;
+            border-radius: 5px;
+        }
     }
 }
