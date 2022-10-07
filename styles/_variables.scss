@@ -1,62 +1,154 @@
-body {
-    --tui-black1: #0d0c0a;
-    --tui-black1L: #141211;
-    --tui-black2: #191716;
-    --tui-black2L: #1E1C1B;
-    --tui-black3: #252423;
-    --tui-black3L: #2F2E2D;
-    --tui-black4: #363535;
-    --tui-black4L: #3F3F3F;
+$primary1: var(--tui-primary1);
+$primary1L: var(--tui-primary1L);
+$primary2: var(--tui-primary2);
+$primary2L: var(--tui-primary2L);
+$primary3: var(--tui-primary3);
+$primary3L: var(--tui-primary3L);
+$primary4: var(--tui-primary4);
+$primary4L: var(--tui-primary4L);
 
-    --tui-white1: rgba(255,255,255,.87);
-    --tui-white2: rgba(255,255,255,.6);
-    --tui-white3: rgba(255,255,255,.4);
-    --tui-highlight: rgba(255,255,255,.05);
+$secondary1: var(--tui-secondary1);
+$secondary1L: var(--tui-secondary1L);
+$secondary2: var(--tui-secondary2);
+$secondary2L: var(--tui-secondary2L);
+$secondary3: var(--tui-secondary3);
+$secondary3L: var(--tui-secondary3L);
+$secondary4: var(--tui-secondary4);
+$secondary4L: var(--tui-secondary4L);
 
-    --tui-accent1: #f56d12;
-    --tui-accent1L: #ff9955;
+$accent1: var(--tui-accent1);
+$accent1L: var(--tui-accent1L);
+$accent2: var(--tui-accent2);
+$accent2L: var(--tui-accent2L);
+
+$positive: var(--tui-positive);
+$negative: var(--tui-negative);
+$warning: var(--tui-warning);
+$info: var(--tui-info);
+
+// $chat-message-whisper: #1c1d20;
+// $chat-message-whisper-border: rgba(78,101,126,.87);
+
+// $selection: #cce2ff;
+
+// $shadow: 0 0 3px var(--palette-dialog-background-shaded-text, var(--tui-white2)) inset;
+
+:root {
+    --tui-primary1: #0d0c0a;
+    --tui-primary1L: #141211;
+    --tui-primary2: #191716;
+    --tui-primary2L: #1E1C1B;
+    --tui-primary3: #252423;
+    --tui-primary3L: #2F2E2D;
+    --tui-primary4: #363535;
+    --tui-primary4L: #3F3F3F;
+
+    --tui-secondary1: rgba(255, 255, 255, 1);
+    --tui-secondary1L: rgba(255, 255, 255, .87);
+    --tui-secondary2: rgba(255, 255, 255, .6);
+    --tui-secondary2L: rgba(255, 255, 255, .4);
+    --tui-secondary3: rgba(255, 255, 255, .32);
+    --tui-secondary3L: rgba(255, 255, 255, .25);
+    --tui-secondary4: rgba(255, 255, 255, .12);
+    --tui-secondary4L: rgba(255, 255, 255, .05);
+
+    --tui-accent1: #f87a26;
+    --tui-accent1L: #f8a221;
     --tui-accent2: #21122F;
     --tui-accent2L: #9b8dff;
 
-    --tui-success: #418824;
-    --tui-failure: #cc2d2d;
-    --tui-mixed-roll: #596cf3;
-
-    --tui-chat-message-whisper: #1c1d20;
-    --tui-chat-message-whisper-border: rgba(78,101,126,.87);
-
-    --tui-selection: #cce2ff;
-
-    --tui-shadow: 0 0 3px var(--palette-dialog-background-shaded-text, var(--tui-white2)) inset;
+    --tui-positive: #418824;
+    --tui-negative: #cc2d2d;
+    --tui-warning: #b8b31a;
+    --tui-info: #596cf3;
 }
 
-$black1: var(--palette-app-background, var(--tui-black1));
-$black1L: var(--palette-app-background-light, var(--tui-black1L));
-$black2: var(--palette-dialog-background, var(--tui-black2));
-$black2L: var(--palette-dialog-background-light, var(--tui-black2L));
 
-$black3: var(--palette-primary, var(--tui-black3));
-$black3L: var(--palette-primary-light, var(--tui-black3L));
-$black4: var(--palette-dialog-darker, var(--tui-black4));
-$black4L: var(--palette-dialog-dark, var(--tui-black4L));
-
-$white1: var(--palette-dialog-background-contrast-text, var(--tui-white1));
-$white2: var(--palette-dialog-background-shaded-text, var(--tui-white2));
-$white3: var(--palette-app-background-contrast-text, var(--tui-white3));
-$highlight: var(--palette-dark, var(--tui-highlight));
-
-$accent1: var(--palette-primary, var(--tui-accent1));
-$accent1L: var(--palette-primary-light, var(--tui-accent1L));
-$accent2: var(--palette-secondary, var(--tui-accent2));
-$accent2L: var(--palette-secondary-light, var(--tui-accent2L));
-
-$success: var(--palette-success, var(--tui-success));
-$failure: var(--palette-danger, var(--tui-failure));
-$mixed-roll: var(--palette-info, var(--tui-mixed-roll));
-
-$whisper: var(--palette-app-background-light, var(--tui-chat-message-whisper));
-$whisperBorder: var(--palette-app-background-light, var(--tui-chat-message-whisper-border));
-
-$selection: var(--palette-light, var(--tui-selection));
-
-$shadow: var(--tui-shadow);
+:root {
+    --color-text-light-highlight: #{$secondary1};
+    --color-text-light-heading: #{$secondary1L};
+    --color-text-light-primary: #{$secondary2};
+    --color-text-dark-primary: #{$secondary1L};
+    --color-text-dark-secondary: #{$secondary2};
+    --color-text-dark-header: #{$secondary1};
+    --color-text-dark-inactive: #{$secondary3};
+    --color-text-hyperlink: #{$accent1};
+    --color-text-light-0: #{$secondary1};
+    --color-text-light-1: #{$secondary1L};
+    --color-text-light-2: #{$secondary2};
+    --color-text-light-3: #{$secondary2L};
+    --color-text-light-4: #{$secondary3};
+    --color-text-light-5: #{$secondary3L};
+    --color-text-light-6: #{$secondary4};
+    --color-text-light-7: #{$secondary4L};
+    --color-text-dark-1: #{$secondary1L};
+    --color-text-dark-2: #{$secondary2};
+    --color-text-dark-3: #{$secondary2L};
+    --color-text-dark-4: #{$secondary3};
+    --color-text-dark-5: #{$secondary3L};
+    --color-text-dark-6: #{$secondary4};
+    --color-border-light-1: #{$secondary2};
+    --color-border-light-2: #{$secondary4};
+    --color-border-dark-1: #{$primary1};
+    --color-border-dark-2: #{$primary2};
+    --color-border-dark-3: #{$primary3};
+    --color-border-dark-4: #{$primary4};
+    --color-border-dark-5: #{$primary4L};
+    --color-shadow-primary: #{$negative};
+    --color-shadow-highlight: #{$accent1};
+    --color-shadow-dark: #000;
+    --color-underline-inactive: #{$secondary3};
+    --color-underline-active: #{$accent1};
+    --color-underline-header: #{$secondary4};
+    --color-border-light-highlight: #{$secondary4};
+    --color-border-light-primary: #{$secondary4};
+    --color-border-light-secondary: #{$secondary4};
+    --color-border-light-tertiary: #{$secondary4};
+    --color-border-dark: #{$primary1};
+    --color-border-dark-primary: #{$primary1L};
+    --color-border-dark-secondary: #{$primary2};
+    --color-border-dark-tertiary: #{$primary2L};
+    --color-border-highlight: #{$accent1};
+    --color-border-highlight-alt: #{$accent1L};
+    --color-bg-btn-minor-inactive: #{$secondary4};
+    --color-bg-btn-minor-active: #{$secondary2};
+    --color-bg-option: #dad8cc;
+    --color-ownership-none: #5500ff;
+    --color-ownership-observer: #7a7971;
+    --color-ownership-owner: #b5b3a4;
+    --z-index-canvas: 0;
+    --z-index-app: 30;
+    --z-index-ui: 60;
+    --z-index-window: 100;
+    --z-index-tooltip: 9999;
+    --sidebar-width: 300px;
+    --sidebar-header-height: 32px;
+    --sidebar-item-height: 48px;
+    --hotbar-height: 52px;
+    --hotbar-width: 578px;
+    --macro-size: 50px;
+    --players-width: 200px;
+    --form-field-height: 26px;
+    --font-primary: "Open Sans",
+    sans-serif;
+    --font-mono: monospace;
+    --font-awesome: "Font Awesome 6 Pro";
+    --font-size-11: 0.6875rem;
+    --font-size-12: 0.75rem;
+    --font-size-13: 0.8125rem;
+    --font-size-14: 0.875rem;
+    --font-size-16: 1rem;
+    --font-size-18: 1.125rem;
+    --font-size-20: 1.25rem;
+    --font-size-24: 1.5rem;
+    --font-size-28: 1.75rem;
+    --font-size-32: 2rem;
+    --font-size-48: 3rem;
+    --line-height-12: 0.75rem;
+    --line-height-16: 1rem;
+    --line-height-20: 1.25rem;
+    --line-height-30: 1.875rem;
+    --color-level-info: #{$info};
+    --color-level-warning: #{$warning};
+    --color-level-error: #{$negative};
+}

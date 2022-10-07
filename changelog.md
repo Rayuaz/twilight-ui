@@ -1,5 +1,12 @@
 # Twilight UI Changelog
 
+## v1.16
+
+- Fixed `.chat-message.emote` styles
+- Removed borders on hover for DnD 5e inputs
+- Fixed font color for Changelogs
+- Fixed labels not changing the cursor on hover
+
 ## v1.15
 
 - Optimized the file picker previews for large images

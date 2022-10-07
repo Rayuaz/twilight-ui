@@ -1,0 +1,59 @@
+@import 'variables';
+
+// Remove later
+
+.banner {
+    background: red;
+}
+
+// --------------
+
+.window-app .window-content,
+.inline-roll .dice-tooltip,
+.chat-message,
+#chat-form textarea,
+.sheet.journal-entry .journal-entry-content {
+    // Removes removes the parchment background
+    background: $primary2;
+}
+
+
+/* ---------------------------------------- */
+/*  Text                                    */
+/* ---------------------------------------- */
+
+body {
+    line-height: 1.5;
+}
+
+// Links
+
+a {
+    &:hover {
+        text-shadow: none;
+    }
+
+    &:not(.item):hover {
+        color: $accent1L;
+
+        & i {
+            color: $accent1L;
+        }
+    }
+
+    &.content-link,
+    &.inline-roll {
+        border: none;
+        background: transparent;
+        color: $accent1;
+        padding: 0 4px;
+        display: inline-flex;
+        align-items: center;
+
+        & i {
+            color: $accent1;
+            font-size: .75em;
+            margin-right: .5em;
+        }
+    }
+}

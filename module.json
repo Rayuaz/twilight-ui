@@ -1,44 +1,20 @@
 {
-    "name": "twilight-ui",
+    "id": "twilight-ui",
     "title": "Twilight UI",
     "description": "A dark theme for Foundry",
-    "author": "Sua Mãe, Aquela Católica",
-    "authors": {
-        "Name": "Sua Mãe, Aquela Católica",
-        "email": "alan@tpk.gg",
-        "discord": "Sua mãe, Aquela Católica#2512"
+    "authors": [
+      {
+      "name": "Rayuaz",
+      "email": "rayquazabr@gmail.com",
+      "discord": "Sua mãe, Aquela Católica#2512"
+      }
+      ],
+    "version": "2.0.0",
+    "compatibility": {
+      "minimum": "10",
+      "verified": "10"
     },
-    "version": "1.15",
-    "minimumCoreVersion": "0.8.8",
-    "compatibleCoreVersion": "0.8.9",
-    "scripts": [
-        "scripts/tinymce_handler.js",
-        "scripts/module_compatibility.js",
-        "scripts/colored_message_sender.js",
-        "scripts/file_picker_preview.js"
-    ],
     "styles": [
         "twilight-ui.css"
-    ],
-    "dependencies": [
-        {
-            "name": "colored-folder-contents",
-            "type": "module",
-            "manifest": "https://github.com/Rayuaz/colored-folder-contents/releases/latest/download/module.json"
-        },
-        {
-            "name": "spell-level-buttons-for-dnd5e",
-            "type": "module",
-            "manifest": "https://github.com/Rayuaz/spell-level-buttons-for-dnd5e/releases/latest/download/module.json"
-        },
-        {
-            "name": "twilight-forms",
-            "type": "module",
-            "manifest": "https://github.com/Rayuaz/twilight-forms/releases/latest/download/module.json"
-        }
-    ],
-    "manifest": "https://github.com/Rayuaz/twilight-ui/releases/latest/download/module.json",
-	"url": "https://github.com/Rayuaz/twilight-ui",
-    "download": "https://github.com/Rayuaz/twilight-ui/releases/latest/download/twilight-ui.zip",
-    "readme": "https://github.com/Rayuaz/twilight-ui/blob/master/README.md"
-}
+    ]
+  }
