@@ -1,0 +1,131 @@
+@import 'variables';
+
+body {
+    line-height: 1.5;
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+    color: $secondary1;
+}
+
+// Links
+a {
+    &:hover {
+        text-shadow: none;
+    }
+
+    &:not(.item):hover {
+        color: $accentL;
+
+        & i {
+            color: $accentL;
+        }
+    }
+
+    &.content-link,
+    &.inline-roll {
+        border: none;
+        background: transparent;
+        color: $accent;
+        padding: 0 4px;
+        display: inline-flex;
+        align-items: center;
+
+        & i {
+            color: $accent;
+            font-size: .75em;
+            margin-right: .5em;
+        }
+
+        &.gmroll,
+        &.blindroll {
+            background: transparent;
+            color: $gm;
+
+            & i {
+                color: $gm;
+            }
+
+            &:hover,
+            &:hover i {
+                color: $gmL;
+            }
+        }
+
+        &.selfroll {
+            color: $whisper;
+
+            & i {
+                color: $whisper;
+            }
+
+            &:hover,
+            &:hover i {
+                color: $whisperL;
+            }
+        }
+        
+        &.gmroll:before,
+        &.blindroll:before,
+        &.selfroll:before {
+            display: inline-block;
+            margin-right: .5em;
+            font-size: .75em;
+            line-height: 1;
+        }
+
+        &.gmroll:before {
+            content: 'GM';
+        }
+
+        &.blindroll:before {
+            content: 'BLIND';
+        }
+
+        &.selfroll:before {
+            content: 'SELF';
+        }
+    }
+}
+
+::selection {
+    background: $accentBg;
+}
+
+table {
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+
+    tr {
+        border-color: $secondary4;
+
+        &:nth-child(even) {
+            background-color: $secondary4L;
+        }
+    }
+
+    td, th, td:first-child {
+        padding: .25em .5em;
+    }
+}
+
+img {
+    border: none;
+    border-radius: 4px;
+}
+
+/* ---------------------------------------- */
+/*  Editor specific                         */
+/* ---------------------------------------- */
+
+section.secret {
+    padding: 0 1rem;
+    background: $gmBg;
+    border: 1px dashed $gm;
+    border-radius: 4px;
+}
+
+section.secret.revealed {
+    background: transparent;
+}

@@ -16,10 +16,18 @@ $secondary3L: var(--tui-secondary3L);
 $secondary4: var(--tui-secondary4);
 $secondary4L: var(--tui-secondary4L);
 
-$accent1: var(--tui-accent1);
-$accent1L: var(--tui-accent1L);
-$accent2: var(--tui-accent2);
-$accent2L: var(--tui-accent2L);
+$accent: var(--tui-accent);
+$accentL: var(--tui-accentL);
+$accentBg: var(--tui-accentBg);
+
+$gm: var(--tui-gm);
+$gmL: var(--tui-gmL);
+$gmBg: var(--tui-gmBg);
+
+$whisper: var(--tui-whisper);
+$whisperL: var(--tui-whisperL);
+$whisperBg: var(--tui-whisperBg);
+
 
 $positive: var(--tui-positive);
 $negative: var(--tui-negative);
@@ -50,7 +58,19 @@ $info: var(--tui-info);
     --tui-secondary3: rgba(255, 255, 255, .32);
     --tui-secondary3L: rgba(255, 255, 255, .25);
     --tui-secondary4: rgba(255, 255, 255, .12);
-    --tui-secondary4L: rgba(255, 255, 255, .05);
+    --tui-secondary4L: rgba(255, 255, 255, .03);
+
+    --tui-accent: #f87a26;
+    --tui-accentL: #f8a221;
+    --tui-accentBg: #f87a2650;
+
+    --tui-gm: #ac53ff;
+    --tui-gmL: #c397fd;
+    --tui-gmBg: #2b1e32;
+
+    --tui-whisper: #778b97;
+    --tui-whisperL: #a7d7f3;
+    --tui-whisperBg: #778b9750;
 
     --tui-accent1: #f87a26;
     --tui-accent1L: #f8a221;
@@ -61,6 +81,9 @@ $info: var(--tui-info);
     --tui-negative: #cc2d2d;
     --tui-warning: #b8b31a;
     --tui-info: #596cf3;
+
+    --tui-whisper-bg: #1c1d20;
+    --tui-whisper-border: rgba(78,101,126,.87);
 }
 
 
@@ -72,7 +95,7 @@ $info: var(--tui-info);
     --color-text-dark-secondary: #{$secondary2};
     --color-text-dark-header: #{$secondary1};
     --color-text-dark-inactive: #{$secondary3};
-    --color-text-hyperlink: #{$accent1};
+    --color-text-hyperlink: #{$accent};
     --color-text-light-0: #{$secondary1};
     --color-text-light-1: #{$secondary1L};
     --color-text-light-2: #{$secondary2};
@@ -95,10 +118,10 @@ $info: var(--tui-info);
     --color-border-dark-4: #{$primary4};
     --color-border-dark-5: #{$primary4L};
     --color-shadow-primary: #{$negative};
-    --color-shadow-highlight: #{$accent1};
+    --color-shadow-highlight: #{$accent};
     --color-shadow-dark: #000;
     --color-underline-inactive: #{$secondary3};
-    --color-underline-active: #{$accent1};
+    --color-underline-active: #{$accent};
     --color-underline-header: #{$secondary4};
     --color-border-light-highlight: #{$secondary4};
     --color-border-light-primary: #{$secondary4};
@@ -108,8 +131,8 @@ $info: var(--tui-info);
     --color-border-dark-primary: #{$primary1L};
     --color-border-dark-secondary: #{$primary2};
     --color-border-dark-tertiary: #{$primary2L};
-    --color-border-highlight: #{$accent1};
-    --color-border-highlight-alt: #{$accent1L};
+    --color-border-highlight: #{$accent};
+    --color-border-highlight-alt: #{$accentL};
     --color-bg-btn-minor-inactive: #{$secondary4};
     --color-bg-btn-minor-active: #{$secondary2};
     --color-bg-option: #dad8cc;
