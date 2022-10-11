@@ -1,0 +1,69 @@
+.window-app form {
+
+    .form-group,
+    .form-group-stacked {
+        gap: .25em;
+        margin-bottom: .75em;
+
+        label {
+            flex-basis: 100%;
+            font-size: .85em;
+            line-height: 1;
+            color: $secondary2;
+
+            span {
+                line-height: 1;
+            }
+        }
+
+        .form-fields {
+            justify-content: flex-start;
+
+            input[type="number"] {
+                flex: 1;
+            }
+        }
+
+        &:has(input[type="checkbox"]) {
+            padding: .3em;
+            border: 1px solid $secondary4;
+            border-radius: 4px;
+
+            label {
+                flex-basis: auto;
+                font-size: 1em;
+                color: $secondary1L;
+                order: 2;
+            }
+
+            &:has(.form-fields) {
+                padding: 0;
+                border: none;
+
+                label {
+                    flex-basis: 100%;
+                    font-size: .85em;
+                    color: $secondary2;
+                    order: inherit;
+                }
+
+                .form-fields {
+                    label {
+                        flex-basis: auto;
+                    }
+
+                    &:has(input[type="checkbox"]:nth-child(2)) {
+                        label:first-child {
+                            order: 3;
+                        }
+
+                        input[type="checkbox"]:nth-child(2) {
+                            order: 2;
+                            margin-left: 1em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

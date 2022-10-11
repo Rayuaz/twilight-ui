@@ -1,0 +1,18 @@
+form .form-group,
+form .form-group-stacked {
+    border-radius: 4px;
+    padding: .25em .5em;
+    min-height: 44px;
+
+    &:hover {
+        background: $primary2L;
+    }
+
+    button.file-picker {
+        padding: 0 .75em;
+
+        &+input[type="text"] {
+            height: fit-content;
+        }
+    }
+}
