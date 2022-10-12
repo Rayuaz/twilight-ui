@@ -1,3 +1,68 @@
+.sheet nav.sheet-tabs {
+    margin: 0;
+    border: none;
+    //border-bottom: 1px solid $secondary4;
+    padding-top: 4px;
+
+    .item {
+        border: 1px solid transparent;
+        border-bottom: 1px solid $secondary4;
+        width: 100%;
+        min-width: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .5em;
+        transition: all .12s ease-in-out;
+
+        &:hover {
+            background: $primary1L;
+        }
+
+        &.active {
+            background: $primary2;
+            border: solid 1px $primary4;
+            border-bottom: 1px solid transparent;
+            border-radius: 4px 4px 0 0;
+            color: $secondary1;
+
+            i {
+                color: $accent;
+            }
+
+            &:first-child {
+                border-left: 1px solid transparent;
+            }
+
+            &:last-child {
+                border-right: 1px solid transparent;
+            }
+        }
+    }
+}
+
+.window-app .window-content .tab.active:has(nav.secondary-tabs) {
+    padding-top: 0;
+    background: $primary2L;
+
+    .tab.active {
+        padding: 0;
+        padding-top: 16px;
+        background: transparent;
+    }
+
+    .secondary-tabs {
+        margin: 0;
+        padding: 0;
+        margin-left: -16px;
+        background: $primary2;
+
+        .item.active {
+            background: $primary2L;
+        }
+    }
+}
+
 form .form-group,
 form .form-group-stacked {
     border-radius: 4px;
@@ -5,14 +70,27 @@ form .form-group-stacked {
     min-height: 44px;
 
     &:hover {
-        background: $primary2L;
+        background: $secondary4L;
     }
 
-    button.file-picker {
+    button.file-picker,
+    button.grid-config,
+    button.capture-position {
         padding: 0 .75em;
 
         &+input[type="text"] {
             height: fit-content;
         }
     }
+}
+
+i.fa-save::before {
+    content: '\f00c';
+}
+
+.app.scene-sheet form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
 }

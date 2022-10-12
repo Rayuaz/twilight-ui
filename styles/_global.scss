@@ -12,30 +12,46 @@ button,
     border: none;
     background: $primary3;
     color: $secondary1L;
-    font-weight: 700;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: .5em;
+    gap: .25em;
     align-self: stretch;
+    padding: .25em 1em;
 
     transition: background .15s ease-in-out;
+
+    i {
+        transition: color .12s ease-in-out;
+    }
 
     &:hover {
         background: $primary3L;
         box-shadow: none;
+
+        i {
+            color: $accent;
+        }
     }
 
-    i {
-        font-weight: 700;
+    i.fas {
+        font-weight: 500;
     }
 
     &[type="submit"] {
         background: $accent;
 
+        i {
+            font-size: 1em;
+        }
+
         &:hover {
             background: $accentL;
+
+            i {
+                color: $secondary1;
+            }
         }
 
         &:last-child {
@@ -45,9 +61,10 @@ button,
 }
 
 // Inputs
-.app input:not([type="checkbox"]),
+.app input:not([type="checkbox"],[type="color"]),
 .app select,
-.app textarea {
+.app textarea,
+input[type="range"] + .range-value {
     padding: .5em;
     border-radius: 4px;
     color: $secondary1L;
@@ -65,13 +82,52 @@ button,
     }
 }
 
-.app select option,
-.app select optgroup {
-    background: $primary1; 
+.app select {
+
+    option,
+    optgroup {
+        background: $primary1;
+    }
+
 }
 
 input[type="checkbox"]:hover {
     cursor: pointer;
+}
+
+input[type="color"][data-edit] {
+    height: auto;
+    align-self: stretch;
+    padding: 0;
+    border: none;
+}
+
+input[type=range] {
+    &::-webkit-slider-runnable-track {
+        box-shadow: none;
+        background: $secondary4;
+        border-radius: 3px;
+        border: none;
+        transition: background .12s ease-in-out;
+    }
+
+    &::-webkit-slider-thumb {
+        box-shadow: none;
+        border: none;
+        border-radius: 50px;
+        background: $accent;
+        margin-top: -3px;
+    }
+
+    &:focus::-webkit-slider-runnable-track {
+        background: $secondary3;
+    }
+
+    + .range-value {
+        flex: 0 0 64px;
+        text-align: start;
+    }
+    
 }
 
 textarea {
@@ -123,6 +179,14 @@ div#camera-views,
                 }
             }
         }
+
+        a {
+            color: $secondary2;
+
+            &.close i {
+                font-size: 1em;
+            }
+        }
     }
 
     &.minimized .window-header {
@@ -132,9 +196,30 @@ div#camera-views,
     .window-content {
         padding: 16px;
         border-radius: 0 0 8px 8px;
+    }
 
-        &:has(nav.tabs) {
-            padding-top: 0;
+    &.sheet:has(nav.tabs) {
+        .window-header {
+            border-bottom: none;
+        }
+    }
+
+    &:has(nav.tabs) {
+
+        .window-content {
+            padding: 0;
+            background: $primary1;
+
+            .tab.active {
+                padding: 16px;
+                background: $primary2;
+            }
+
+            button[type="submit"] {
+                margin: 16px;
+                margin-top: 0;
+                width: calc(100% - 32px);
+            }
         }
     }
 
@@ -186,6 +271,20 @@ div#camera-views,
         }
     }
 }
+
+.tabs {
+    justify-content: space-between;
+
+    .item {
+        color: $secondary2;
+
+        &.active {
+            text-shadow: none;
+            color: $secondary1;
+        }
+    }
+}
+
 // scrollbar
 ::-webkit-scrollbar {
     width: 6px;
@@ -204,4 +303,233 @@ div#camera-views,
 :root {
     scrollbar-width: thin;
     scrollbar-color: $secondary3;
+}
+
+//Context Menu
+#context-menu {
+    background: $primary1;
+    border-color: $secondary4;
+
+    li.context-item {
+        padding: 0 8px;
+        transition: color .12s ease-in-out;
+
+        i {
+            margin-right: 8px;
+        }
+
+        &:hover {
+            text-shadow: none;
+            color: $accent;
+            cursor: pointer;
+        }
+    }
+}
+
+#players {
+    border-color: $secondary4;
+
+    h3 {
+        border-bottom: 1px solid $secondary4;
+        transition: background .12s ease-in-out;
+
+        i {
+            transition: background .12s ease-in-out;
+        }
+
+        &:hover {
+            background: $secondary4L;
+            cursor: pointer;
+
+            i {
+                color: $accent;
+            }
+        }
+    }
+
+    ol .player.context {
+        border-color: transparent;
+        color: $accent;
+    }
+}
+
+#support-details {
+    #support-report {
+        border: 1px solid $secondary4;
+        border-radius: 4px;
+    }
+
+    button[name="copy"] {
+        background: $accent;
+
+        i {
+            font-weight: 500;
+        }
+
+        &:hover {
+            background: $accentL;
+        }
+    }
+}
+
+#client-settings,
+#tours-management,
+#keybindings {
+    aside.sidebar {
+        padding: 16px 0;
+
+        .entry-filter {
+            margin: 0 16px;
+            margin-bottom: 16px;
+        }
+
+        position: relative;
+        border: none;
+
+        &:after {
+            content: '';
+            height: 100%;
+            width: 1px;
+            position: absolute;
+            right: 0px;
+            top: 0;
+            background: $secondary4;
+            z-index: 1;
+        }
+
+        .category-tab {
+            padding: 8px 16px;
+            border: 1px solid transparent;
+            border-radius: 4px 0 0 4px;
+            margin-left: 4px;
+            transition: all .12s ease-in-out;
+            text-align: start;
+            gap: .5em;
+
+            &.active {
+                background: $primary2;
+                border-color: $secondary4;
+                border-right: 1px solid transparent;
+                position: relative;
+                z-index: 2;
+            }
+        }
+
+        .reset-all {
+            margin: 0 16px;
+            width: calc(100% - 32px);
+        }
+    }
+
+    .categories {
+        .scrollable {
+            padding: 0;
+            background: $primary2;
+
+            .form-group button {
+                text-align: start;
+                justify-content: flex-start;
+            }
+        }
+
+        footer {
+            background: $primary2;
+            margin: 0;
+            padding-top: 16px;
+            border-top: solid 1px $secondary4;
+        }
+    }
+}
+
+#keybindings {
+    .action {
+        border-bottom: 1px solid $secondary4;
+        align-items: flex-start;
+    }
+
+    .binding {
+
+        border: 1px solid $secondary4;
+        padding: .5em;
+        border-radius: 4px;
+
+        .binding-fields {
+            position: relative;
+
+            .binding-input-icon {
+                margin: 0;
+                position: absolute;
+                right: 16px;
+                top: calc(50% - 8px);
+                color: $secondary2;
+            }
+        }
+
+        .key {
+            background: $primary3;
+
+            &.uneditable {
+                background: transparent;
+                color: $secondary2;
+            }
+        }
+
+        .control {
+            &.conflicts {
+                color: $accent;
+            }
+
+            &.uneditable {
+                color: $secondary4;
+            }
+        }
+    }
+}
+
+.tour,
+#tooltip.tour {
+    background: $primary2;
+    padding: 16px;
+    border: 1px solid $secondary4;
+    border-radius: 8px;
+
+    .content {
+        color: $secondary1L;
+        text-align: start;
+        margin: 1em 0;
+        line-height: 1.3;
+    }
+
+    [data-action="exit"] {
+        right: 16px;
+    }
+
+    .step-title {
+        color: $secondary1;
+        font-weight: 700;
+    }
+
+    .step-header {
+        border-bottom: 1px solid $secondary4;
+        padding-bottom: 8px;
+
+        &:after {
+            border-color: $secondary4;
+            border: 1px solid $secondary4;
+            display: none;
+        }
+    }
+
+    .step-button-disabled {
+        color: $secondary4;
+    }
+
+    .step-controls .progress {
+        color: $secondary2;
+        font-size: .75em;
+    }
+}
+
+.tour-fadeout {
+    border-radius: 8px;
 }

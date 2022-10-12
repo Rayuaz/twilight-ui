@@ -1,0 +1,2 @@
+- Fazer um script para que o tamanho mínimo das janelas seja igual ao tamanho da navbar
+- Ajustar o fundo dos botões nas abas onde há navbar
