@@ -1,7 +1,7 @@
-.sheet nav.sheet-tabs {
+.sheet nav.sheet-tabs,
+.filepicker nav.tabs {
     margin: 0;
     border: none;
-    //border-bottom: 1px solid $secondary4;
     padding-top: 4px;
 
     .item {
@@ -14,6 +14,8 @@
         justify-content: center;
         gap: .5em;
         transition: all .12s ease-in-out;
+        border-radius: 4px 4px 0 0;
+        padding: 8px 12px;
 
         &:hover {
             background: $primary1L;

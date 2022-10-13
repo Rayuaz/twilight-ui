@@ -71,15 +71,21 @@ input[type="range"] + .range-value {
     width: 100%;
     height: fit-content;
     transition: border .15s ease-in-out;
+}
 
-    &:hover {
-        border-color: $secondary3;
-    }
+.app input:not([type="checkbox"], [type="color"]):hover,
+.app select:hover,
+.app textarea:hover,
+input[type="range"]+.range-value:hover {
+    border-color: $secondary3;
+}
 
-    &:focus {
-        border-color: $secondary2;
-        box-shadow: none;
-    }
+.app input:not([type="checkbox"], [type="color"]):focus,
+.app select:focus,
+.app textarea:focus,
+input[type="range"]+.range-value:focus {
+    border-color: $secondary2;
+    box-shadow: none;
 }
 
 .app select {
@@ -182,9 +188,21 @@ div#camera-views,
 
         a {
             color: $secondary2;
+            display: flex;
+            height: fit-content;
+            align-items: center;
+            gap: 4px;
+
+            i[class^=fa] {
+                margin: 0;
+            }
 
             &.close i {
                 font-size: 1em;
+            }
+
+            &:hover {
+                color: $secondary1;
             }
         }
     }
@@ -432,6 +450,10 @@ div#camera-views,
             }
         }
 
+        h2.border {
+            border-color: $accent;
+        }
+
         footer {
             background: $primary2;
             margin: 0;
@@ -532,4 +554,232 @@ div#camera-views,
 
 .tour-fadeout {
     border-radius: 8px;
+}
+
+.dialog .dialog-buttons {
+    margin-top: 8px;
+    gap: 8px;
+
+    button {
+        @extend button;
+
+        &.default {
+            @extend button;
+            background: $accent;
+
+            &:hover {
+                background: $accentL;
+
+                i {
+                    color: $secondary1;
+                }
+            }
+        }
+    }
+}
+
+#tooltip {
+    background: $primary1;
+    padding: .5em 1em;
+    border: 1px solid $primary4;
+    border-radius: 4px;
+    transition: visibility .12s ease-in-out, opacity .12s ease-in-out;
+
+    &.active {
+        transition: opacity .12s ease-in-out;
+    }
+}
+
+.app.filepicker {
+    
+    .window-content {
+        padding: 16px;
+
+        header {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            nav.tabs {
+                width: 100%;
+            }
+
+            .form-group{
+                width: 100%;
+                padding-left: 16px;
+                padding-right: 16px;
+                background: $primary2;
+                margin: 0;
+
+                &:has(.display-modes)  {
+                    padding: 0;
+                    padding-left: 8px;
+                    padding-right: 16px;
+                    width: 40%;
+                    
+                    .display-modes {
+                        width: 100%;
+                        flex-basis: 100%;
+                    }
+
+                    a {
+                        width: 100%;
+                        background: transparent;
+                        border: none;
+                        margin: 0;
+                        background: $primary3;
+                        border-radius: 0;
+                        padding: 1em;
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: background .12s ease-in-out;
+                        width: 100%;
+            
+                        &:first-child {
+                            border-radius: 4px 0 0 4px;
+                        }
+            
+                        &:last-child {
+                            border-radius: 0 4px 4px 0;
+                        }
+            
+                        &:not(:last-child):after {
+                            content: '';
+                            position: absolute;
+                            right: 0;
+                            top: 12.5%;
+                            width: 1px;
+                            height: 75%;
+                            background: $secondary4;                            
+                        }
+
+                        &:hover {
+                            background: $primary3L;
+
+                            i {
+                                color: $accent;
+                            }
+                        }
+
+                        &.active {
+                            background: $primary4;
+                            color: $accent;
+                            text-shadow: none;
+                        }
+                    }
+                }
+
+                label {
+                    display: none;
+                }
+
+                &.filter-dir {
+                    width: 60%;
+                    padding-right: 0;
+                    position: relative;
+
+                    &:after {
+                        content: "\f002";
+                        font-family: var(--font-awesome);
+                        position: absolute;
+                        right: 16px;
+                        top: calc(50% - 12px);
+                        color: $secondary3;
+
+                    }
+                }
+            }
+        }
+
+        section.filepicker-body {
+            padding: 16px;
+            background: $primary2;
+
+            .directory {
+                border: none;
+                margin: 0;
+                background: transparent;
+                border-bottom: 1px solid $secondary4;
+
+                &.folders-list {
+                    border-top: 1px solid $secondary4;
+                }
+
+                > li {
+                    border: none;
+                    padding: 0 8px;
+                    height: fit-content;
+                    border-radius: 4px;
+                    transition: all .12s ease-in-out;
+
+                    i {
+                        transition: color .12s ease-in-out;
+                    }
+
+                    &:hover,
+                    &.picked {
+                        text-shadow: none;
+                        color: $secondary1;
+                        background: $secondary4;
+
+                        i {
+                            color: $accent;
+                        }
+                    }
+                }
+
+                &.thumbs-list > li {
+                    padding: 8px;
+                }
+
+                &.tiles-list > li {
+                    padding: 4px;
+                }
+            }
+        }
+
+        footer.form-footer {
+            margin: 0;
+            margin-top: -3px;
+            padding: 16px;
+            padding-top: 0;
+            background: $primary2;
+
+            .form-group:hover {
+                background: transparent;
+            }
+        }
+    
+        .current-dir button {
+            @extend button;
+        }
+
+        button.privacy:hover i {
+            color: $gmL;
+        }
+
+        .private {
+            button.privacy {
+                background: $gmBg;
+                box-shadow: 0 0 4px $gm inset;
+                transition: all .12s ease-in-out;
+        
+                &:hover {
+                    background: $gm;
+                    box-shadow: 0 0 4px $secondary1 inset;
+        
+                    i {
+                        color: $secondary1;
+                    }
+                }
+            }
+
+            .directory,
+            .private.dir {
+                background: $gmBg;
+            }
+        }
+    }
 }

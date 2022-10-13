@@ -12,6 +12,12 @@ i {
 
 // Links
 a {
+    transition: color .12s ease-in-out;
+
+    i {
+        transition: color .12s ease-in-out;
+    }
+
     &:hover {
         text-shadow: none;
     }
@@ -120,19 +126,4 @@ hr {
     border: none;
     border-bottom: 2px solid $secondary4;
     margin: 1em 0;
-}
-
-/* ---------------------------------------- */
-/*  Editor specific                         */
-/* ---------------------------------------- */
-
-section.secret {
-    padding: 0 1rem;
-    background: $gmBg;
-    border: 1px dashed $gm;
-    border-radius: 4px;
-}
-
-section.secret.revealed {
-    background: transparent;
 }

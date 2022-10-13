@@ -3,3 +3,50 @@
     border-left: 1px solid $secondary4;
     border-radius: 0;
 }
+
+section.secret {
+    padding: 0 1rem;
+    background: $gmBg;
+    border: 1px dashed $gm;
+    border-radius: 4px;
+
+    display: flex;
+    flex-direction: column;
+
+    &.revealed {
+        background: transparent;
+    }
+
+    button.reveal {
+        border: none;
+        padding: .25em 1em;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        font-size: var(--font-size-14);
+
+        background: $gm;
+        order: 2;
+
+        &:hover {
+            background: $gmL;
+        }
+
+    }
+}
+
+.sheet.journal-entry .journal-entry-page .editor-edit {
+
+    padding: .25em .5em;
+    border: none;
+    background: $accent;
+    transition: background .12s ease-in-out;
+
+    &:hover {
+        background: $accentL;
+
+        i {
+            color: $secondary1;
+        }
+    }
+
+}
