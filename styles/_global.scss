@@ -11,6 +11,7 @@ button,
 .window-app button {
     border: none;
     background: $primary3;
+    border-radius: 4px;
     color: $secondary1L;
 
     display: flex;
@@ -18,9 +19,11 @@ button,
     align-items: center;
     gap: .25em;
     align-self: stretch;
-    padding: .25em 1em;
+    padding: .6em 1em;
+    height: auto;
+    line-height: 1;
 
-    transition: background .15s ease-in-out;
+    transition: background .12s ease-in-out;
 
     i {
         transition: color .12s ease-in-out;
@@ -61,34 +64,46 @@ button,
 }
 
 // Inputs
+input,
 .app input:not([type="checkbox"],[type="color"]),
 .app select,
 .app textarea,
-input[type="range"] + .range-value {
+input[type="range"] + .range-value,
+#chat-controls .roll-type-select {
     padding: .5em;
     border-radius: 4px;
     color: $secondary1L;
     width: 100%;
     height: fit-content;
     transition: border .15s ease-in-out;
+    background: transparent;
+    border: 1px solid $secondary4;
 }
 
+input:hover,
 .app input:not([type="checkbox"], [type="color"]):hover,
 .app select:hover,
 .app textarea:hover,
-input[type="range"]+.range-value:hover {
+input[type="range"]+.range-value:hover,
+#chat-controls .roll-type-select:hover {
     border-color: $secondary3;
 }
 
+input:focus,
 .app input:not([type="checkbox"], [type="color"]):focus,
 .app select:focus,
 .app textarea:focus,
-input[type="range"]+.range-value:focus {
+input[type="range"]+.range-value:focus,
+#chat-controls .roll-type-select:focus {
     border-color: $secondary2;
     box-shadow: none;
 }
 
 .app select {
+    
+    &:hover {
+        cursor: pointer;
+    }
 
     option,
     optgroup {
@@ -687,7 +702,6 @@ div#camera-views,
                         right: 16px;
                         top: calc(50% - 12px);
                         color: $secondary3;
-
                     }
                 }
             }
