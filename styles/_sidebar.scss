@@ -207,6 +207,37 @@
         }
     }
 
+    .combat-sidebar {
+        .combat-tracker-header {
+            a.combat-button {
+                color: $secondary2;
+
+                &.combat-create {
+                    i {
+                        font-size: 1em;
+                    }
+                }
+            }
+        }
+    }
+
+    .scenes-sidebar {
+        .scene:not(.folder) {
+            border-radius: 8px;
+            border: 1px solid $primary3;
+            background-position: center;
+            transition: all .12s ease-in-out;
+            margin-bottom: 8px;
+            box-shadow: 0 0 20px black inset;
+            //box-shadow: none;
+
+            &:hover {
+                background-position: center;
+                box-shadow: 0 0 5px black inset;
+            }
+        }
+    }
+
     .dice-roll .dice-formula,
     .dice-roll .dice-total {
         box-shadow: none;
@@ -261,40 +292,149 @@
             height: fit-content;
         }
     }
+    
+}
+
+#chat-log {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-right: 8px;
 
     .chat-message {
         border-color: var(--color-border-light-2);
+        padding: 8px;
+        margin: 0;
+
+        .message-header {
+            line-height: 1;
+            margin-bottom: 4px;
+
+            &:has(.flavor-text),
+            &:has(.whisper-to) {
+                margin-bottom: 0;
+            }
+
+            .message-sender {
+                margin-bottom: 4px;
+                color: $secondary2;
+                font-size: .7rem;
+            }
+
+            .flavor-text,
+            .whisper-to {
+                margin-bottom: 8px;
+                color: $secondary2L;
+                font-style: italic;
+            }
+
+            .message-timestamp {
+                font-size: .7rem;
+                margin-right: 4px;
+            }
+
+            .message-delete i {
+                font-weight: 400;
+            }
+        }
 
         &.emote {
+            background: $primary2;
             font-style: italic;
+            background: $primary1;
 
             header {
                 display: none;
             }
         }
-    }
 
-    .chat-bubble {
+        &.whisper {
+            background: $whisperBg;
+            border-color: $whisper;
+        }
+
+        &.blind {
+            .message-sender:before {
+                content: 'Blind';
+                text-transform: uppercase;
+                color: $whisper;
+                margin-right: 4px;
+            }
+        }
+
+        .dice-roll {
+            .dice-result {
+                .dice-formula,
+                .dice-total {
+                    padding: 8px;
+                    border-radius: 4px;
+                    height: auto;
+                    line-height: 1;
+                    min-height: 38px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: background .12s ease-in-out;
+
+                    &:hover {
+                        cursor: pointer;
+                        background: $primary2L;
+                    }
+
+                    &.success {
+                        color: $positive;
+                    }
+
+                    &.failure {
+                        color: $negative;
+                    }
+                }
+
+                .dice-tooltip {
+                    padding: 4px;
+                }
+            }
+        }
+
+        .table-draw {
+            .table-description {
+                padding-top: 4px;
+                padding-bottom: 8px;
+            }
+
+            .table-results {
+                margin-top: 8px;
+
+                .result-image {
+                    border-radius: 4px;
+                }
+            }
+        }
+
+
+    }
+}
+
+#chat-popout #chat-log {
+    padding-left: 8px;
+    margin-bottom: 8px;
+}
+
+.chat-bubble {
+    color: $primary2;
+    padding: 16px;
+    border-color: $primary1;
+
+    &.chatter {
         color: $primary2;
+        background: #f5f2ec;
         padding: 16px;
         border-color: $primary1;
-
-        &.chatter {
-            color: $primary2;
-            background: #f5f2ec;
-            padding: 16px;
-            border-color: $primary1;
-        }
-
-        &.emote {
-            color: $secondary1L;
-        }
     }
 
-    .chat-message.emote,
-    .chat-bubble.emote {
+    &.emote {
+        color: $secondary1L;
         background: $primary2;
         border-color: $accentBg;
     }
-    
 }
