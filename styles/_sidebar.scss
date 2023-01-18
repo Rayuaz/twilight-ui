@@ -1,52 +1,35 @@
-#sidebar {
+#sidebar,
+#sidebar.collapsed {
     border: none;
-    border-radius: 0 8px 8px 8px;
-    border: solid 1px $secondary4;
+    border-radius: 0;
     position: relative;
     overflow: visible;
-    padding: 8px;
-    padding-top: 0;
-
-    #sidebar-tabs {
-        border-color: $secondary4;
-        box-shadow: none;
-        border-color: $accent;
-
-        > .item {
-            flex: auto;
-            border-radius: 8px 8px 0 0;
-            transition: background .12s ease-in-out;
-            border: none;
-            margin-bottom: -1px;
-            width: 100%;
-
-            &:hover {
-                background: $primary2L;
-                color: $secondary1;
-            }
-
-            &.active {
-                color: $secondary1;
-                border-color: $accent;
-                box-shadow: none;
-                background: $accent;
-            }
-        }
-    }
+    padding: 0;
+    background: transparent;
+    border: none;
+    margin-right: 44px;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100%;
+    transition: all .12s ease-in-out;
 
     #sidebar-tabs {
         position: absolute;
-        top: -1px;
-        left: -44px;
+        z-index: -1;
+        top: 0;
+        right: -44px;
         flex-direction: column;
-        height: fit-content;
-        background: $primary1;
-        border-radius: 8px 0 0 8px;
+        height: 100%;
+        background: transparent;
         border: none;
-        border: 1px solid $secondary4;
         margin: 0;
+        justify-content: flex-start;
+        padding-right: 0;
+        font-size: 16px;
+        box-shadow: none;
 
         > .item {
+            border: none;
             line-height: 1;
             width: 42px;
             height: 42px;
@@ -55,15 +38,27 @@
             justify-content: center;
             border-radius: 0;
             margin: 0;
-            
-            &:first-child {
-                border-radius: 8px 0 0 0;
-            }
+            flex: none;
+            transition: all .12s ease-in-out;
+            border-right: 1px solid transparent;
 
             .notification-pip {
-                right: auto;
-                left: -5px;
-                top: calc(50% - 5px);
+                right: 3px;
+                top: calc(50% - 10px);
+            }
+
+            &:hover {
+                color: $accent;
+                border-right: 1px solid $accent;
+            }
+
+            &.active {
+                box-shadow: none;
+                border: none;
+                color: $accent;
+                background: linear-gradient(270deg, $accentBg 0%, rgba(0, 0, 0, 0) 100%);
+                border-right: 1px solid $accent;
+                border-radius: 0;
             }
 
             &.active .notification-pip {
@@ -72,21 +67,10 @@
         }
     }
 
-    &.collapsed {
-        width: fit-content !important;
-        margin-right: 0;
-        padding: 0;
-        border: none;
-        border-radius: 8px 0 0 8px;
-
-        #sidebar-tabs {
-            position: static;
-        }
-    }
-
     .directory {
         .directory-header {
             margin: 16px 0;
+            margin-bottom: 8px;
             display: flex;
             flex-direction: column;
             gap: 8px;
@@ -107,7 +91,9 @@
                 input {
                     height: auto;
                     line-height: 1;
-                    background: transparent;
+                    background: rgba(0,0,0,.3);
+                    backdrop-filter: blur(1.5px);
+                    border-color: $secondary4;
                     margin: 0;
                     text-align: start;
                     padding: .5em 1em;
@@ -119,15 +105,28 @@
 
                 a {
                     @extend button;
+                    background: transparent;
+                    border-radius: 4px;
                 }
             }
 
             .action-buttons {
                 gap: 4px;
+                flex-direction: column;
+                margin-bottom: 16px;
 
                 button {
                     @extend button;
+                    background: $primaryT;
                     margin: 0;
+
+                    &:hover {
+                        background: $accent;
+
+                        i {
+                            color: $secondary1;
+                        }
+                    }
                 }
             }
         }
@@ -222,18 +221,55 @@
     }
 
     .scenes-sidebar {
+        --sidebar-scene-height: 75px;
+
         .scene:not(.folder) {
             border-radius: 8px;
-            border: 1px solid $primary3;
+            border: none;
             background-position: center;
+            background-size: cover;
             transition: all .12s ease-in-out;
             margin-bottom: 8px;
-            box-shadow: 0 0 20px black inset;
-            //box-shadow: none;
+            box-shadow: none;
+            padding: 8px 16px;
+            position: relative;
+
+            h3 {
+                line-height: 1;
+                font-size: .9rem;
+                text-align: left;
+                margin: 0;
+                z-index: 1;
+                text-shadow: rgba(0,0,0,.4) 0px 2px 4px;
+                font-weight: 700;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 8px;
+                background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+                opacity: .4;
+                transition: all .12s ease-in-out;
+            }
 
             &:hover {
                 background-position: center;
-                box-shadow: 0 0 5px black inset;
+                box-shadow: none;
+                background-size: cover;
+
+                &:after {
+                    opacity: .7;
+                }
+
+                a:hover {
+                    color: inherit;
+                    text-shadow: rgba(0, 0, 0, .4) 0px 2px 4px;
+                }
             }
         }
     }
@@ -246,9 +282,12 @@
     #chat-controls {
         flex: 0 0 auto;
         margin: 0;
-        padding: 8px 0;
+        padding: 0;
+        padding-top: 16px;
+        padding-bottom: 8px;
         align-items: center;
         gap: 4px;
+        border-top: 1px solid $secondary2L;
 
         .chat-control-icon i.fas {
             font-weight: 300;
@@ -279,17 +318,35 @@
                 }
             }
         }
+
+        select.roll-type-select {
+            border-color: $secondary2L;
+
+            &:hover,
+            &:focus {
+                border-color: $secondary1;
+            }
+        }
     }
 
     #chat-form {
         margin: 0;
         height: fit-content;
         flex: 0 0 auto;
+        padding: 8px 0;
 
         textarea {
             @extend input;
             line-height: 1.3;
             height: fit-content;
+            border-color: $secondary2L;
+            transition: all .12s ease-in-out;
+
+            &:hover,
+            &:focus {
+                border-color: $secondary1;
+                background-color: rgba(0, 0, 0, .12);
+            }
         }
     }
     
@@ -299,12 +356,21 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    padding-right: 8px;
+    padding-right: 0;
+    overflow-y: overlay;
 
     .chat-message {
-        border-color: var(--color-border-light-2);
+        border-color: var(--color-border-light-2)!important;
         padding: 8px;
         margin: 0;
+        border-radius: 8px;
+        border-width: 1px;
+        background: $primaryT;
+        backdrop-filter: blur(1.5px);
+
+        &:last-child {
+            margin-bottom: 16px;
+        }
 
         .message-header {
             line-height: 1;
@@ -317,7 +383,8 @@
 
             .message-sender {
                 margin-bottom: 4px;
-                color: $secondary2;
+                //color: $secondary2;
+                color: $accent!important;
                 font-size: .7rem;
             }
 
@@ -329,8 +396,9 @@
             }
 
             .message-timestamp {
-                font-size: .7rem;
+                font-size: .6rem;
                 margin-right: 4px;
+                color: $secondary3L;
             }
 
             .message-delete i {
@@ -339,9 +407,8 @@
         }
 
         &.emote {
-            background: $primary2;
             font-style: italic;
-            background: $primary1;
+            background: $primaryT;
 
             header {
                 display: none;
@@ -350,7 +417,7 @@
 
         &.whisper {
             background: $whisperBg;
-            border-color: $whisper;
+            border-color: $whisper!important;
         }
 
         &.blind {

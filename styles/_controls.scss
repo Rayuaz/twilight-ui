@@ -1,0 +1,122 @@
+#controls {
+    padding-left: 0;
+
+    ol.control-tools {
+
+        > li,
+        > li:hover,
+        > li.active {
+            background: transparent;
+            box-shadow: none;
+            border: none;
+        }
+
+        > li {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            background: transparent;
+            border-radius: 0;
+            transition: all .12s ease-in-out;
+            color: $secondary3;
+        }
+
+        &.active > li {
+            color: $secondary2
+        }
+
+        > li.active:not(.toggle) {
+            color: $accent;
+        }
+
+        &.main-controls {
+            border-radius: 0;
+            margin: 0;
+            padding: 0;
+
+            li {
+                background: rgba(0, 0, 0, .25);
+                border-left: 1px solid transparent;
+
+                &:first-child {
+                    background: linear-gradient(0deg, rgba(0, 0, 0, .25) 0%, rgba(0, 0, 0, 0) 100%);
+                }
+
+                &:last-child {
+                    background: linear-gradient(180deg, rgba(0, 0, 0, .25) 0%, rgba(0, 0, 0, 0) 100%);
+                }
+
+                &:hover {
+                    border-color: $accent;
+                }
+
+                &.active {
+                    background: $accentBg;
+                    border-left: 1px solid $accent;
+                }
+                
+            }
+        }
+
+        &.sub-controls {
+            li {
+                border: none;
+                border-left: 1px solid $accentBg;
+
+                &:hover {
+                    color: $accent;
+                    border-color: $accent;
+                }
+
+                &.active:not(.toggle) {
+                    background: linear-gradient(90deg, $accentBg 0%, rgba(0, 0, 0, 0) 100%);
+                }
+
+                &.toggle {
+                    background: linear-gradient(90deg, $gmBg 0%, rgba(0, 0, 0, 0) 100%);
+                    color: $secondary2;
+                    position: relative;
+                    border-left: 1px solid $gmBg;
+
+                    &:after {
+                        content: 'off';
+                        font-size: .55rem;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        background: $gmBg;
+                        line-height: 1;
+                        text-transform: uppercase;
+                        letter-spacing: 3px;
+                        width: 100%;
+                        padding: 3px 0;
+                    }
+
+                    &:hover {
+                        box-shadow: none;
+                        border: none;
+                        border-left: 1px solid $gm;
+                        color: $secondary1;
+                    }
+
+                    &.active {
+                        color: $secondary1;
+                        background: linear-gradient(90deg, $gm 0%, rgba(0, 0, 0, 0) 100%);
+                        box-shadow: none;
+                        border: none;
+                        border-left: 1px solid $gm;
+
+                        &:after {
+                            content: 'on';
+                            background: $gm;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

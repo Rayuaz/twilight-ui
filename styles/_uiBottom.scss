@@ -1,0 +1,121 @@
+#players {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+#hotbar {
+    margin-bottom: 8px;
+
+    #hotbar-directory-controls,
+    #hotbar-page-controls {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+    }
+
+    #macro-list {
+        border: none;
+        border-radius: 0;
+        gap: 8px;
+
+        .macro .macro-icon {
+            border-radius: 8px;
+            transition: all .12s ease-in-out;
+            height: 100%;
+            width: 100%;
+        }
+    
+        .macro .macro-key {
+            top: auto;
+            right: auto;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(0deg, rgba(0, 0, 0, .7) 20%, rgba(0, 0, 0, 0) 100%);
+            text-align: center;
+            border-radius: 0 0 8px 8px;
+            padding-top: 5px;
+            transition: all .12s ease-in-out;
+            z-index: 1
+        }
+
+        .macro.active,
+        .macro.inactive {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            transition: all .12s ease-in-out;
+        }
+
+        .macro.inactive {
+            opacity: 0;
+            
+            &:hover {
+                background: rgba(0, 0, 0, .3);
+
+                &:after {
+                    content: '+';
+                    color: rgba(255, 255, 255, .7);
+                    font-weight: 700;
+                    font-size: 30px;
+                    line-height: 1;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+
+        &:hover .macro.inactive {
+            opacity: 1;
+        }
+
+        .macro.active:hover {
+            border: none;
+
+            .macro-icon {
+                filter: brightness(1.5);
+            }
+
+            .macro-key {
+                opacity: 0;
+            }
+        }
+    }
+
+    #hotbar-page-controls {
+        order: -1;
+    }
+
+    .bar-controls span.page-number {
+        font-size: 16px;
+        color: $secondary1;
+        line-height: 1;
+    }
+
+    #hotbar-directory-controls {
+        flex-direction: row;
+        align-items: center;
+
+        a {
+            line-height: 1;
+            font-size: 20px;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: solid 1px transparent;
+
+            &:hover {
+                border-bottom: solid 1px $accent;
+            }
+        }
+    }
+
+
+
+}

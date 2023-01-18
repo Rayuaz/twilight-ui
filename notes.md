@@ -11,3 +11,20 @@ function setHeight(fieldId){
 }
 setHeight('textBox1');
 </script>```
+
+- Considerar esse estilo pros botões:
+
+#sidebar .directory .directory-header .action-buttons button {
+text-transform: uppercase;
+font-size: .8rem;
+letter-spacing: 2px;
+font-weight: 600;
+padding-top: 12px;
+padding-bottom: 12px;
+}
+
+#sidebar .directory .directory-header .action-buttons button i {
+font-size: .9em;
+font-weight: 700!important;
+color: var(--tui-accent)
+}

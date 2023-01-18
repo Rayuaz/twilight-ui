@@ -7,6 +7,8 @@ $primary3L: var(--tui-primary3L);
 $primary4: var(--tui-primary4);
 $primary4L: var(--tui-primary4L);
 
+$primaryT: var(--tui-primaryT);
+
 $secondary1: var(--tui-secondary1);
 $secondary1L: var(--tui-secondary1L);
 $secondary2: var(--tui-secondary2);
@@ -34,9 +36,6 @@ $negative: var(--tui-negative);
 $warning: var(--tui-warning);
 $info: var(--tui-info);
 
-// $chat-message-whisper: #1c1d20;
-// $chat-message-whisper-border: rgba(78,101,126,.87);
-
 // $selection: #cce2ff;
 
 // $shadow: 0 0 3px var(--palette-dialog-background-shaded-text, var(--tui-white2)) inset;
@@ -51,6 +50,8 @@ $info: var(--tui-info);
     --tui-primary4: #363535;
     --tui-primary4L: #3F3F3F;
 
+    --tui-primaryT: #191716d4; // Transparent BG
+
     --tui-secondary1: rgba(255, 255, 255, 1);
     --tui-secondary1L: rgba(255, 255, 255, .87);
     --tui-secondary2: rgba(255, 255, 255, .6);
@@ -60,9 +61,9 @@ $info: var(--tui-info);
     --tui-secondary4: rgba(255, 255, 255, .12);
     --tui-secondary4L: rgba(255, 255, 255, .03);
 
-    --tui-accent: #f87a26;
-    --tui-accentL: #f8a221;
-    --tui-accentBg: #f87a2650;
+    --tui-accent: #ff9429; //f87a26
+    --tui-accentL: #ffb45e; //f8a221
+    --tui-accentBg: #f87a2650; //f87a2650
 
     --tui-gm: #ac53ff;
     --tui-gmL: #c397fd;
@@ -70,20 +71,12 @@ $info: var(--tui-info);
 
     --tui-whisper: #778b97;
     --tui-whisperL: #a7d7f3;
-    --tui-whisperBg: #39424850;
-
-    --tui-accent1: #f87a26;
-    --tui-accent1L: #f8a221;
-    --tui-accent2: #21122F;
-    --tui-accent2L: #9b8dff;
+    --tui-whisperBg: #394248d4;
 
     --tui-positive: #418824;
     --tui-negative: #cc2d2d;
     --tui-warning: #b8b31a;
     --tui-info: #596cf3;
-
-    --tui-whisper-bg: #1c1d20;
-    --tui-whisper-border: rgba(78,101,126,.87);
 }
 
 
