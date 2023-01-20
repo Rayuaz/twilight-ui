@@ -120,6 +120,19 @@
                     background: $primaryT;
                     margin: 0;
 
+                    text-transform: uppercase;
+                    //font-size: .8rem;
+                    letter-spacing: 2px;
+                    font-weight: 600;
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                
+                    i {
+                        font-size: .9em;
+                        font-weight: 700;
+                        color: $accent;
+                    }
+
                     &:hover {
                         background: $accent;
 

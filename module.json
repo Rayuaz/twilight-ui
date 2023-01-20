@@ -4,9 +4,9 @@
     "description": "A dark theme for Foundry",
     "authors": [
       {
-      "name": "Rayuaz",
-      "email": "rayquazabr@gmail.com",
-      "discord": "Sua mãe, Aquela Católica#2512"
+        "name": "Rayuaz",
+        "email": "rayquazabr@gmail.com",
+        "discord": "Sua mãe, Aquela Católica#2512"
       }
       ],
     "version": "2.0.0",
@@ -16,5 +16,8 @@
     },
     "styles": [
         "twilight-ui.css"
+    ],
+    "esmodules": [
+        "scripts/colored-folders.js"
     ]
   }
