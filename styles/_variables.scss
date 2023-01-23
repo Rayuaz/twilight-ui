@@ -18,6 +18,8 @@ $secondary3L: var(--tui-secondary3L);
 $secondary4: var(--tui-secondary4);
 $secondary4L: var(--tui-secondary4L);
 
+$sidebarItemBg: var(--tui-sidebar-item-bg);
+
 $accent: var(--tui-accent);
 $accentL: var(--tui-accentL);
 $accentBg: var(--tui-accentBg);
@@ -60,6 +62,8 @@ $info: var(--tui-info);
     --tui-secondary3L: rgba(255, 255, 255, .25);
     --tui-secondary4: rgba(255, 255, 255, .12);
     --tui-secondary4L: rgba(255, 255, 255, .03);
+
+    --tui-sidebar-item-bg: linear-gradient(90deg, rgba(0, 0, 0, .3), transparent);
 
     --tui-accent: #ff9429; //f87a26
     --tui-accentL: #ffb45e; //f8a221

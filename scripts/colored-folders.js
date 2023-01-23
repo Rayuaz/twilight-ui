@@ -1,5 +1,10 @@
 function colorFolderBackground(el) {
     let bgColor = el.find('.folder-header').css('background-color');
+
+    if(bgColor == "rgba(0, 0, 0, 0)") {
+        bgColor = "rgb(0,0,0)";
+    }
+
     el.css('--tui-bg-color', bgColor);
     el.css('--tui-bg-colorT', bgColor.replace(')', ', 0.5)').replace('rgb', 'rgba'));
 

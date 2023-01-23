@@ -18,6 +18,8 @@
         "twilight-ui.css"
     ],
     "esmodules": [
-        "scripts/colored-folders.js"
+        "scripts/colored-folders.js",
+        "scripts/compendium-icons.js",
+        "scripts/move-action-buttons.js"
     ]
   }
