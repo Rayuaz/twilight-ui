@@ -85,6 +85,16 @@
             &.context {
                 border-top: 1px solid var(--tui-accent);
             }
+
+            li.scene-player {
+                border: none;
+                color: white;
+                font-weight: 300;
+                line-height: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         }
     }
 }
