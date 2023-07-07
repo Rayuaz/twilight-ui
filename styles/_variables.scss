@@ -32,7 +32,6 @@ $whisper: var(--tui-whisper);
 $whisperL: var(--tui-whisperL);
 $whisperBg: var(--tui-whisperBg);
 
-
 $positive: var(--tui-positive);
 $negative: var(--tui-negative);
 $warning: var(--tui-warning);
@@ -46,24 +45,24 @@ $info: var(--tui-info);
     --tui-primary1: #100f0e;
     --tui-primary1L: #1e1b1a;
     --tui-primary2: #191716;
-    --tui-primary2L: #1E1C1B;
+    --tui-primary2L: #1e1c1b;
     --tui-primary3: #252423;
-    --tui-primary3L: #2F2E2D;
+    --tui-primary3L: #2f2e2d;
     --tui-primary4: #363535;
-    --tui-primary4L: #3F3F3F;
+    --tui-primary4L: #3f3f3f;
 
     --tui-primaryT: #191716d4; // Transparent BG
 
     --tui-secondary1: rgba(255, 255, 255, 1);
-    --tui-secondary1L: rgba(255, 255, 255, .87);
-    --tui-secondary2: rgba(255, 255, 255, .6);
-    --tui-secondary2L: rgba(255, 255, 255, .4);
-    --tui-secondary3: rgba(255, 255, 255, .32);
-    --tui-secondary3L: rgba(255, 255, 255, .25);
-    --tui-secondary4: rgba(255, 255, 255, .12);
-    --tui-secondary4L: rgba(255, 255, 255, .03);
+    --tui-secondary1L: rgba(255, 255, 255, 0.87);
+    --tui-secondary2: rgba(255, 255, 255, 0.6);
+    --tui-secondary2L: rgba(255, 255, 255, 0.4);
+    --tui-secondary3: rgba(255, 255, 255, 0.32);
+    --tui-secondary3L: rgba(255, 255, 255, 0.25);
+    --tui-secondary4: rgba(255, 255, 255, 0.12);
+    --tui-secondary4L: rgba(255, 255, 255, 0.03);
 
-    --tui-sidebar-item-bg: linear-gradient(90deg, rgba(0, 0, 0, .3), transparent);
+    --tui-sidebar-item-bg: linear-gradient(90deg, rgba(0, 0, 0, 0.3), transparent);
 
     --tui-accent: #ff9429; //f87a26
     --tui-accentL: #ffb45e; //f8a221
@@ -82,7 +81,6 @@ $info: var(--tui-info);
     --tui-warning: #b8b31a;
     --tui-info: #596cf3;
 }
-
 
 :root {
     --color-text-light-highlight: #{$secondary1};
@@ -149,8 +147,7 @@ $info: var(--tui-info);
     --macro-size: 50px;
     --players-width: 200px;
     --form-field-height: 26px;
-    --font-primary: "Open Sans",
-    sans-serif;
+    --font-primary: "Open Sans", sans-serif;
     --font-mono: monospace;
     --font-awesome: "Font Awesome 6 Pro";
     --font-size-11: 0.6875rem;

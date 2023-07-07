@@ -22,12 +22,12 @@
     &:before {
         z-index: 2;
         backdrop-filter: blur(1.5px);
-        mask: radial-gradient(circle, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 1) 100%);
+        mask: radial-gradient(circle, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 1) 100%);
     }
 
     // Background vignette
     &:after {
-        background: radial-gradient(circle, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 1) 100%);
+        background: radial-gradient(circle, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 1) 100%);
         opacity: .7;
         z-index: 1;
     }
@@ -64,10 +64,6 @@ button,
         i {
             color: $accent;
         }
-    }
-
-    i.fas {
-        font-weight: 500;
     }
 
     &[type="submit"] {
@@ -151,21 +147,28 @@ input[type="color"][data-edit] {
     border: none;
 }
 
-input[type=range] {
+input[type=range]:not([type="checkbox"]):not([type="color"]) {
+    overflow: hidden;
+    background-color: $secondary4;
+    height: 7px;
+    padding: 0;
+    border-radius: 50px;
+    border: none;
+
     &::-webkit-slider-runnable-track {
         box-shadow: none;
-        background: $secondary4;
-        border-radius: 3px;
+        background: transparent;
         border: none;
-        transition: background .12s ease-in-out;
+        cursor: ew-resize;
     }
 
     &::-webkit-slider-thumb {
-        box-shadow: none;
+        box-shadow: -200px 0 0 200px $accent;
         border: none;
-        border-radius: 50px;
-        background: $accent;
-        margin-top: -3px;
+        background: $accentL;
+        border-radius: 0;
+        margin-top: 0;
+        width: 3px;
     }
 
     &:focus::-webkit-slider-runnable-track {
@@ -370,6 +373,7 @@ div#camera-views,
 #context-menu {
     background: $primary1;
     border-color: $secondary4;
+    z-index: 99;
 
     li.context-item {
         padding: 0 8px;

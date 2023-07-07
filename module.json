@@ -20,6 +20,7 @@
     "esmodules": [
         "scripts/colored-folders.js",
         "scripts/compendium-icons.js",
-        "scripts/move-action-buttons.js"
+        "scripts/move-action-buttons.js",
+        "scripts/click-title-to-play-sound.js"
     ]
   }
